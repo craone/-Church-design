@@ -1,0 +1,321 @@
+<krpano>
+    <krpano stagescale="0.5" devices="mobile"/>
+    <layer name="errxinxi" visible="false" type="container" keep="true" bgcolor="0x000000" zorder="9999999"
+           bgcapture="true" handcursor="false" width="100%" height="100%" align="center" bgalpha="1">
+        <layer name="err_title" keep="true" style="txt_style" align="center" autoheight="true" background="false"
+               border="false" enabled="false" css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:18px;"
+               html="错误：[br][br]upload/user/2017/05/u10527/scene/119932/m/skintemplate/default/default.xml您的主账号已到期或当前正处于独立运行状态[br][br]请使用视维PC客户端或视维iPad播放器2.5以上版本播放[br][br]最新客户端官方下载：www.svrvr.com[br][br]视维全国统一服务热线：4007-111-788[br][br][br][br][br][br]数字加密·盗版必究"/>
+    </layer>
+    <action name="photo_simple" protect="true" autorun="onstart">ifnot(ymqr == shiweiyun4007111788jiushipobudiao,
+        set(layer[errxinxi].visible,true); set(layer[ctimage11].visible,false); );
+    </action>
+    <events name="skin_events" keep="true" onnewpano=" skin_update_scene_infos();"
+            onnewscene=" global_ac(Start); if(pano_state == normal,yinyue(up);); if((online) AND (settings.comments), ifnot(com_off,delayedcall(5,js(comment(new)););); );"
+            onresize=" set(xwlcf2,0); global(); if(q_list, listlist(windows); );"
+            onenterfullscreen="set(layer[head_full_ion].crop,671|270|83|83);set(layer[head_full_txt].html,退出);js(wapView.controlDiv(hide));skin_fullscreen_btn(enter);"
+            onexitfullscreen="set(layer[head_full_ion].crop,588|270|83|83);set(layer[head_full_txt].html,全屏);js(wapView.controlDiv(show));skin_fullscreen_btn(out);"/>
+    <action protect="true" name="skin_startup">ifnot(device.mobile, copy(layer[skin_control_bar].y_opened,0);
+        add(layer[skin_scroll_window].y, layer[skin_control_bar].height, layer[skin_control_bar].y);
+        add(layer[skin_scroll_window].y_opened, layer[skin_control_bar].height, layer[skin_control_bar].y_opened); );
+        if(group[group].item.count GT 1, set(group_x,0);for(set(i,0), i LT group[group].item.count, inc(i),
+        set(group_name,get(group[group].item[get(i)].name)); addlayer(get(group_name));
+        layer[get(group_name)].loadstyle(group_txt);
+        set(layer[get(group_name)].html,get(group[group].item[get(i)].title));
+        set(layer[get(group_name)].parent,layer[skin_album]); set(layer[get(group_name)].x,get(group_x));
+        set(group_s,calc(group[group].item[get(i)].title.length + 2 )); if(device.mobile, mul(group_s,get(group_s),20);
+        , mul(group_s,get(group_s),14); ); set(layer[get(group_name)].width,get(group_s)); add(group_x,group_s); );
+        copy(layer[skin_album].width,group_x); if(device.mobile, set(layer[skin_thumbs].y, 40); ,
+        set(layer[skin_thumbs].y, 30); ); skin_addthumbs(group,get(group[group].item[0].name)); , skin_addthumbs(all);
+        ); if(settings.thumbs_opened,delayedcall(1,skin_showthumbs(););); skin_updatescroll();
+        skin_update_scene_infos(); ifnot((device.desktop) OR (device.flash), copy(plugin[skin_gyro].url,
+        plugin[skin_gyro].html5_url); set(layer[skin_btn_gyro].visible,true); if(settings.gyro,
+        set(plugin[skin_gyro].enabled,true); ); ); if(editor,set(setstate,hide); , set(setstate,mini);
+        if(data[guide].name,set(layer[head_guide_qd].visible,true);); ); if(online,
+        set(layer[logo_img].url,%CURRENTXML%/../../packet/svrvr/logo.png); ,
+        set(layer[logo_img].url,%CURRENTXML%/svrvr/logo.png); set(layer[top_gps].visible,false);
+        set(layer[user_dianz].visible,false); set(layer[user_top].height,330); set(settings.comments,false);
+        set(layer[comment].visible,false); ); if(settings.logolink != 'http://', copy(logolink,settings.logolink);
+        txtadd(logolink,get(logolink),'/?openwin=1'); set(plugin[logo_img].onclick,openurl(get(logolink))); );
+        set(layer[top_title].html,get(user_title)); set(layer[top_tel].html,get(user_tel));
+        set(layer[top_add].html,get(user_add)); set(zansl,get(praise)); if(device.mobile,
+        set(layer[head_zan_txt].html,get(zansl)); , set(layer[dianz_shuliang].html,get(zansl)); );
+        state_ac(get(setstate));if(settings.adlogo, if(device.mobile,
+        set(adlogourl,%CURRENTXML%/../../packet/svrvr/logo_m.png); set(plugin[adlogo].url,get(adlogourl));
+        if(settings.logolink == 'http://' , , copy(logolink,settings.logolink);
+        set(plugin[adlogo].onclick,openurl(get(logolink))); ); , set(plugin[adlogo].visible,false); ); ,
+        set(plugin[adlogo].visible,false); ); if(settings.adad, if(device.mobile, if(online,
+        set(adadurl,%CURRENTXML%/../../packet/svrvr/ad_m.png); , set(adadurl,%CURRENTXML%/svrvr/ad_m.png); ); ,
+        if(online, set(adadurl,%CURRENTXML%/../../packet/svrvr/ad.png); , set(adadurl,%CURRENTXML%/svrvr/ad.png); ); );
+        set(plugin[adad].url,get(adadurl)); if(settings.adadhttp == 'http://' , , copy(adadhttp,settings.adadhttp);
+        set(plugin[adad].onclick,openurl(get(adadhttp))); ); , set(plugin[adad].visible,false); );
+        ifnot(settings.swlogo, set(layer[swlogo].visible,false); set(layer[copyright].html,); ); button_wz();global();
+    </action>
+    <action protect="true" name="skin_editor_int">set(layer[adlogo].y,-100); set(layer[skin_title].y,-50);
+        set(layer[skin_btn_user].visible,false);
+    </action>
+    <action protect="true" name="button_wz">set(icoshu,-1); if(layer[skin_btn_user].visible, add(icoshu,1); );
+        if(layer[skin_btn_thumbs].visible, add(icoshu,1); ); if(layer[skin_btn_music].visible, add(icoshu,1); );
+        if(settings.comments, add(icoshu,1); ); if(mapdata.imagemap, add(icoshu,1); ); if(layer[skin_btn_gyro].visible,
+        add(icoshu,1); ); if(layer[skin_btn_vr].visible, add(icoshu,1); ); if(layer[skin_btn_vr].visible,
+        set(layer[skin_btn_vr].x,calc(icoshu * 60 + 10)); tween(layer[skin_btn_vr].alpha,1); sub(icoshu,1); );
+        if(layer[skin_btn_gyro].visible, set(layer[skin_btn_gyro].x,calc(icoshu * 60 + 10));
+        tween(layer[skin_btn_gyro].alpha,1); sub(icoshu,1); ); if(mapdata.imagemap,
+        set(layer[skin_btn_map].visible,true); set(layer[skin_btn_map].x,calc(icoshu * 60 + 10));
+        tween(layer[skin_btn_map].alpha,1); sub(icoshu,1); ); if(settings.comments,
+        set(layer[skin_btn_comments].x,calc(icoshu * 60 + 10)); set(layer[skin_btn_comments].visible,true);
+        set(layer[comment].visible,true); tween(layer[skin_btn_comments].alpha,1); sub(icoshu,1); );
+        if(layer[skin_btn_music].visible, set(layer[skin_btn_music].x,calc(icoshu * 60 + 10));
+        tween(layer[skin_btn_music].alpha,1); sub(icoshu,1); ); if(layer[skin_btn_thumbs].visible,
+        set(layer[skin_btn_thumbs].x,calc(icoshu * 60 + 10)); tween(layer[skin_btn_thumbs].alpha,1); sub(icoshu,1); );
+        if(layer[skin_btn_user].visible, set(layer[skin_btn_user].x,calc(icoshu * 60 + 10));
+        tween(layer[skin_btn_user].alpha,1); );
+    </action>
+    <action name="skin_state">if(%1 == true, stopdelayedcall(ss); stopdelayedcall(bb); set(layer[da_box].visible,true);
+        tween(layer[da_box].alpha,1,1); ifnot((device.mobile) OR (editor), set(layer[user_box].visible,true);
+        tween(layer[user_box].alpha,1,1); ); ); if(%1 == false, tween(layer[da_box].alpha,0,1);
+        delayedcall(ss,1,set(layer[da_box].visible,false);); ifnot((device.mobile) OR (editor),
+        tween(layer[user_box].alpha,0,1); delayedcall(bb,1,set(layer[user_box].visible,false);); ); );
+    </action>
+    <style name="skin_base" url="icon.png?v=3"/>
+    <events name="loadingbar" keep="true" onxmlcomplete="loadingbar_startloading();"
+            onloadcomplete="delayedcall(0.5, loadingbar_stoploading() );"
+            onresize="set(xwlcf,0);skin_showthumbs(restore);"/>
+    <layer name="loadingbar_fill" keep="true" type="container" bgcolor="0x45c01a" bgalpha="1.0" enabled="false"
+           visible="false" align="lefttop" width="0" height="3" onloaded="if(ismobile,set(height,4));"/>
+    <action protect="true" name="loadingbar_startloading">set(loadingbar_isloading, true);
+        set(layer[loadingbar_fill].visible, true); asyncloop(loadingbar_isloading, mul(pv, progress.progress, 100);
+        txtadd(pv, '%'); copy(layer[loadingbar_fill].width, pv); );
+    </action>
+    <action protect="true" name="loadingbar_stoploading">set(loadingbar_isloading, false);
+        set(layer[loadingbar_fill].visible, false);
+    </action>
+    <style name="skin_glow" ondown="copy(skin_lockglow,name); skin_buttonglow(get(name)); if(ondown2, ondown2() );"
+           onover="if(skin_lockglow === null, copy(skin_lockglow,name); skin_buttonglow(get(name),0.3) );"
+           onout="if(skin_lockglow === name, ifnot(pressed, skin_buttonglow(null);delete(skin_lockglow); ));"
+           onup="if(hovering, skin_buttonglow(get(name),0.3), skin_buttonglow(null);delete(skin_lockglow); ); if(onup2, onup2() );"/>
+    <style name="group_txt" keep="true" zorder="2" backgroundcolor="0xffffff" backgroundalpha="0" vcenter="true"
+           url="%SWFPATH%/plugins/textfield.swf" align="lefttop" visible="true" y="0" x="0" height="30"
+           css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:14px;"
+           onover="tween(backgroundalpha,0.3, 0.2,linear);" onout="tween(backgroundalpha,0, 0.2,linear);"
+           onclick="skin_addthumbs(group,get(name),user);"/>
+    <layer name="skin_title" style="txt_style" align="top" x="0" y="10" visible="true" keep="true" autoheight="true"
+           background="false" border="false" enabled="false"
+           css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:22px; font-weight:bold;" textshadow="1"/>
+    <layer name="da_box" type="container" align="righttop" x="0" y="0" alpha="0" width="100%" keep="true" visible="true"
+           height="100%">
+        <layer name="skin_scroll_window" type="container" align="leftbottom" width="100%" height="100%" x="0" y="60"
+               y_opened="60" y_closed="-2" maskchildren="true">
+            <layer name="skin_scroll_layer" type="container" align="leftbottom" width="100%" height="100%" x="0"
+                   y="-100%">
+                <layer name="swlogo"
+                       url="data:image/png;base64,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"
+                       align="lefttop" x="0" y="-35" capture="false" accuracy="1" state="small" scale="0.4" alpha="0.6"
+                       onclick="openurl('http://www.svrvr.com/?openwin=1',_blank);"/>
+                <layer name="skin_scroll_container" type="container" bgcolor="0x000000" bgalpha="0.5" align="lefttop"
+                       width="100%" height="100%" x="0" y="0" maskchildren="true">
+                    <layer name="skin_thumbs_container" type="container" align="lefttop" width="100%" height="100%"
+                           visible="false">
+                        <layer name="skin_album" state="closed" url="%SWFPATH%/plugins/scrollarea.swf"
+                               alturl="%SWFPATH%/plugins/scrollarea.js" direction="h" align="top" width="100%"
+                               height="30" x="0" onloaded="setcenter(0,0);"/>
+                        <layer name="skin_thumbs" state="closed" url="%SWFPATH%/plugins/scrollarea.swf"
+                               alturl="%SWFPATH%/plugins/scrollarea.js" direction="h" align="top" width="100%"
+                               height="100" zorder="1" onloaded="skin_updatescroll();"/>
+                        <layer name="skin_thumbborder" keep="true" style="skin_base" crop="0|282|207|140" visible="true"
+                               enabled="false" zorder="5" align="left" scale="0.5" x="-1" y="0" ox="-1" oy="0"/>
+                    </layer>
+                </layer>
+                <layer name="skin_fullscreen" visible="true" bgroundedge="40" type="container" bgcolor="0x000000"
+                       bgcapture="true" width="40" scalechildren="true" height="40" align="righttop" bgalpha="0.5"
+                       x="20" y="-70" onover="tween(bgalpha,0.8,0.5);" onout="tween(bgalpha,0.5,0.5);"
+                       onclick=" if(fullscreen, set(fullscreen,false); , set(fullscreen,true); );"
+                       onloaded="if(ismobile, set(scale,1.5); set(y,-80); set(layer[head_full_txt].visible,true); );">
+                    <layer name="head_full_ion" visible="true" style="skin_base" enabled="false" crop="588|270|83|83"
+                           align="center" x="-1" y="-1" scale="0.3"
+                           onloaded="if(ismobile,set(scale,0.25);set(x,-1);set(y,-5););"/>
+                    <layer name="head_full_txt" style="txt_style" align="bottom" x="0" y="-5" visible="false"
+                           width="100%" background="false" border="false" enabled="false" html="全 屏"
+                           css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:14px;"/>
+                </layer>
+                <layer name="comment" visible="false" bgroundedge="40" type="container" bgcolor="0x000000"
+                       bgcapture="true" width="40" scalechildren="true" height="40" align="righttop" bgalpha="0.5"
+                       x="20" y="-120" onclick="js(comment(add));" onover="tween(bgalpha,0.8,0.5);"
+                       onout="tween(bgalpha,0.5,0.5);"
+                       onloaded="if(ismobile, set(scale,1.5); set(y,-160); set(layer[head_shuo_txt].visible,true); );">
+                    <layer name="head_shuo_ion" visible="true" style="skin_base" enabled="false" crop="295|10|100|80"
+                           align="center" x="-1" y="-1" scale="0.25" onloaded="if(ismobile,set(y,-5););"/>
+                    <layer name="head_shuo_txt" style="txt_style" align="bottom" x="0" y="-5" visible="false"
+                           width="100%" background="false" border="false" enabled="false" html="说 说"
+                           css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:14px;"/>
+                </layer>
+                <layer name="head_zan_bg" visible="false" bgroundedge="40" type="container" bgcolor="0x000000"
+                       bgcapture="true" width="40" scalechildren="true" height="40" align="righttop" bgalpha="0.5"
+                       x="20" y="-170" onclick="global_ac(praise);" onover="tween(bgalpha,0.8,0.5);"
+                       onout="tween(bgalpha,0.5,0.5);"
+                       onloaded="if(ismobile, set(visible,true); set(scale,1.5); if(settings.comments,set(y,-240);,set(y,-160);); set(layer[head_zan_txt].visible,true); );">
+                    <layer name="head_zan_ion" visible="true" style="skin_base" enabled="false" crop="490|218|60|60"
+                           align="center" x="0" y="0" scale="0.35" onloaded="if(ismobile,set(y,-5););"/>
+                    <layer name="head_zan_txt" style="txt_style" align="bottom" x="0" y="-5" visible="false"
+                           width="100%" background="false" border="false" enabled="false"
+                           css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:14px;"/>
+                </layer>
+                <layer name="head_guide_qd" visible="false" bgroundedge="35" type="container" bgcolor="0x000000"
+                       bgcapture="true" width="200" height="40" align="top" bgalpha="0.5" x="0" y="-60"
+                       onover="set(bgalpha,0.65);" onout="set(bgalpha,0.5);"
+                       onclick=" if(layer[skin_btn_music].crop == 140|0|140|140, set(guide_bgbg,true); yinyue(stop); ); set(layer[guide_box].visible,true); guide_ac(kaishi,get(data[guide].content));">
+                    <layer name="guide_yj_ioc" visible="true" style="skin_base" enabled="false" url="guide.png"
+                           crop="400|0|100|100" align="left" x="35" y="0" scale="0.25"/>
+                    <layer name="guide_yj_txt" style="txt_style" align="right" x="35" y="0" visible="true"
+                           vcenter="true" background="false" border="false" enabled="false"
+                           css="color:#FFFFFF; font-family:Arial;font-size:16px;" html="启动一键导游"/>
+                </layer>
+            </layer>
+        </layer>
+        <layer name="skin_control_bar" keep="true" type="container" bgcolor="0x000000" bgalpha="0.5" align="leftbottom"
+               width="100%" height="70" x="0" y="0" y_opened="20" y_closed="-42" zorder="3">
+            <plugin name="adad" url="" align="rightbottom" keep="true" handcursor="true" visible="true" scale="0.6"
+                    x="0" y="0"/>
+            <layer name="skin_btn_user" style="skin_base|skin_glow" crop="0|430|140|140" alpha="0" align="left" x="10"
+                   scale="0.4" onclick="global_ac(jj);set(xwlcf2,0);global();"
+                   onloaded="if(ismobile,set(onclick,state_ac(mob_show)));"/>
+            <layer name="skin_btn_thumbs" style="skin_base|skin_glow" crop="0|0|140|140" alpha="0" visible="true"
+                   align="left" x="70" scale="0.4" ondown2="skin_showthumbs();"/>
+            <layer name="skin_btn_music" style="skin_base|skin_glow" crop="140|140|140|140" alpha="0" visible="true"
+                   align="left" x="130" scale="0.4" onclick="yinyue(play);"/>
+            <layer name="skin_btn_comments" style="skin_base|skin_glow" crop="280|0|140|140" alpha="0" visible="false"
+                   align="left" x="190" scale="0.4"
+                   onclick="comment(switch);switch(crop,280|0|140|140,280|140|140|140);"/>
+            <layer name="skin_btn_map" style="skin_base|skin_glow" crop="420|0|140|140" alpha="0" visible="false"
+                   align="left" x="250" scale="0.4" onclick="openimagemap(switch);"/>
+            <layer name="skin_btn_gyro" style="skin_base|skin_glow" crop="560|0|140|140" alpha="0" visible="false"
+                   align="left" x="310" scale="0.4" onclick="switch(plugin[skin_gyro].enabled);" devices="html5"/>
+            <layer name="skin_btn_vr" style="skin_base|skin_glow" crop="149|430|140|140" alpha="0" visible="false"
+                   align="left" x="370" scale="0.4" onclick="webvr.enterVR();enterVR();" devices="html5"/>
+        </layer>
+        <plugin name="adlogo" url="" align="lefttop" zorder="20" keep="true" handcursor="true" visible="true"
+                scale="0.5" x="20" y="20"/>
+        <layer name="skin_buttonglow" keep="true" style="skin_base" crop="0|140|140|140" align="center" x="0" y="-6"
+               scale="0.5" alpha="0.0" visible="false" enabled="false"/>
+        <plugin name="skin_gyro" keep="true" url="" html5_url="%SWFPATH%/plugins/gyro2.js" devices="html5"
+                enabled="false"/>
+    </layer>
+    <style name="skin_thumbbg_style" type="container" x="0" width="100%" y="0" height="18" align="bottom" keep="true"
+           bgcolor="0x000000" bgalpha="0.5"/>
+    <style name="skin_thumbtext_style" align="bottom" width="100%" keep="true" autoheight="true" enabled="false"
+           background="false" border="false"
+           css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:12px;"/>
+    <krpano devices="mobile">
+        <style name="group_txt" css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:20px;" height="40"/>
+        <layer name="skin_title" y="15" css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:24px;"
+               textshadow="0"/>
+        <layer name="da_box">
+            <layer name="skin_scroll_window" y="80" y_opened="80" y_closed="-4">
+                <layer name="skin_scroll_layer">
+                    <layer name="skin_topborder" height="16"/>
+                    <layer name="swlogo" scale="0.5" x="4.5" y="-45"/>
+                    <layer name="skin_title"
+                           css="text-align:left; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:26px;"/>
+                    <layer name="skin_scroll_container">
+                        <layer name="skin_thumbs_container">
+                            <layer name="skin_thumbs" height="200"/>
+                            <layer name="skin_thumbborder" scale="0.67"/>
+                        </layer>
+                    </layer>
+                </layer>
+            </layer>
+            <layer name="skin_control_bar" height="80" y="0" y_opened="0" y_closed="-88">
+                <plugin name="adad" scale="1" y="8"/>
+                <layer name="skin_btn_user" scale="0.45"/>
+                <layer name="skin_btn_thumbs" scale="0.45"/>
+                <layer name="skin_btn_music" scale="0.45"/>
+                <layer name="skin_btn_comments" scale="0.45"/>
+                <layer name="skin_btn_map" scale="0.45"/>
+                <layer name="skin_btn_gyro" scale="0.45"/>
+                <layer name="skin_btn_vr" scale="0.45"/>
+            </layer>
+            <plugin name="adlogo" scale="0.7"/>
+            <layer name="skin_buttonglow" scale="0.8"/>
+        </layer>
+        <style name="skin_thumbbg_style" height="28"/>
+        <style name="skin_thumbtext_style" css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:16px;"/>
+    </krpano>
+    <action name="skin_fullscreen_btn">if(%1 == enter, set(layer[swlogo].parent,false);
+        set(layer[swlogo].align,leftbottom); set(layer[swlogo].y,10); set(layer[skin_fullscreen].parent,false);
+        set(layer[skin_fullscreen].align,rightbottom); set(layer[skin_fullscreen].y,20); skin_state(false); ); if(%1 ==
+        out, set(layer[swlogo].parent,layer[skin_scroll_layer]); set(layer[swlogo].align,lefttop);
+        set(layer[swlogo].y,-35); set(layer[skin_fullscreen].parent,layer[skin_scroll_layer]);
+        set(layer[skin_fullscreen].align,righttop); if(ismobile, set(layer[skin_fullscreen].y,-80); ,
+        set(layer[skin_fullscreen].y,-70); ); skin_state(true); );
+    </action>
+    <action protect="true" name="skin_music">if(%1 == on, set(layer[skin_btn_music].crop,140|140|140|140);
+        set(layer[skin_btn_music].onclick,yinyue(play);); set(music_stop,true); ); if(%1 == off,
+        set(layer[skin_btn_music].crop,140|0|140|140); set(layer[skin_btn_music].onclick,yinyue(stop););
+        set(music_stop,false); );
+    </action>
+    <action protect="true" name="skin_addthumbs">if(%1 == atart, if(device.mobile, set(thumbwidth , 136);
+        set(thumbheight , 90); , set(thumbwidth , 100); set(thumbheight , 66); ); set(thumbpadding, 10); set(thumbcrop ,
+        0|40|200|160); add(thumbxoffset, thumbwidth, thumbpadding); mul(thumbxcenter, thumbxoffset, 0.5);
+        mul(thumbbarwidth, thumbxoffset,get(thumbs_shu)); add(thumbbarwidth, thumbpadding); add(thumbbarheight,
+        thumbpadding, thumbheight); add(thumbbarheight, thumbpadding); copy(layer[skin_thumbs].height, thumbbarheight);
+        copy(layer[skin_thumbs].width, thumbbarwidth); mul(halfheight, thumbbarheight, 0.5);
+        copy(layer[skin_thumbs_scrollleft].y, halfheight); copy(layer[skin_thumbs_scrollright].y, halfheight); ); if(%1
+        == create, txtadd(thumbname,'skin_thumb_',get(i)); addlayer(get(thumbname)); copy(layer[get(thumbname)].url,
+        scene[%2].thumburl); set(layer[get(thumbname)].keep, true); set(layer[get(thumbname)].parent, 'skin_thumbs');
+        set(layer[get(thumbname)].align, left); copy(layer[get(thumbname)].crop, thumbcrop);
+        copy(layer[get(thumbname)].width, thumbwidth); copy(layer[get(thumbname)].height, thumbheight);
+        mul(thumbx,thumbs_shu,thumbxoffset); add(thumbx, thumbpadding); copy(layer[get(thumbname)].x, thumbx);
+        add(scene[%2].thumbx, thumbx, thumbxcenter); copy(scene[%2].thumby, thumbpadding);
+        set(layer[get(thumbname)].linkedscene, %2); set(layer[get(thumbname)].onclick,
+        copy(layer[skin_thumbborder].parent, name); loadscene(get(linkedscene), null, MERGE, BLEND(0.5)); );
+        txtadd(thumbtitlbackename,'thumb_title_bg',get(i)); addlayer(get(thumbtitlbackename));
+        copy(layer[get(thumbtitlbackename)].parent, thumbname);
+        layer[get(thumbtitlbackename)].loadstyle(skin_thumbbg_style); set(layer[get(thumbtitlbackename)].zorder,2);
+        txtadd(thumbtext, 'skin_thumbtext_',get(i)); addlayer(get(thumbtext)); set(layer[get(thumbtext)].parent,
+        get(thumbname)); layer[get(thumbtext)].loadstyle(txt_style|skin_thumbtext_style);
+        set(layer[get(thumbtext)].html, get(scene[%2].title)); set(layer[get(thumbtext)].zorder,3); ); if(%1 == del,
+        set(layer[skin_thumbborder].visible,false); for(set(i,0), i LT group[group].item.count, inc(i),
+        set(group_name,get(group[group].item[get(i)].name)); set(layer[get(group_name)].backgroundalpha,0);
+        set(layer[get(group_name)].onout,tween(backgroundalpha,0, 0.2,linear););
+        set(layer[get(group_name)].onclick,skin_addthumbs(group,get(name),user);); ); for(set(i,0), i LT scene.count,
+        inc(i), txtadd(thumbname,'skin_thumb_',get(i)); txtadd(thumbtitlbackename,'thumb_title_bg',get(i));
+        txtadd(thumbtext, 'skin_thumbtext_',get(i)); removelayer(get(thumbtext)); removelayer(get(thumbtitlbackename));
+        removelayer(get(thumbname)); ); ); if(%1 == all, set(thumbs_shu,get(scene.count)); skin_addthumbs(atart);
+        set(thumbs_shu,0); for(set(i,0), i LT scene.count, inc(i), skin_addthumbs(create,get(scene[get(i)].name));
+        add(thumbs_shu,1); ); ); if(%1 == group, skin_addthumbs(del);
+        set(photo_dq,%2);set(layer[%2].backgroundalpha,0.3); set(layer[%2].onout,false); set(layer[%2].onclick,false);
+        skin_addthumbs(atart); set(thumbs_shu,0); for(set(i,0), i LT scene.count, inc(i), if(scene[get(i)].group == %2,
+        skin_addthumbs(create,get(scene[get(i)].name)); if(thumbs_shu LT 1,set(sc,get(scene[get(i)].name)); );
+        add(thumbs_shu,1); ); ); if(%3 == user, loadscene(get(sc), null, MERGE, BLEND(0.5)); );
+        set(layer[skin_thumbs].width,calc(thumbs_shu * thumbxoffset)); skin_updatescroll(); );
+    </action>
+    <action name="skin_updatescroll">if(layer[skin_thumbs].loaded, set(cursceneindex, 0); if(xml.scene,
+        copy(cursceneindex, scene[get(xml.scene)].index));
+        layer[skin_thumbs].setcenter(get(scene[get(cursceneindex)].thumbx), get(scene[get(cursceneindex)].thumby)); );
+    </action>
+    <action protect="true" name="skin_update_scene_infos">if(xml.scene !== null, if(scene[get(xml.scene)].index GE 0,
+        if(pano_state == normal, if(scene[get(xml.scene)].title,
+        set(layer[skin_title].html,get(scene[get(xml.scene)].title)); , set(layer[skin_title].html,); ); );
+        if(group[group].item.count GT 1, set(group_name,get(scene[get(xml.scene)].group)); if(photo_dq !== group_name,
+        skin_addthumbs(group,get(group_name)); ); ); if(layer[calc("skin_thumb_" +
+        scene[get(xml.scene)].index)].visible,
+        txtadd(layer[skin_thumbborder].parent,'skin_thumb_',get(scene[get(xml.scene)].index));
+        set(layer[skin_thumbborder].visible,true); , set(layer[skin_thumbborder].visible,false); ); ); );
+    </action>
+    <action protect="true" name="skin_buttonglow">if(%1 != null, set(strength,0.7); if(%2 != null, set(strength,%2));
+        set(layer[skin_buttonglow].parent, %1); set(layer[skin_buttonglow].visible, true);
+        tween(layer[skin_buttonglow].alpha, get(strength), 0.07); , tween(layer[skin_buttonglow].alpha, 0.0, 0.1,
+        default, set(layer[skin_buttonglow].parent, null); set(layer[skin_buttonglow].visible, false); ); );
+    </action>
+    <action protect="true" name="skin_showthumbs">if(%1 == restore, if(layer[skin_thumbs].state == 'opened', if(xwlcf ==
+        6, delete(xwlcf); , set(layer[skin_thumbs].state, 'closed'); skin_showthumbs();
+        delayedcall(0.5,add(xwlcf,1);skin_showthumbs(restore);); ); ); , if(layer[skin_thumbs].state == 'closed',
+        set(show,true); , set(show,false); ); mul(mh, layer[skin_scroll_layer].pixelheight, -1);
+        if(layer[skin_scroll_layer].y == -100%, copy(layer[skin_scroll_layer].y,mh)); if(show,
+        set(layer[skin_thumbs].state, 'opened'); add(mh,layer[skin_thumbs].height); if(group[group].item.count GT 1,
+        if(device.mobile, add(mh,45); , add(mh,25); ); ); tween(layer[skin_scroll_layer].y, get(mh), 0.5, easeOutQuint);
+        set(layer[skin_thumbs_container].visible, true); tween(layer[skin_thumbs_container].alpha, 1.0, 0.25);
+        tween(layer[skin_map].alpha, 0.0, 0.25, default, set(layer[skin_map].visible,false)); ,
+        set(layer[skin_thumbs].state, 'closed'); tween(layer[skin_scroll_layer].y, get(mh), 0.5, easeOutQuint,
+        set(layer[skin_thumbs_container].visible, false);); ); );
+    </action>
+</krpano>

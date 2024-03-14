@@ -1,0 +1,410 @@
+<krpano>
+    <style name="user_ioc" url="ioc.png"/>
+    <style name="user_glow" bgcolor="0x292a2f" bgcapture="true" handcursor="true" y="50" width="50" height="59"
+           align="leftbottom" bgalpha="1" type="container"/>
+    <layer name="user_box" alpha="0" visible="false" keep="true" type="container" bgcolor="0x292a2f" y="-1"
+           bgcapture="true" handcursor="false" width="50" height="101%" align="left" bgalpha="1">
+        <layer name="user_switch" style="user_ioc" visible="false" crop="222|300|42|42" align="righttop" scale="0.4"
+               x="5" y="10" alpha="0.8" onclick="switch(statestate,mini,max);state_ac(get(statestate));"/>
+        <layer name="user_top" type="container" width="50" height="380" y="50" align="lefttop">
+            <layer name="top_logo" style="txt_style" width="130" height="100" roundedge="2" align="top" y="20"
+                   background="true" backgroundcolor="0x292a2f" border="true" borderwidth="1.0" bordercolor="0x414143">
+                <layer name="logo_img" url="" width="0" height="0" align="center" onloaded="imgsize(130,100);"/>
+            </layer>
+            <layer name="top_title" style="txt_style" align="top" y="130" background="false" width="90%" height="40"
+                   handcursor="false" html=""
+                   css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:18px;"/>
+            <layer name="top_tel" style="txt_style" align="top" y="160" background="false" handcursor="false" html=""
+                   css="text-align:center; color:#828387; font-family:Arial;font-size:18px;"
+                   onclick="if(device.mobile,openurl(calc('tel:' + html)););"/>
+            <layer name="top_add" style="txt_style" align="lefttop" y="185" x="10" width="85%" handcursor="false"
+                   background="false" html="" css="text-align:center;color:#828387; font-family:Arial;font-size:12px;"/>
+            <layer name="top_gps" style="user_ioc" align="bottom" x="0" y="280" crop="182|296|42|52" scale="0.5"
+                   onover="textfollow(打开地图);" onclick="js(gps());"/>
+            <layer name="user_dianz" style="user_ioc" handcursor="true" crop="54|155|54|54" x="0" y="360" scale="0.5"
+                   width="54" height="54" align="bottom" edge="center" bgalpha="1" onover="textfollow(作品点赞);"
+                   onclick="global_ac(praise);">
+                <layer name="dianz_shuliang" style="txt_style" align="bottom" x="0" y="-20" width="100%"
+                       handcursor="false" background="false" html=""
+                       css="text-align:center; color:#828387; font-family:Arial;font-size:12px;"/>
+            </layer>
+            <layer name="user_fenge1" type="container" bgcolor="0x000000" y="258" bgcapture="true" width="50" height="1"
+                   align="bottom" bgalpha="1"/>
+            <layer name="user_Int1" style="user_glow" x="0" y="179">
+                <layer name="user_img1" style="user_ioc" align="center" crop="0|55|100|100" scale="0.5" width="100"
+                       height="100" onover="set(layer[user_Int1].bgcolor,0x191919);"
+                       onout="set(layer[user_Int1].bgcolor,0x292a2f);" onclick="global_ac(jj);set(xwlcf2,0);global();"/>
+            </layer>
+            <layer name="user_Int2" style="user_glow" x="0" y="119">
+                <layer name="user_img2" style="user_ioc" align="center" crop="100|55|100|100" scale="0.5" width="100"
+                       height="100" onover="set(layer[user_Int2].bgcolor,0x191919);"
+                       onout="set(layer[user_Int2].bgcolor,0x292a2f);" onclick="global_ac(zp);set(xwlcf2,0);global();"/>
+            </layer>
+            <layer name="user_Int3" style="user_glow" x="0" y="60">
+                <layer name="user_img3" style="user_ioc" align="center" crop="200|55|100|100" scale="0.5" width="100"
+                       height="100" onover="set(layer[user_Int3].bgcolor,0x191919);"
+                       onout="set(layer[user_Int3].bgcolor,0x292a2f);"
+                       onclick="global_ac(sp,mini);set(xwlcf2,0);global();"/>
+            </layer>
+            <layer name="user_Int4" style="user_glow" x="0" y="1">
+                <layer name="user_img4" style="user_ioc" align="center" crop="300|55|100|100" scale="0.5" width="100"
+                       height="100" onover="set(layer[user_Int4].bgcolor,0x191919);"
+                       onout="set(layer[user_Int4].bgcolor,0x292a2f);" onclick="global_ac(fx);set(xwlcf2,0);global();"/>
+            </layer>
+            <layer name="user_fenge2" visible="false" type="container" bgcolor="0x000000" y="50" bgcapture="true"
+                   width="200" height="1" align="bottom" bgalpha="1"/>
+            <layer name="user_dabt" visible="false" style="user_ioc" handcursor="false" crop="0|0|271|56" x="10" y="10"
+                   scale="0.5" align="leftbottom" bgalpha="1"/>
+            <layer name="user_gd" visible="false" style="user_ioc" crop="280|0|71|56" x="15" y="10" scale="0.5"
+                   width="71" height="56" align="rightbottom" bgalpha="1"/>
+        </layer>
+        <layer name="user_content" type="container" width="90%" align="lefttop">
+            <layer name="worinima" type="container" align="top" x="5" y="5" width="-10" height="-10"
+                   maskchildren="true">
+                <layer name="scroller" url="%SWFPATH%/plugins/scrollarea.swf" x="0" handcursor="false"
+                       alturl="%SWFPATH%/plugins/scrollarea.js" mwheel="true" direction="v" overscroll="0"
+                       align="lefttop" width="100%" height="100%"
+                       onscroll="if(hoverflow GT 0, div(yp,toverflow,hoverflow); Math.min(yp,1); Math.max(yp,0); copy(th,layer[scrollbar].pixelheight); sub(th,85); mul(yp,th); add(yp,10); copy(layer[scrollslider].y,yp); );">
+                    <layer name="prompt_txt" visible="false" align="lefttop" url="%SWFPATH%/plugins/textfield.swf"
+                           handcursor="false" background="false"
+                           css="text-align:center; color:#828387; font-family:Arial;font-size:14px;"/>
+                </layer>
+            </layer>
+            <layer name="scrollbar" type="container" bgcapture="true" bgcolor="0x717171" bgalpha="0.6" align="righttop"
+                   x="0" y="5" width="1" height="-10">
+                <layer name="scrollslider" style="user_ioc" align="righttop" x="-10" y="10" crop="190|218|20|70"
+                       alpha="0.6"
+                       ondown="if(layer[scroller].hoverflow GT 0,copy(cy,y);copy(sy,mouse.stagey);dragging(); );"
+                       dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); Math.max(ny,10); copy(th,layer[scrollbar].pixelheight); sub(th,10); sub(th,65); Math.min(ny,th); copy(y,ny); sub(ny,10); sub(th,10); div(ny,th); copy(fh,layer[scroller].hoverflow); mul(fh,-1); mul(ny,fh); copy(layer[scroller].y,ny); delayedcall(0,dragging()); );"/>
+            </layer>
+        </layer>
+        <layer name="fx_box" type="container" visible="false" handcursor="false" alpha="0" bgcapture="true" x="0" y="0"
+               align="lefttop" width="100%" height="100%">
+            <layer name="fx_code_box" style="qj_border" handcursor="false" x="1" y="1" width="128" height="128"
+                   align="top" onover="textfollow(微信扫描，立即穿越到手机！);">
+                <layer name="fx_code" url="%CURRENTXML%/svrvr/code.png" handcursor="false" width="115" height="115"
+                       align="center" alpha="0.7" onover="textfollow(微信扫描，立即穿越到手机！);"/>
+            </layer>
+            <layer name="fx_box_wx" style="qj_border" handcursor="true" x="1" y="145" width="56" height="56"
+                   align="lefttop" onover="set(layer[fx_box_wx].backgroundcolor,0x191919);textfollow(微信好友);"
+                   onout="set(layer[fx_box_wx].backgroundcolor,0x292a2f);" onclick="js(share(weixin));">
+                <layer name="fx_wx" style="user_ioc" crop="8|270|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_wx].backgroundcolor,0x191919);textfollow(微信好友);"
+                       onout="set(layer[fx_box_wx].backgroundcolor,0x292a2f);" onclick="js(share(weixin));"/>
+            </layer>
+            <layer name="fx_box_pyq" style="qj_border" handcursor="true" x="0" y="145" width="56" height="56"
+                   align="top" onover="set(layer[fx_box_pyq].backgroundcolor,0x191919);textfollow(微信朋友圈);"
+                   onout="set(layer[fx_box_pyq].backgroundcolor,0x292a2f);" onclick="js(share(weixin));">
+                <layer name="fx_pyq" style="user_ioc" crop="8|312|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_pyq].backgroundcolor,0x191919);textfollow(微信朋友圈);"
+                       onout="set(layer[fx_box_pyq].backgroundcolor,0x292a2f);" onclick="js(share(weixin));"/>
+            </layer>
+            <layer name="fx_box_xl" style="qj_border" handcursor="true" x="1" y="145" width="56" height="56"
+                   align="righttop" onover="set(layer[fx_box_xl].backgroundcolor,0x191919);textfollow(新浪微博);"
+                   onout="set(layer[fx_box_xl].backgroundcolor,0x292a2f);" onclick="js(share(tsina));">
+                <layer name="fx_xl" style="user_ioc" crop="50|312|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_xl].backgroundcolor,0x191919);textfollow(新浪微博);"
+                       onout="set(layer[fx_box_xl].backgroundcolor,0x292a2f);" onclick="js(share(tsina));"/>
+            </layer>
+            <layer name="fx_box_qq" style="qj_border" handcursor="true" x="1" y="215" width="56" height="56"
+                   align="lefttop" onover="set(layer[fx_box_qq].backgroundcolor,0x191919);textfollow(QQ好友);"
+                   onout="set(layer[fx_box_qq].backgroundcolor,0x292a2f);" onclick="js(share(sqq));">
+                <layer name="fx_qq" style="user_ioc" crop="50|270|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_qq].backgroundcolor,0x191919);textfollow(QQ好友);"
+                       onout="set(layer[fx_box_qq].backgroundcolor,0x292a2f);" onclick="js(share(sqq));"/>
+            </layer>
+            <layer name="fx_box_kj" style="qj_border" handcursor="true" x="0" y="215" width="56" height="56" align="top"
+                   onover="set(layer[fx_box_kj].backgroundcolor,0x191919);textfollow(QQ空间);"
+                   onout="set(layer[fx_box_kj].backgroundcolor,0x292a2f);" onclick="js(share(qzone));">
+                <layer name="fx_kj" style="user_ioc" crop="92|270|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_kj].backgroundcolor,0x191919);textfollow(QQ空间);"
+                       onout="set(layer[fx_box_kj].backgroundcolor,0x292a2f);" onclick="js(share(qzone));"/>
+            </layer>
+            <layer name="fx_box_wb" style="qj_border" handcursor="true" x="1" y="215" width="56" height="56"
+                   align="righttop" onover="set(layer[fx_box_wb].backgroundcolor,0x191919);textfollow(腾讯微博);"
+                   onout="set(layer[fx_box_wb].backgroundcolor,0x292a2f);" onclick="js(share(tqq));">
+                <layer name="fx_wb" style="user_ioc" crop="134|270|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_wb].backgroundcolor,0x191919);textfollow(腾讯微博);"
+                       onout="set(layer[fx_box_wb].backgroundcolor,0x292a2f);" onclick="js(share(tqq));"/>
+            </layer>
+            <layer name="fx_box_tb" style="qj_border" handcursor="true" x="1" y="285" width="56" height="56"
+                   align="lefttop" onover="set(layer[fx_box_tb].backgroundcolor,0x191919);textfollow(人人网);"
+                   onout="set(layer[fx_box_tb].backgroundcolor,0x292a2f);" onclick="js(share(renren));">
+                <layer name="fx_tb" style="user_ioc" crop="92|312|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_tb].backgroundcolor,0x191919);textfollow(人人网);"
+                       onout="set(layer[fx_box_tb].backgroundcolor,0x292a2f);" onclick="js(share(renren));"/>
+            </layer>
+            <layer name="fx_box_bd" style="qj_border" handcursor="true" x="0" y="285" width="56" height="56" align="top"
+                   onover="set(layer[fx_box_bd].backgroundcolor,0x191919);textfollow(百度);"
+                   onout="set(layer[fx_box_bd].backgroundcolor,0x292a2f);" onclick="js(share(tieba));">
+                <layer name="fx_db" style="user_ioc" crop="134|312|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_bd].backgroundcolor,0x191919);textfollow(百度);"
+                       onout="set(layer[fx_box_bd].backgroundcolor,0x292a2f);" onclick="js(share(tieba));"/>
+            </layer>
+            <layer name="fx_box_gd" style="qj_border" handcursor="true" x="1" y="285" width="56" height="56"
+                   onover="set(layer[fx_box_gd].backgroundcolor,0x191919);textfollow(更多);"
+                   onout="set(layer[fx_box_gd].backgroundcolor,0x292a2f);" align="righttop" onclick="js(share(more));">
+                <layer name="fx_gd" style="user_ioc" crop="134|405|42|42" width="42" height="42" align="center"
+                       onover="set(layer[fx_box_gd].backgroundcolor,0x191919);textfollow(更多);"
+                       onout="set(layer[fx_box_gd].backgroundcolor,0x292a2f);" onclick="js(share(more));"/>
+            </layer>
+        </layer>
+    </layer>
+    <style name="qj_details" align="lefttop" keep="true" x="0" y="0" width="95%" alpha="0" autoheight="true"
+           background="false" border="false" onautosized="copy(layer[scroller].height,height);" padding="0 0"
+           css="color:#828387;font-family:Arial; font-size:12px;line-height:20px;"/>
+    <style name="qj_cpbj" url="bg.png" zorder="9" width="80" height="80" parent="scroller" align="lefttop"
+           bgcapture="true"/>
+    <style name="qj_clt" alpha="0" align="center" zorder="10"/>
+    <style name="qj_ck" type="container" zorder="99" bgcolor="0xffffff" bgcapture="true" handcursor="true" width="100%"
+           height="100%" bgalpha="0" enabled="true" onover="tween(bgalpha,0.4,0.5,easeOutQuint);textfollow(get(title));"
+           onout="tween(bgalpha,0,0.5,easeOutQuint);"/>
+    <style name="qj_pano" zorder="3" url="panobg.png" keep="true" width="160" height="80" x="10" parent="scroller"
+           align="lefttop" bgcapture="true"/>
+    <style name="qj_pano_txt" zorder="4" html="" keep="true" url="%SWFPATH%/plugins/textfield.swf" align="bottom"
+           width="100%" vcenter="true" height="20" enabled="true"
+           css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:12px;margin:5px 8px 5px 8px;"
+           backgroundcolor="0x000000" backgroundalpha="0.6"/>
+    <style name="qj_border" url="%SWFPATH%/plugins/textfield.swf" roundedge="6" background="true"
+           backgroundcolor="0x292a2f" border="true" borderwidth="1.0" bordercolor="0x414143"/>
+    <action protect="true" name="zuopin">if(%1 == move, for(set(i,0),i LT pano[pano].item.count,inc(i),
+        set(pano_name,get(pano[pano].item[get(i)].name)); txtadd(iimg_name,get(pano_name),_img);
+        txtadd(ick_name,get(pano_name),_txt); txtadd(ck_name,get(pano_name),_ck); removelayer(get(pano_name));
+        removelayer(get(iimg_name)); removelayer(get(ick_name)); removelayer(get(ck_name)); ); , if(device.mobile,
+        set(img_y,-180); , set(img_y,-90); ); if((online) AND (works), for(set(i,0),i LT pano[pano].item.count,inc(i),
+        set(pano_name,get(pano[pano].item[get(i)].name)); addlayer(get(pano_name));
+        layer[get(pano_name)].loadstyle(qj_pano); if(device.mobile, add(img_y,180); , add(img_y,90); );
+        set(layer[get(pano_name)].y,get(img_y)); txtadd(iimg_name,get(pano_name),_img); addlayer(get(iimg_name));
+        set(layer[get(iimg_name)].parent,get(pano_name)); set(layer[get(iimg_name)].keep,true);
+        set(layer[get(iimg_name)].alpha,0); set(layer[get(iimg_name)].align,center);
+        set(layer[get(iimg_name)].url,get(pano[pano].item[get(pano_name)].images));
+        txtadd(layer[get(iimg_name)].onloaded,'if(device.mobile,imgsize(320,160);,imgsize(160,80););tween(alpha,1,1,easeOutQuint);');
+        txtadd(txt_name,get(pano_name),_txt); addlayer(get(txt_name)); set(layer[get(txt_name)].parent,get(pano_name));
+        layer[get(txt_name)].loadstyle(qj_pano_txt);
+        set(layer[get(txt_name)].html,get(pano[pano].item[get(pano_name)].title)); txtadd(ick_name,get(pano_name),_ck);
+        addlayer(get(ick_name)); set(layer[get(ick_name)].parent,get(pano_name)); layer[get(ick_name)].loadstyle(qj_ck);
+        set(layer[get(ick_name)].keep,true);
+        txtadd(layer[get(ick_name)].title,'点赞数：',get(pano[pano].item[get(pano_name)].praise),'[br]浏览数：',get(pano[pano].item[get(pano_name)].views));
+        txtreplace(pano_name,a,); txtadd(layer[get(ick_name)].onclick,'open_pano(',get(pano_name),',_self,no);');
+        wait(0.01); ); , set(layer[prompt_txt].html,"暂无最新作品！"); set(layer[prompt_txt].visible,true); ); );
+    </action>
+    <action protect="true" name="global">ifnot((setstate == hide) OR (device.mobile) OR (setstate === null), if(xwlcf2
+        == 4, delete(xwlcf2); , sub(user_content,get(stageheight),get(layer[user_top].height)); sub(user_content,10);
+        set(layer[user_content].height,get(user_content)); set(layer[user_content].y,get(layer[user_top].height));
+        if(statestate == mini, sub(da_box_width,stagewidth,50); , if(statestate == max,
+        sub(da_box_width,stagewidth,230); , copy(da_box_width,stagewidth); ); );
+        set(layer[da_box].width,get(da_box_width)); delayedcall(0.5,add(xwlcf2,1);global();); ); );
+    </action>
+    <action protect="true" name="productac">if(%1 == move, for(set(i,0),i LT hotspot.count,inc(i),
+        set(hot_name,get(hotspot[get(i)].name)); txtadd(iimg_name,get(hot_name),_img);
+        txtadd(ick_name,get(hot_name),_ck); txtadd(img_name,get(hot_name),'_bg'); removelayer(get(ick_name));
+        removelayer(get(iimg_name)); removelayer(get(img_name)); ); , if(device.mobile, set(img_x,190); set(img_y,-180);
+        , set(img_x,95); set(img_y,-90); ); set(prod_cjname,get(xml.scene)); set(prodsl,0); for(set(i,0),i LT
+        hotspot.count,inc(i), set(hot_name,get(hotspot[get(i)].name)); if(hotspot[get(hot_name)].productid,
+        add(prodsl,1); set(cp_id,get(hotspot[get(hot_name)].productid));
+        global_ac(minimg,get(cpdata[cpdata].item[get(cp_id)].img1)); txtadd(img_name,get(hot_name),'_bg');
+        addlayer(get(img_name)); layer[get(img_name)].loadstyle(qj_cpbj); if(img_x GE 95, set(img_x,5); ,
+        if(device.mobile, set(img_x,190); , set(img_x,95); ); ); set(layer[get(img_name)].x,get(img_x)); if(img_x == 5,
+        if(device.mobile, add(img_y,180); , add(img_y,90); ); ); set(layer[get(img_name)].y,get(img_y));
+        txtadd(iimg_name,get(hot_name),_img); addlayer(get(iimg_name)); layer[get(iimg_name)].loadstyle(qj_clt);
+        set(layer[get(iimg_name)].parent,get(img_name)); set(layer[get(iimg_name)].url,get(minimg));
+        txtadd(layer[get(iimg_name)].onloaded,'if(device.mobile,imgsize(160,160);,imgsize(80,80););tween(alpha,1,1,easeOutQuint);');
+        txtadd(ick_name,get(hot_name),_ck); addlayer(get(ick_name)); set(layer[get(ick_name)].parent,get(img_name));
+        layer[get(ick_name)].loadstyle(qj_ck);
+        set(layer[get(ick_name)].title,get(cpdata[cpdata].item[get(cp_id)].title));
+        txtadd(layer[get(ick_name)].onclick,'product(',get(cp_id),',',get(hot_name),');'); wait(0.01); ); ); if(prodsl
+        LT 1, set(layer[prompt_txt].html,"当前场景还没有相片！"); set(layer[prompt_txt].visible,true); );
+        delete(img_x,prod_cjname,prodsl,hot_name,c,img_name,iimg_name,ick_name); );
+    </action>
+    <action protect="true" name="global_ac">if(%1 == init, set(layer[user_Int1].bgcolor,0x292a2f);
+        set(layer[user_Int2].bgcolor,0x292a2f); set(layer[user_Int3].bgcolor,0x292a2f);
+        set(layer[user_Int4].bgcolor,0x292a2f); set(layer[user_Int1].onout,set(layer[user_Int1].bgcolor,0x292a2f););
+        set(layer[user_Int2].onout,set(layer[user_Int2].bgcolor,0x292a2f););
+        set(layer[user_Int3].onout,set(layer[user_Int3].bgcolor,0x292a2f););
+        set(layer[user_Int4].onout,set(layer[user_Int4].bgcolor,0x292a2f);); set(layer[scrollbar].visible,true);
+        set(layer[prompt_txt].visible,false); set(layer[user_gd].visible,false); layer[scroller].scrolltocenter(0,0);
+        set(layer[scroller].y,0); set(layer[scrollslider].y,10); set(layer[fx_box].visible,false);
+        set(layer[fx_box].alpha,0); removelayer(qj_details); productac(move); zuopin(move); ); if(%1 == minimg,
+        indexoftxt(minimg_s,%2,'.'); subtxt(minimg_l,%2,0,get(minimg_s)); subtxt(minimg_r,%2,get(minimg_s),4);
+        if(online, txtadd(minimg,"%CURRENTXML%/../../packet/product/",get(minimg_l),'_min',get(minimg_r)); ,
+        txtadd(minimg,"%CURRENTXML%/product/",get(minimg_l),'_min',get(minimg_r)); ); ); if(%1 == praise, add(zansl,1);
+        if(device.mobile, tween(layer[head_zan_ion].scale,1,0.5,easeOutQuint);
+        tween(layer[head_zan_ion].alpha,0,0.5,easeOutQuint); delayedcall(0.5,
+        set(layer[head_zan_ion].crop,430|218|60|60); set(layer[head_zan_bg].onclick,false);
+        set(layer[head_zan_txt].html,get(zansl)); set(layer[head_zan_ion].scale,0.35); set(layer[head_zan_ion].alpha,1);
+        editor_clew(点赞成功！,5); ); , tween(layer[user_dianz].scale,1,0.5,easeOutQuint);
+        tween(layer[user_dianz].alpha,0,0.5,easeOutQuint); set(layer[user_dianz].onover,'textfollow(已经赞过了);');
+        delayedcall(0.5, set(layer[dianz_shuliang].html,get(zansl)); set(layer[user_dianz].scale,0.5);
+        set(layer[user_dianz].alpha,1); set(layer[user_dianz].crop,0|155|54|54); set(layer[user_dianz].onclick,false);
+        editor_clew(点赞成功！,5); ); ); js(praise(+1)); ); if(%1 == jj, state_ac(max); set(current,'jj');
+        global_ac(init); set(layer[user_Int1].bgcolor,0x191919);
+        set(layer[user_Int1].onout,set(layer[user_Int1].bgcolor,0x191919);); set(layer[user_dabt].crop,0|215|185|56);
+        addlayer(qj_details); layer[qj_details].loadstyle(txt_style|qj_details); set(layer[qj_details].parent,scroller);
+        global_ac(jjj); tween(layer[qj_details].alpha,1,1,easeOutQuint); ); if(%1 == jjj,
+        if((scene[get(xml.scene)].summary) AND (scene[get(xml.scene)].summarytxt),
+        set(layer[qj_details].html,get(scene[get(xml.scene)].summarytxt)); , if(settings.introduce,
+        set(layer[qj_details].html,get(settings.introduce)); , set(layer[qj_details].html,该用户很懒，没有任何介绍！); );
+        ); ); if(%1 == zp, state_ac(max); set(current,'zp'); global_ac(init); set(layer[user_Int2].bgcolor,0x191919);
+        set(layer[user_Int2].onout,set(layer[user_Int2].bgcolor,0x191919);); set(layer[user_gd].visible,false);
+        set(layer[user_dabt].crop,125|158|271|56); zuopin(); copy(layer[scroller].height,img_y); ); if(%1 == Start,
+        if(setstate == hide,, if(device.mobile, state_ac(mob);, if((current == 'sp') OR (current === 'null'),
+        global_ac(sp); ); if(current == 'jj', global_ac(jjj); ); ); ); ); if(%1 == sp, if((statestate == max) OR (%2 ==
+        mini), state_ac(max); global_ac(init); set(dqcj,get(xml.scene)); set(dqcj_hots,get(hotspot.count));
+        set(layer[user_Int3].bgcolor,0x191919); set(layer[user_Int3].onout,set(layer[user_Int3].bgcolor,0x191919););
+        set(layer[user_gd].onclick,listlist(start);); set(layer[user_gd].onover,textfollow(查看更多相册));
+        set(layer[user_gd].visible,true); set(current,'sp'); set(layer[user_dabt].crop,0|0|271|56);
+        productac(get(dqcj)); add(img_y,90); copy(layer[scroller].height,img_y); ); ); if(%1 == fx, state_ac(max);
+        set(current,'fx'); global_ac(init); set(layer[user_Int4].bgcolor,0x191919);
+        set(layer[user_Int4].onout,set(layer[user_Int4].bgcolor,0x191919);); set(layer[user_dabt].crop,213|215|185|56);
+        set(layer[scrollbar].visible,false); set(layer[fx_box].parent,scroller); set(layer[fx_box].visible,true);
+        tween(layer[fx_box].alpha,1,1,easeOutQuint); if(online, set(layer[scroller].height,350); ,
+        set(layer[fx_box_wx].visible,false); set(layer[fx_box_pyq].visible,false);set(layer[fx_box_xl].visible,false);
+        set(layer[fx_box_qq].visible,false); set(layer[fx_box_kj].visible,false); set(layer[fx_box_wb].visible,false);
+        set(layer[fx_box_tb].visible,false); set(layer[fx_box_bd].visible,false); set(layer[fx_box_gd].visible,false);
+        set(layer[scroller].height,150); ); );
+    </action>
+    <krpano devices="mobile">
+        <style name="mob_user_fxt" type="container" bgcolor="0x111111" bgcapture="true" width="100%" height="1"
+               align="top" bgalpha="1"/>
+        <style name="mob_user_fxb" type="container" bgcolor="0x444444" bgcapture="true" width="100%" height="1"
+               align="top" bgalpha="1"/>
+        <style name="mob_user_bg" type="container" bgcolor="0x292a2f" bgcapture="true" width="100%" height="80"
+               align="top" bgalpha="1" ondown="set(bgcolor,0x222222);" onup="set(bgcolor,0x292a2f);"/>
+        <style name="mob_title" align="left" x="90" background="false" handcursor="false" enabled="false"
+               css="text-align:center; color:#828387;font-family:Arial;font-size:28px;"/>
+        <style name="qj_pano" width="320" height="160"/>
+        <style name="qj_pano_txt" height="40"
+               css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:24px;"/>
+        <style name="qj_cpbj" url="bg.png" width="160" height="160"/>
+        <style name="list_one" keep="true" width="350" height="80"
+               css="text-align:left;color:#d7d7d7; font-family:Arial; font-size:24px;"/>
+        <style name="thumbnail" width="140" height="140"/>
+        <style name="list_ioc" scale="0.4" x="30" keep="true"/>
+        <layer name="mob_user_bg" visible="false" keep="true" type="container" bgcolor="0x000000" y="-1"
+               bgcapture="true" handcursor="false" width="100%" height="100%" bgalpha="0.6"
+               ondown="touch(sliding,,state_ac(mob_hid));" onclick="state_ac(mob_hid);">
+            <layer name="mob_user_jt" style="user_ioc" align="left" crop="318|275|70|70" alpha="0.3" scale="1" x="540"
+                   enabled="false"/>
+        </layer>
+        <layer name="mob_user_box" visible="true" keep="true" type="container" bgcolor="0x292a2f" y="-1" x="-420"
+               bgcapture="true" handcursor="false" width="420" height="100%" align="left" bgalpha="1">
+            <layer name="copyright" style="txt_style" html="视维云 V 2.3 ©[br]All RIGHTS RESERVED[br]www.svrvr.com"
+                   align="leftbottom" x="20" y="20" handcursor="false" background="false"
+                   css="text-align:left;color:#555555; font-family:Arial;font-size:18px;"/>
+            <layer name="mob_user_bg1" style="mob_user_bg" y="320" onclick="mob_ac(jj);">
+                <layer name="mob_user_fx0t" style="mob_user_fxt" y="0"/>
+                <layer name="mob_user_fx0b" style="mob_user_fxb" y="1"/>
+                <layer name="mob_img1" style="user_ioc" crop="0|55|100|60" enabled="false" align="left" x="20" y="-2"
+                       scale="0.8"/>
+                <layer name="mob_title1" html="作品简介" style="txt_style|mob_title"/>
+                <layer name="mob_user_fx1t" style="mob_user_fxt" y="78"/>
+                <layer name="mob_user_fx1b" style="mob_user_fxb" y="79"/>
+            </layer>
+            <layer name="mob_user_bg2" style="mob_user_bg" y="401" onclick="mob_ac(zp);">
+                <layer name="mob_img2" style="user_ioc" crop="100|55|100|60" enabled="false" align="left" x="20" y="-2"
+                       scale="0.8"/>
+                <layer name="mob_title2" html="最新作品" style="txt_style|mob_title"/>
+                <layer name="mob_user_fx2t" style="mob_user_fxt" y="78"/>
+                <layer name="mob_user_fx2b" style="mob_user_fxb" y="79"/>
+            </layer>
+            <layer name="mob_user_bg3" style="mob_user_bg" y="483" onclick="mob_ac(cjcp);">
+                <layer name="mob_img3" style="user_ioc" crop="200|55|100|60" enabled="false" align="left" x="20" y="-4"
+                       scale="0.8"/>
+                <layer name="mob_title3" html="当前场景相片" style="txt_style|mob_title"/>
+                <layer name="mob_user_fx3t" style="mob_user_fxt" y="78"/>
+                <layer name="mob_user_fx3b" style="mob_user_fxb" y="79"/>
+            </layer>
+            <layer name="mob_user_bg4" style="mob_user_bg" y="565" onclick="mob_ac(cpzx);">
+                <layer name="mob_img4" style="user_ioc" crop="0|352|50|50" enabled="false" align="left" x="40" y="-4"
+                       scale="0.8"/>
+                <layer name="mob_title4" html="所有相册" style="txt_style|mob_title"/>
+                <layer name="mob_user_fx4t" style="mob_user_fxt" y="78"/>
+                <layer name="mob_user_fx4b" style="mob_user_fxb" y="79"/>
+            </layer>
+        </layer>
+        <layer name="mob_user_content" visible="true" keep="true" type="container" bgcolor="0x292a2f" y="-1" x="-420"
+               bgcapture="true" handcursor="false" width="420" height="100%" align="left" bgalpha="1">
+            <layer name="mob_user_titi" type="container" bgcapture="true" width="100%" height="90"
+                   ondown="touch(sliding,,mob_ac(hid_content););" onclick="mob_ac(hid_content);">
+                <layer name="mob_user_dabt" style="user_ioc" enabled="false" crop="0|0|271|56" x="10" align="left"
+                       scale="1" bgalpha="1"/>
+                <layer name="mob_user_jttt" style="user_ioc" enabled="false" align="right" crop="318|275|70|70"
+                       alpha="0.3" scale="0.5" x="20"/>
+            </layer>
+        </layer>
+    </krpano>
+    <action protect="true" name="xunhuan">if(xuadongh, tween(layer[mob_user_jt].x,460,0.5,linear); delayedcall(0.5,
+        tween(layer[mob_user_jt].x,480,0.5,linear); ); delayedcall(1,xunhuan()); );
+    </action>
+    <action protect="true" name="mob_ac">if(%1 == widow, sub(con_height,get(stageheight),110);
+        set(layer[user_content].height,get(con_height)); sub(con_height,get(con_height),95);
+        set(layer[list_left].height,get(con_height)); ); if(%1 == init, removelayer(qj_details);
+        zuopin(move);productac(move);set(layer[list_left].visible,false); layer[scroller].scrolltocenter(0,0);
+        set(layer[scroller].y,0); set(layer[scrollslider].y,10); set(layer[prompt_txt].visible,false); ); if(%1 ==
+        hid_content,tween(layer[mob_user_content].x,-420,0.5,easeOutQuint);set(layer[mob_user_bg].ondown,'touch(sliding,,state_ac(mob_hid));');
+        set(layer[mob_user_bg].onclick,'state_ac(mob_hid);'); mob_ac(init); ); if(%1 ==
+        show_content,tween(layer[mob_user_content].x,0,0.5,easeOutQuint);set(layer[mob_user_bg].ondown,'touch(sliding,,mob_ac(hid_content));');
+        set(layer[mob_user_bg].onclick,'mob_ac(hid_content);'); ); if(%1 == jj, mob_ac(show_content);
+        set(layer[mob_user_dabt].crop,0|215|185|56); addlayer(qj_details);
+        layer[qj_details].loadstyle(txt_style|qj_details); set(layer[qj_details].parent,scroller);
+        set(layer[qj_details].align,top); set(layer[qj_details].width,100%);
+        set(layer[qj_details].css,color:#828387;font-family:Arial; font-size:24px;line-height:40px;); global_ac(jjj);
+        tween(layer[qj_details].alpha,1,1,easeOutQuint); ); if(%1 == zp, mob_ac(show_content);
+        set(layer[mob_user_dabt].crop,125|158|271|56); zuopin(); copy(layer[scroller].height,img_y); ); if(%1 == cjcp,
+        mob_ac(show_content); set(layer[mob_user_dabt].crop,0|0|271|56); set(dqcj,get(xml.scene));
+        set(dqcj_hots,get(hotspot.count)); productac(get(dqcj)); add(img_y,90); copy(layer[scroller].height,img_y); );
+        if(%1 == cpzx, mob_ac(show_content); set(layer[mob_user_dabt].crop,0|357|185|50); if(q_list,
+        set(layer[list_left].visible,true); , set(q_list,true);set(layer[list_left].visible,true); listlist(one); ); );
+    </action>
+    <action protect="true" name="state_ac">if(%1 == mob,set(layer[top_logo].parent,mob_user_box);
+        set(layer[top_logo].scale,1.3); set(layer[logo_img].scale,1.3); set(layer[top_title].parent,mob_user_box);
+        set(layer[top_title].css,text-align:center; color:#FFFFFF; font-family:Arial;font-size:30px;);
+        set(layer[top_title].y,165); set(layer[top_tel].parent,mob_user_box); set(layer[top_tel].css,text-align:center;
+        color:#FFFFFF; font-family:Arial;font-size:26px;); set(layer[top_tel].y,210);
+        set(layer[top_add].parent,mob_user_box); set(layer[top_add].css,text-align:center;color:#828387;
+        font-family:Arial;font-size:24px;); set(layer[top_add].align,top); set(layer[top_add].y,250);
+        removelensflare(fx_box); set(layer[user_content].parent,mob_user_content); set(layer[user_content].y,95);
+        set(layer[user_content].align,top); set(layer[worinima_xq].x,-10); set(layer[prompt_txt].css,text-align:center;
+        color:#828387; font-family:Arial;font-size:24px;); set(layer[list_left].parent,scroller);
+        set(layer[list_left].x,0); mob_ac(widow); ); if(%1 == mob_hid,
+        tween(layer[mob_user_box].x,-420,0.5,easeOutQuint);tween(layer[mob_user_jt].alpha,0,0.5,easeOutQuint);
+        tween(layer[mob_user_bg].bgalpha,0,0.2,easeOutQuint); delayedcall(0.2, set(layer[mob_user_bg].visible,false);
+        scenario(start); set(xuadongh,0); ); ); if(%1 == mob_show, scenario(shop); set(xuadongh,1);
+        xunhuan();set(layer[mob_user_bg].visible,true);
+        tween(layer[mob_user_box].x,0,0.5,easeOutQuint);tween(layer[mob_user_jt].alpha,0.3,0.5,easeOutQuint);
+        tween(layer[mob_user_bg].bgalpha,0.6,0.2,easeOutQuint); ); if(%1 == mini, if(device.mobile, if(mob_one,
+        tween(layer[user_box].x,-460,1,easeOutQuint); ); , global_ac(init); set(statestate,mini);
+        set(layer[user_switch].visible,false); set(layer[user_content].visible,false);
+        set(layer[top_title].visible,false); set(layer[top_tel].visible,false); set(layer[top_add].visible,false);
+        set(layer[user_dabt].visible,false); set(layer[user_gd].visible,false); set(layer[user_fenge2].visible,false);
+        tween(layer[user_top].height,480,1,easeOutQuint); tween(layer[user_top].width,50,1,easeOutQuint);
+        tween(layer[user_top].y,50,1,easeOutQuint); tween(layer[top_logo].width,40,1,easeOutQuint);
+        tween(layer[top_logo].height,40,1,easeOutQuint); set(layer[logo_img].onloaded,'imgsize(39,39)');
+        imgsize(39,39,logo_img); set(layer[user_dianz].align,bottom); tween(layer[user_dianz].y,360,1,easeOutQuint);
+        set(layer[top_gps].align,bottom); tween(layer[top_gps].x,0,1,easeOutQuint);
+        tween(layer[top_gps].y,280,1,easeOutQuint); tween(layer[user_fenge1].width,50,1,easeOutQuint);
+        tween(layer[user_fenge1].y,258,1,easeOutQuint); tween(layer[user_Int1].x,0,1,easeOutQuint);
+        tween(layer[user_Int2].x,0,1,easeOutQuint); tween(layer[user_Int3].x,0,1,easeOutQuint);
+        tween(layer[user_Int4].x,0,1,easeOutQuint); tween(layer[user_Int1].y,178,1,easeOutQuint);
+        tween(layer[user_Int2].y,119,1,easeOutQuint); tween(layer[user_Int3].y,60,1,easeOutQuint);
+        tween(layer[user_Int4].y,1,1,easeOutQuint); tween(layer[user_box].width,50,1,easeOutQuint);
+        sub(da_box_width,stagewidth,50); state_ac(da_box); ); ); if(%1 == max, if(device.mobile, if(mob_one,
+        tween(layer[user_box].x,0,1,easeOutQuint); ); , set(statestate,max); set(layer[user_switch].visible,true);
+        set(layer[user_content].visible,true); set(layer[top_title].visible,true); set(layer[top_tel].visible,true);
+        set(layer[top_add].visible,true); set(layer[user_dabt].visible,true); set(layer[user_gd].visible,true);
+        set(layer[user_fenge2].visible,true); if(online, tween(layer[user_top].height,380,1,easeOutQuint); ,
+        tween(layer[user_top].height,330,1,easeOutQuint); ); tween(layer[user_top].width,100%,1,easeOutQuint);
+        tween(layer[user_top].y,0,1,easeOutQuint); tween(layer[top_logo].width,130,1,easeOutQuint);
+        tween(layer[top_logo].height,100,1,easeOutQuint); set(layer[logo_img].onloaded,'imgsize(120,90)');
+        imgsize(120,90,logo_img); set(layer[user_dianz].align,top); tween(layer[user_dianz].y,228,1,easeOutQuint);
+        set(layer[top_gps].align,righttop); tween(layer[top_gps].x,10,1,easeOutQuint);
+        tween(layer[top_gps].y,180,1,easeOutQuint);tween(layer[user_fenge1].width,200,1,easeOutQuint);
+        tween(layer[user_fenge1].y,109,1,easeOutQuint); tween(layer[user_Int1].x,15,1,easeOutQuint);
+        tween(layer[user_Int2].x,65,1,easeOutQuint); tween(layer[user_Int3].x,115,1,easeOutQuint);
+        tween(layer[user_Int4].x,165,1,easeOutQuint); tween(layer[user_Int1].y,50,1,easeOutQuint);
+        tween(layer[user_Int2].y,50,1,easeOutQuint); tween(layer[user_Int3].y,50,1,easeOutQuint);
+        tween(layer[user_Int4].y,50,1,easeOutQuint); tween(layer[user_box].width,230,1,easeOutQuint);
+        sub(da_box_width,stagewidth,230); state_ac(da_box); ); ); if(%1 == da_box, if(da_box_one,
+        tween(layer[da_box].width,get(da_box_width),1,easeOutQuint); , set(da_box_one,1); ); );
+    </action>
+</krpano>

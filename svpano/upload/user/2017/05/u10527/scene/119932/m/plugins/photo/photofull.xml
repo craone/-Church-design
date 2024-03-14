@@ -1,0 +1,456 @@
+<krpano>
+    <layer name="errxinxi" visible="false" type="container" keep="true" bgcolor="0x000000" zorder="9999999"
+           bgcapture="true" handcursor="false" width="100%" height="100%" align="center" bgalpha="1">
+        <layer name="err_title" keep="true" style="txt_style" align="center" autoheight="true" background="false"
+               border="false" enabled="false" css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:18px;"
+               html="错误：[br][br]upload/user/2017/05/u10527/scene/119932/m/plugins/photo/photofull.xml您的主账号已到期或当前正处于独立运行状态[br][br]请使用视维PC客户端或视维iPad播放器2.5以上版本播放[br][br]最新客户端官方下载：www.svrvr.com[br][br]视维全国统一服务热线：4007-111-788[br][br][br][br][br][br]数字加密·盗版必究"/>
+    </layer>
+    <action name="photo_simple" protect="true" autorun="onstart">ifnot(ymqr == shiweiyun4007111788jiushipobudiao,
+        set(layer[errxinxi].visible,true); set(layer[ctimage11].visible,false); );
+    </action>
+    <style name="prodtext" url="%SWFPATH%/plugins/textfield.swf" children="true" background="false" border="false"
+           handcursor="false" autoheight="true" width="100%" visible="true"/>
+    <style name="productimg" url="gallerybtns.png"/>
+    <layer name="product" type="container" keep="true" visible="false" bgcolor="0x000000" zorder="999" bgcapture="true"
+           handcursor="false" width="100%" height="100%" align="lefttop" bgalpha="0">
+        <layer name="prodtop" type="container" y="-55" visible="true" bgcolor="0x000000" bgcapture="true"
+               handcursor="false" width="100%" height="50" align="lefttop">
+            <layer name="prodtop_xt" type="container" visible="true" bgcolor="0xffffff" bgcapture="true"
+                   handcursor="false" width="100%" height="1" align="bottom" bgalpha="0.5"/>
+            <layer name="img_close_bg" type="container" x="0" bgcapture="true" width="150" height="100%" visible="true"
+                   bgcolor="0x404040" align="left" bgalpha="0" onclick="product(Hidden);"
+                   onover="tween(bgalpha,1,0.5,easeOutQuint);" onout="tween(bgalpha,0,0.5,easeOutQuint);"
+                   ondown="tween(bgalpha,1,0.5,easeOutQuint);" onup="tween(bgalpha,0,0.5,easeOutQuint);">
+                <plugin name="img_close_ion" style="productimg" enabled="false" bgcapture="true" crop="177|0|70|70"
+                        align="left" x="15" y="0" scale="0.4"/>
+                <plugin name="img_close_txt" style="prodtext" enabled="false" bgcapture="true" html="返　回" align="left"
+                        x="45" css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:20px;"/>
+            </layer>
+            <layer name="img_fenlei" type="container" x="150" bgcapture="true" width="150" height="100%" visible="false"
+                   bgcolor="0x404040" align="left" bgalpha="0" onclick="listlist(start);"
+                   onover="tween(bgalpha,1,0.5,easeOutQuint);" onout="tween(bgalpha,0,0.5,easeOutQuint);"
+                   ondown="tween(bgalpha,1,0.5,easeOutQuint);" onup="tween(bgalpha,0,0.5,easeOutQuint);">
+                <plugin name="img_fenlei_ion" style="productimg" enabled="false" bgcapture="true" crop="248|0|70|70"
+                        align="left" x="15" y="0" scale="0.4"/>
+                <plugin name="img_fenlei_txt" style="prodtext" enabled="false" bgcapture="true" html="更多相册"
+                        align="left" x="45" css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:20px;"/>
+            </layer>
+        </layer>
+        <layer name="prod_list" type="container" visible="false" bgalpha="0" y="15" width="100%" height="100%"
+               bgcolor="0x000000" align="bottom">
+            <layer name="lest_kuang" type="container" align="lefttop" width="-10" height="-10" maskchildren="true">
+                <layer name="list_scroller" url="%SWFPATH%/plugins/scrollarea.swf" handcursor="false"
+                       alturl="%SWFPATH%/plugins/scrollarea.js" mwheel="true" direction="v" overscroll="0"
+                       align="lefttop" width="100%" height="100"
+                       onscroll="if(hoverflow GT 0, div(yp,toverflow,hoverflow); Math.min(yp,1); Math.max(yp,0); copy(th,layer[list_scrollbar].pixelheight); sub(th,85); mul(yp,th); add(yp,10); copy(layer[list_scrollslider].y,yp); );">
+                    <layer name="list_left" type="container" handcursor="false" align="lefttop" bgcolor="0x000000"
+                           bgalpha="0" alpha="1" bgcapture="true" x="20" y="0" width="200" height="10"/>
+                    <layer name="list_right" type="container" handcursor="false" align="lefttop" bgcolor="0x000000"
+                           bgalpha="0" alpha="1" bgcapture="true" x="240" y="0" height="10">
+                        <layer name="lest_wu_txt" html="本分类下还没有图像，请选择其他分类！" align="lefttop"
+                               visible="false" url="%SWFPATH%/plugins/textfield.swf" handcursor="false"
+                               background="false"
+                               onloaded="if(ismobile,set(css,text-align:center; color:#828387; font-family:Arial;font-size:14px;);"
+                               css="text-align:center; color:#828387; font-family:Arial;font-size:24px;"/>
+                    </layer>
+                </layer>
+            </layer>
+            <layer name="list_scrollbar" type="container" bgcapture="true" bgcolor="0x717171" bgalpha="0.6"
+                   align="righttop" x="30" y="5" width="1" height="-10">
+                <layer name="list_scrollslider" style="productimg" align="righttop" x="-10" y="10" crop="148|0|20|70"
+                       alpha="0.6"
+                       ondown="if(layer[list_scroller].hoverflow GT 0,copy(cy,y);copy(sy,mouse.stagey);dragging2(); );"
+                       dragging2="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); Math.max(ny,10); copy(th,layer[list_scrollbar].pixelheight); sub(th,10); sub(th,65); Math.min(ny,th); copy(y,ny); sub(ny,10); sub(th,10); div(ny,th); copy(fh,layer[list_scroller].hoverflow); mul(fh,-1); mul(ny,fh); copy(layer[list_scroller].y,ny); delayedcall(0,dragging2()); );"/>
+            </layer>
+        </layer>
+        <layer name="prod_box" type="container" visible="true" bgalpha="0" width="100%" y="25" align="leftbottom">
+            <layer name="prodleft" type="container" zorder="99" alpha="0" enabled="true" bgcapture="true"
+                   handcursor="false" width="20%" x="-1000" height="100%" align="lefttop" bgalpha="0">
+                <plugin name="prodxt" type="container" bgcolor="0x595959" bgcapture="true" handcursor="false" width="1"
+                        x="-10" height="100%" align="right" bgalpha="1"/>
+                <plugin name="btn_xshi" style="productimg" crop="335|10|38|51" align="righttop"
+                        onover="tween(alpha,1,0.5,easeOutQuint);" onout="tween(alpha,0.7,0.5,easeOutQuint);" x="-37"
+                        y="0" scale="0.7"
+                        onclick=" if(youce_sf, set(youce_sf,0); tween(layer[prodleft].x,20,0.5,easeOutQuint); add(aios8,get(layer[prodleft].pixelwidth),90); sub(prod_w,get(stagewidth),get(aios8)); , set(youce_sf,1); tween(layer[prodleft].x,-20%,0.5,easeOutQuint); sub(prod_w,get(stagewidth),70); ); tween(layer[prodright].width,get(prod_w),0.5,easeOutQuint); switch(crop,390|10|38|51,335|10|38|51);"/>
+                <layer name="prodtitle" style="prodtext" autoheight="true" align="top" y="0" html=""
+                       css="text-align:left; color:#FFFFFF;font-weight:bold;font-family:Arial;font-size:22px;">
+                    <layer name="prodattribute" onloaded="if(isflash,set(height,40););" style="prodtext"
+                           align="leftbottom" edge="lefttop" y="-20" html=""
+                           css="text-align:left; color:#b5b5b5;font-family:Arial; font-size:18px;">
+                        <layer name="spotdizhi" backgroundcolor="0x000000" y="-15" align="bottom" edge="top" html=""
+                               width="90%" height="40" backgroundalpha="0.7" roundedge="4" vcenter="true" shadow="0.1"
+                               shadowrange="5" shadowcolor="0xffffff" shadowalpha="1.0"
+                               onloaded="if(isflash,set(roundedge,8););" url="%SWFPATH%/plugins/textfield.swf"
+                               css="text-align:center; color:#d8d8d8; font-family:Arial; font-size:14px;"/>
+                        <layer name="textfield" type="container" align="bottom" bgcapture="true" edge="top" x="-15"
+                               y="-75" width="90%">
+                            <layer name="worinima_xq" type="container" align="top" x="5" y="5" width="-10" height="-10"
+                                   maskchildren="true">
+                                <layer name="textscroller" url="%SWFPATH%/plugins/scrollarea.swf"
+                                       alturl="%SWFPATH%/plugins/scrollarea.js" mwheel="true" direction="v"
+                                       overscroll="0" align="lefttop" width="100%" height="100%"
+                                       onscroll="if(hoverflow GT 0, div(yp,toverflow,hoverflow); Math.min(yp,1); Math.max(yp,0); copy(th,layer[scrollbar_xq].pixelheight); sub(th,70); mul(yp,th); add(yp,10); copy(layer[scrollslider_xq].y,yp); );">
+                                    <layer name="proddetails" style="txt_style" align="lefttop" x="0" y="0" width="100%"
+                                           autoheight="true" background="false" border="false"
+                                           onautosized="copy(layer[textscroller].height,height);" padding="0 0"
+                                           html="暂无详情"
+                                           css="color:#b5b5b5;font-family:Arial; font-size:16px;line-height:20px;"/>
+                                </layer>
+                            </layer>
+                            <layer name="scrollbar_xq" type="container" bgcapture="true" bgcolor="0x717171"
+                                   bgalpha="0.6" align="righttop" x="-13" y="5" width="1" height="-10">
+                                <layer name="scrollslider_xq" style="productimg" align="righttop" x="-11" y="100"
+                                       crop="148|0|23|70" alpha="0.6"
+                                       ondown="if(layer[textscroller].hoverflow GT 0,copy(cy,y);copy(sy,mouse.stagey);dragging(); );"
+                                       dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); Math.max(ny,10); copy(th,layer[scrollbar_xq].pixelheight); sub(th,80); Math.min(ny,th); copy(y,ny); sub(ny,10); sub(th,70); div(ny,th); copy(fh,layer[textscroller].hoverflow); mul(fh,-1); mul(ny,fh); layer[textscroller].stopscrolling(); copy(layer[textscroller].y,ny); delayedcall(0,dragging()); );"/>
+                            </layer>
+                        </layer>
+                    </layer>
+                </layer>
+            </layer>
+            <layer name="prodright" type="container" maskchildren="true" bgcapture="true" handcursor="false" width="75%"
+                   height="100%" align="right" bgalpha="0">
+                <layer name="imgloading" type="container" x="-75" visible="false" bgcapture="true" bgcolor="0xffffff"
+                       handcursor="false" width="20" height="20" align="center" bgalpha="0">
+                    <plugin name="img_ld_1" type="container" x="30" bgcapture="true" bgcolor="0xffffff"
+                            handcursor="false" width="20" height="20" align="center" bgalpha="0"/>
+                    <plugin name="img_ld_2" type="container" x="60" bgcapture="true" bgcolor="0xffffff"
+                            handcursor="false" width="20" height="20" align="center" bgalpha="0"/>
+                    <plugin name="img_ld_3" type="container" x="90" bgcapture="true" bgcolor="0xffffff"
+                            handcursor="false" width="20" height="20" align="center" bgalpha="0"/>
+                    <plugin name="img_ld_4" type="container" x="120" bgcapture="true" bgcolor="0xffffff"
+                            handcursor="false" width="20" height="20" align="center" bgalpha="0"/>
+                    <plugin name="img_ld_5" type="container" x="150" bgcapture="true" bgcolor="0xffffff"
+                            handcursor="false" width="20" height="20" align="center" bgalpha="0"/>
+                </layer>
+                <plugin name="img_page" style="productimg" zorder="10" crop="0|0|53|70" align="leftcenter"
+                        onover="tween(alpha,1,0.5,easeOutQuint);" onout="tween(alpha,0.7,0.5,easeOutQuint);" x="20"
+                        y="20" alpha="0.7" scale="1.2" onclick="pro_ac(left);"/>
+                <plugin name="img_next" style="productimg" zorder="10" crop="53|0|53|70" align="rightcenter"
+                        onover="tween(alpha,1,0.5,easeOutQuint);" onout="tween(alpha,0.7,0.5,easeOutQuint);" x="20"
+                        y="20" alpha="0.7" scale="1.2" onclick="pro_ac(right);"/>
+            </layer>
+        </layer>
+    </layer>
+    <krpano devices="mobile">
+        <layer name="product">
+            <layer name="prodtop" y="-100" height="100">
+                <layer name="img_close_bg" width="230">
+                    <plugin name="img_close_ion" scale="0.7"/>
+                    <plugin name="img_close_txt" x="60"
+                            css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:30px;"/>
+                </layer>
+            </layer>
+            <layer name="prod_box" type="container" visible="true" bgalpha="0" width="100%" y="25" align="leftbottom">
+                <layer name="prodleft">
+                    <plugin name="btn_xshi" align="righttop" scale="1" x="0" y="10"/>
+                    <layer name="prodtitle"
+                           css="text-align:left; color:#FFFFFF;font-family:Arial;font-weight:bold;font-size:30px;">
+                        <layer name="prodattribute"
+                               css="text-align:left; color:#b5b5b5; font-family:Arial; font-size:24px;">
+                            <layer name="spotxiangq" backgroundcolor="0x000000" y="-20" align="leftbottom"
+                                   edge="lefttop" html="查看详情" width="40%" height="70" x="50%" backgroundalpha="0.7"
+                                   roundedge="4" vcenter="true" shadow="0.1" shadowrange="5" shadowcolor="0xffffff"
+                                   shadowalpha="1.0" url="%SWFPATH%/plugins/textfield.swf"
+                                   css="text-align:center; color:#d8d8d8; font-family:Arial; font-size:24px;"
+                                   onclick="pro_ac(4);"/>
+                            <layer name="spotdizhi" y="-20" x="5%" align="leftbottom" edge="lefttop" height="70"
+                                   css="text-align:center; color:#d8d8d8; font-family:Arial; font-size:24px;"/>
+                        </layer>
+                    </layer>
+                </layer>
+            </layer>
+        </layer>
+    </krpano>
+    <style name="product_img" url="" parent="prodright" handcursor="true" align="center" alpha="0" x="0" y="0" scale="1"
+           ondown="draglayer(lr);touch(sliding,touch_ac(3);,pro_ac(right);,pro_ac(left););touch_ac(1);"
+           onup="touch_ac(3);" onout="roller(chu);" onover="roller(jin);" onclick="touch(double,touch_ac(4););"
+           onloaded="imgloading(1);set(img_scale,1);tween(layer[popupimage_image].alpha,1,1,easeOutQuint);"/>
+    <action protect="true" name="imgloading">if(%1 == 1, set(img_loading,false);
+        tween(layer[imgloading].alpha,0,0.5,easeOutQuint); delayedcall(0.2, set(layer[imgloading].visible,false); );
+        div(img_sf,prod_w,layer[popupimage_image].imagewidth);
+        mul(img_heig,layer[popupimage_image].imageheight,img_sf);if(img_heig GT layer[prodright].pixelheight,
+        div(img_sf_h,layer[prodright].pixelheight,img_heig); mul(img_sf,img_sf,img_sf_h); );
+        mul(pop_width,layer[popupimage_image].imagewidth,img_sf);
+        mul(pop_height,layer[popupimage_image].imageheight,img_sf); set(layer[popupimage_image].width,get(pop_width));
+        set(layer[popupimage_image].height,get(pop_height)); , if(img_loading,
+        delayedcall(0.2,tween(layer[imgloading].bgalpha,1,1.5,easeOutQuint););
+        delayedcall(0.6,tween(layer[imgloading].bgalpha,0.2,1.5,easeOutQuint););
+        delayedcall(0.4,tween(layer[img_ld_1].bgalpha,1,1.5,easeOutQuint););
+        delayedcall(0.8,tween(layer[img_ld_1].bgalpha,0.2,1.5,easeOutQuint););
+        delayedcall(0.6,tween(layer[img_ld_2].bgalpha,1,1.5,easeOutQuint););
+        delayedcall(1,tween(layer[img_ld_2].bgalpha,0.2,1.5,easeOutQuint););
+        delayedcall(0.8,tween(layer[img_ld_3].bgalpha,1,1.5,easeOutQuint););
+        delayedcall(1.2,tween(layer[img_ld_3].bgalpha,0.2,1.5,easeOutQuint););
+        delayedcall(1,tween(layer[img_ld_4].bgalpha,1,1.5,easeOutQuint););
+        delayedcall(1.6,tween(layer[img_ld_4].bgalpha,0.2,1.5,easeOutQuint););
+        delayedcall(1.2,tween(layer[img_ld_5].bgalpha,1,1.5,easeOutQuint););
+        delayedcall(2,tween(layer[img_ld_5].bgalpha,0.2,1.5,easeOutQuint);); delayedcall(3,imgloading();); ); );
+    </action>
+    <action protect="true" name="thumbnail">if(%1 == move, for(set(i,0),i LT cpdata[cpdata].item.count,inc(i),
+        set(cp_name,get(cpdata[cpdata].item[get(i)].name)); txtadd(iimg_name,get(cp_name),_img);
+        txtadd(ick_name,get(cp_name),_ck); removelayer(get(ick_name)); removelayer(get(iimg_name));
+        removelayer(get(cp_name)); ); , if(%1 == start, if(q_one_start, , set(q_one_start,1);
+        thumbnail(get(list[two].item[0].name)); ); , thumbnail(move); if(device.mobile, set(thumb_s_wh,150); ,
+        set(thumb_s_wh,120); ); sub(thumb_s,get(layer[list_right].width),40); div(thumb_s,get(thumb_s),get(thumb_s_wh));
+        roundval(thumb_zs,thumb_s,0); if(thumb_zs GT thumb_s, sub(thumb_s,1); ); set(layer[lest_wu_txt].visible,false);
+        txtadd(thumb_x,'-',get(thumb_s_wh)); set(thumb_y,0); set(thumb_pl,0); set(thumb_sl,0); for(set(i,0),i LT
+        cpdata[cpdata].item.count,inc(i), set(cp_name,get(cpdata[cpdata].item[get(i)].name));
+        set(cp_series,get(cpdata[cpdata].item[get(cp_name)].series)); if(%1 == cp_series, add(thumb_sl,1);
+        listlist(minimg,get(cpdata[cpdata].item[get(cp_name)].img1)); addlayer(get(cp_name));
+        layer[get(cp_name)].loadstyle(thumbnail); add(thumb_pl,1); if(thumb_pl GT thumb_s, set(thumb_pl,1);
+        set(thumb_x,0); add(thumb_y,get(thumb_s_wh)); , add(thumb_x,get(thumb_s_wh)); );
+        set(layer[get(cp_name)].x,get(thumb_x)); set(layer[get(cp_name)].y,get(thumb_y));
+        add(scroller_height,thumb_y,210); if(scroller_height GT layer[list_scroller].height,
+        set(layer[list_scroller].height,get(scroller_height)); ); txtadd(iimg_name,get(cp_name),_img);
+        addlayer(get(iimg_name)); set(layer[get(iimg_name)].parent,get(cp_name)); set(layer[get(iimg_name)].alpha,0);
+        set(layer[get(iimg_name)].align,center); set(layer[get(iimg_name)].url,get(minimg));
+        txtadd(layer[get(iimg_name)].onloaded,'if(device.mobile,imgsize(140,140);,imgsize(100,100););tween(alpha,1,1,easeOutQuint);');
+        txtadd(ick_name,get(cp_name),_ck); addlayer(get(ick_name)); set(layer[get(ick_name)].parent,get(cp_name));
+        layer[get(ick_name)].loadstyle(thumb_ck);
+        set(layer[get(ick_name)].title,get(cpdata[cpdata].item[get(cp_name)].title));
+        txtadd(layer[get(ick_name)].onclick,'product(',get(cp_name),',lest);'); wait(0.01); ); ); if(thumb_sl LT 1,
+        set(layer[lest_wu_txt].visible,true); );
+        delete(thumb_s,thumb_zs,thumb_x,thumb_y,thumb_pl,cp_name,cp_series,scroller_height,iimg_name,ick_name,thumb_sl);
+        ); );
+    </action>
+    <action protect="true" name="product">if(%1 == Hidden,set(rolleroff,false);
+        tween(layer[prodleft].x,-1000,0.5,easeOutQuint); tween(layer[prodleft].alpha,0,0.5,easeOutQuint);
+        tween(layer[prodright].x,-1000,0.5,easeOutQuint); tween(layer[prodright].alpha,0,0.2,easeOutQuint);
+        pro_ac(empty); if(%2 == list, listlist(acc_list);
+        set(layer[img_close_bg].onclick,'thumbnail(move);product(Hidden);'); set(layer[list_scrollbar].visible,true);,
+        roller(restore); if(device.mobile, pro_ac(exit); , listlist(hidden_list); pro_ac(exit);); ); roller(shop); ,
+        if(%2 == lest, listlist(hidden_list); set(layer[img_close_bg].onclick,'product(Hidden,list);'); ,
+        if(device.mobile,, set(layer[img_fenlei].visible,true); ); ); if(%2 != null,
+        looktohotspot(%2,get(view.fov),smooth(300)); , looktohotspot(get(name),get(view.fov),smooth(300)); );
+        if(rolleroff,, roller(shop); set(rolleroff,true); ); pro_ac(start,%2); set(prcpname,%1); set(maxscale,3);
+        set(youce_sf,1); set(youce_sf_h,1); set(xq_qhuan,0); set(layer[prod_box].visible,true);
+        set(layer[list_scrollbar].visible,false);tween(layer[prodleft].alpha,1,0.5,easeOutQuint);
+        set(layer[prodright].alpha,1); if(device.mobile, set(layer[proddetails].css,color:#b5b5b5; font-family:Arial;
+        font-size:24px;line-height:36px;); set(plugin[prodxt].visible,false); if(stagewidth GT
+        stageheight,set(ls_zxg,true); , set(ls_zxg,false); ); pro_ac(mob_dir);pro_ac(mob_all); ,
+        add(ls_add,stagewidth,stageheight); pro_ac(pc_dir);pro_ac(pc);); if(cpdata[cpdata].item[get(prcpname)].title,
+        set(cp_title,get(cpdata[cpdata].item[get(prcpname)].title));,set(cp_title,暂无标题););
+        if(cpdata[cpdata].item[get(prcpname)].attribute,set(cp_attribute,get(cpdata[cpdata].item[get(prcpname)].attribute));,set(cp_attribute,'
+        ');); if(cpdata[cpdata].item[get(prcpname)].details,
+        set(cp_details,get(cpdata[cpdata].item[get(prcpname)].details));set(layer[spotxiangq].visible,true);,set(cp_details,);set(layer[spotxiangq].visible,false););
+        if(cpdata[cpdata].item[get(prcpname)].link,
+        txtadd(cp_link,get(cpdata[cpdata].item[get(prcpname)].link),?openwin=1);
+        set(layer[spotdizhi].onclick,openurl(get(cp_link))); set(layer[spotdizhi].html,查看详情页);
+        set(layer[spotdizhi].visible,true); , set(layer[spotdizhi].visible,false); );
+        set(layer[prodtitle].html,get(cp_title)); set(layer[prodattribute].html,get(cp_attribute));
+        set(layer[proddetails].html,get(cp_details)); layer[textscroller].scrolltocenter(0,0);
+        set(layer[textscroller].y,0); set(layer[scrollslider_xq].y,10); if(cpdata[cpdata].item[get(prcpname)].img5,
+        set(cpshu_max,5);set(cpshu_max2,6); , if(cpdata[cpdata].item[get(prcpname)].img4,
+        set(cpshu_max,4);set(cpshu_max2,5); , if(cpdata[cpdata].item[get(prcpname)].img3,
+        set(cpshu_max,3);set(cpshu_max2,4); , if(cpdata[cpdata].item[get(prcpname)].img2,
+        set(cpshu_max,2);set(cpshu_max2,3); , set(cpshu_max,1);set(cpshu_max2,2); ); ); ); ); set(tuxiangsl,1);
+        pro_ac(1); );
+    </action>
+    <action protect="true" name="pro_ac">if(%1 == start, scenario(shop); set(layer[product].visible,true);
+        tween(layer[product].bgalpha,0.85,0.5,easeOutQuint); delayedcall(0.2,
+        tween(layer[prodtop].y,0,0.5,easeOutQuint); ); ); if(%1 == exit, tween(layer[prodtop].y,-100,0.5,easeOutQuint);
+        tween(layer[product].bgalpha,0,0.5,easeOutQuint); delayedcall(0.3, set(layer[product].visible,false); );
+        scenario(start); ); if(%1 == mob_dir, div(sbbli,stagewidth,stageheight); if(sbbli LT 0.9, if(ls_zxg,,
+        pro_ac(mob_shu); set(ls_zxg,true); ); , if(ls_zxg, pro_ac(mob_heng); set(ls_zxg,false); ); );
+        delayedcall(0.5,pro_ac(mob_dir);); ); if(%1 == pc_dir,add(sbbli,stagewidth,stageheight); if(sbbli == ls_add,,
+        add(ls_add,stagewidth,stageheight); switch(youce_sf,0,1); pro_ac(pc); ); delayedcall(0.5,pro_ac(pc_dir);); );
+        if(%1 == mob_alltop, set(layer[textfield].alpha,0); set(layer[textfield].visible,false);
+        set(layer[textfield].parent,prodright); set(layer[textfield].height,100%); set(layer[textfield].width,85%);
+        set(layer[textfield].align,top); set(layer[textfield].x,-6); set(layer[textfield].y,20);
+        sub(prod_box_h,get(stageheight),150); ); if(%1 == mob_shu, pro_ac(mob_alltop); set(layer[prodleft].width,90%);
+        set(layer[prodleft].height,250); tween(layer[prodleft].x,5%,0.5,easeOutQuint); set(layer[prodxt].visible,false);
+        set(layer[spotdizhi].width,40%); set(layer[spotxiangq].visible,true); set(layer[spotxiangq].width,40%);
+        set(layer[spotxiangq].x,50%); set(layer[spotxiangq].y,-20); set(layer[spotxiangq].align,leftbottom);
+        set(layer[spotxiangq].edge,lefttop); set(layer[btn_xshi].rotate,90); set(prod_w,get(stagewidth));
+        set(layer[prodright].align,bottom); set(layer[btn_xshi].onclick,pro_ac(jinchu,shu);); set(layer[btn_xshi].x,0);
+        pro_ac(jinchu,shu); switch(xq_qhuan,0,1); pro_ac(4); ); if(%1 == mob_heng, pro_ac(mob_alltop);
+        set(layer[prodleft].width,30%); set(layer[prodleft].height,100%); set(layer[prodleft].y,0);
+        set(layer[prodxt].visible,true); set(layer[spotdizhi].width,90%); set(layer[spotxiangq].width,90%);
+        set(layer[spotxiangq].align,bottom); set(layer[spotxiangq].edge,top); set(layer[spotxiangq].x,0);
+        set(layer[spotxiangq].y,-110); set(layer[prodright].align,right); set(prod_h,100%);
+        set(layer[btn_xshi].rotate,0); set(layer[btn_xshi].y,0); set(layer[btn_xshi].x,-50);
+        set(layer[btn_xshi].rotate,0); set(layer[btn_xshi].onclick,pro_ac(jinchu,heng);); pro_ac(jinchu,heng);
+        switch(xq_qhuan,0,1); pro_ac(4); ); if(%1 == jinchu, if(%2 == heng, if(youce_sf_h, set(youce_sf_h,0);
+        set(youce_sf,1); tween(layer[prodleft].x,15,0.5,easeOutQuint); sub(prod_h,get(stageheight),140);
+        mul(prod_w,get(stagewidth),0.7); sub(prod_w,90); set(layer[btn_xshi].crop,335|10|38|51); , set(youce_sf_h,1);
+        set(youce_sf,0); sub(prod_h,get(stageheight),140); tween(layer[prodleft].x,-30%,0.5,easeOutQuint);
+        sub(prod_w,get(stagewidth),70); set(layer[btn_xshi].crop,390|10|38|51); ); set(layer[prodright].x,20); ,
+        if(youce_sf,set(youce_sf,0); set(youce_sf_h,1); tween(layer[prodleft].y,0,0.5,easeOutQuint);
+        sub(prod_h,get(stageheight),380); tween(layer[btn_xshi].y,10,0.5,easeOutQuint);
+        set(layer[btn_xshi].crop,335|10|38|51); , set(youce_sf,1); set(youce_sf_h,0);
+        tween(layer[prodleft].y,-800,0.5,easeOutQuint); sub(prod_h,get(stageheight),130);
+        tween(layer[btn_xshi].y,810,0.5,easeOutQuint); set(layer[btn_xshi].crop,390|10|38|51); );
+        set(layer[prodright].x,0); ); pro_ac(give);); if(%1 == pc, set(layer[prodright].x,30); set(prod_h,100%);
+        sub(prod_box_h,get(stageheight),100); sub(wo_deheight,get(stageheight),250);
+        set(layer[textfield].height,get(wo_deheight)); if(youce_sf,set(youce_sf,0);
+        tween(layer[prodleft].x,15,0.5,easeOutQuint); mul(prod_kuan,get(stagewidth),0.2);
+        sub(prod_w,get(stagewidth),get(prod_kuan)); sub(prod_w,90); set(layer[btn_xshi].crop,335|10|38|51);
+        ,set(youce_sf,1); tween(layer[prodleft].x,-20%,0.5,easeOutQuint); sub(prod_w,get(stagewidth),70);
+        set(layer[btn_xshi].crop,390|10|38|51); ); set(layer[textfield].visible,true);
+        tween(layer[textfield].alpha,1,0.3,easeOutQuint); pro_ac(give); ); if(%1 == give,
+        set(layer[prod_box].height,get(prod_box_h));tween(layer[prodright].height,get(prod_h),0.5,easeOutQuint);
+        tween(layer[prodright].width,get(prod_w),0.5,easeOutQuint); ); if(%1 == mobimg, indexoftxt(mobimg_s,%2,'.');
+        subtxt(mobimg_l,%2,0,get(mobimg_s)); subtxt(mobimg_r,%2,get(mobimg_s),4);
+        txtadd(mobimg,get(mobimg_l),'_mob',get(mobimg_r)); ); if(%1 == 1, delayedcall(0.5,
+        set(layer[imgloading].visible,true); set(plugin[imgloading].bgalpha,0); set(plugin[img_ld_1].bgalpha,0);
+        set(plugin[img_ld_2].bgalpha,0); set(plugin[img_ld_3].bgalpha,0); set(plugin[img_ld_4].bgalpha,0);
+        set(plugin[img_ld_5].bgalpha,0); tween(layer[imgloading].alpha,1,0.3,easeOutQuint); set(img_loading,true);
+        imgloading(); addlayer(popupimage_image); layer[popupimage_image].loadstyle(product_img); if(tuxiangsl == 1,
+        if(device.mobile, if(cpdata[cpdata].item[get(prcpname)].is_thumb1,
+        pro_ac(mobimg,get(cpdata[cpdata].item[get(prcpname)].img1));
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(mobimg)); ,
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img1)); ); ,
+        if(online, txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img1)); ,
+        txtadd(img_url,'%CURRENTXML%/product/',get(cpdata[cpdata].item[get(prcpname)].img1)); ); ); ); if(tuxiangsl ==
+        2, if(device.mobile, if(cpdata[cpdata].item[get(prcpname)].is_thumb2,
+        pro_ac(mobimg,get(cpdata[cpdata].item[get(prcpname)].img2));
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(mobimg)); ,
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img2)); ); ,
+        if(online, txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img2)); ,
+        txtadd(img_url,'%CURRENTXML%/product/',get(cpdata[cpdata].item[get(prcpname)].img2)); ); ); ); if(tuxiangsl ==
+        3, if(device.mobile, if(cpdata[cpdata].item[get(prcpname)].is_thumb3,
+        pro_ac(mobimg,get(cpdata[cpdata].item[get(prcpname)].img3));
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(mobimg)); ,
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img3)); ); ,
+        if(online, txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img3)); ,
+        txtadd(img_url,'%CURRENTXML%/product/',get(cpdata[cpdata].item[get(prcpname)].img3)); ); ); ); if(tuxiangsl ==
+        4, if(device.mobile, if(cpdata[cpdata].item[get(prcpname)].is_thumb4,
+        pro_ac(mobimg,get(cpdata[cpdata].item[get(prcpname)].img4));
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(mobimg)); ,
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img4)); ); ,
+        if(online, txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img4)); ,
+        txtadd(img_url,'%CURRENTXML%/product/',get(cpdata[cpdata].item[get(prcpname)].img4)); ); ); ); if(tuxiangsl ==
+        5, if(device.mobile, if(cpdata[cpdata].item[get(prcpname)].is_thumb5,
+        pro_ac(mobimg,get(cpdata[cpdata].item[get(prcpname)].img5));
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(mobimg)); ,
+        txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img5)); ); ,
+        if(online, txtadd(img_url,'%CURRENTXML%/../../packet/product/',get(cpdata[cpdata].item[get(prcpname)].img5)); ,
+        txtadd(img_url,'%CURRENTXML%/product/',get(cpdata[cpdata].item[get(prcpname)].img5)); ); ); );
+        set(layer[popupimage_image].url,get(img_url)); ); ); if(%1 == empty,
+        tween(layer[popupimage_image].alpha,0,0.3,easeOutQuint); delayedcall(0.3,removelayer(popupimage_image);); );
+        if(%1 == left, tween(layer[popupimage_image].x,get(prod_w),0.3,easeOutQuint); pro_ac(empty); sub(tuxiangsl,1);
+        if(tuxiangsl LE 0, for(set(i,0),i LT cpdata[cpdata].item.count,inc(i),
+        set(cpdata_name,get(cpdata[cpdata].item[get(i)].name)); if(cpdata_name == prcpname, sub(ii,i,1); if(ii LE -1,
+        sub(ii,cpdata[cpdata].item.count,1); ); set(prcpname,get(cpdata[cpdata].item[get(ii)].name));
+        set(i,cpdata[cpdata].item.count); product(get(prcpname)); ); ); ); pro_ac(1); ); if(%1 == right,
+        sub(asdvef,0,prod_w);tween(layer[popupimage_image].x,get(asdvef),0.3,easeOutQuint); pro_ac(empty);
+        add(tuxiangsl,1); if(tuxiangsl GE cpshu_max2, for(set(i,0),i LT cpdata[cpdata].item.count,inc(i),
+        set(cpdata_name,get(cpdata[cpdata].item[get(i)].name)); if(cpdata_name == prcpname, add(ii,i,1); if(ii GE
+        cpdata[cpdata].item.count, set(ii,0); ); set(prcpname,get(cpdata[cpdata].item[get(ii)].name));
+        set(i,cpdata[cpdata].item.count); product(get(prcpname)); ); ); ); pro_ac(1); ); if(%1 == 4, if(xq_qhuan ==
+        1,tween(layer[textfield].alpha,0,0.3,easeOutQuint); delayedcall(0.3,set(layer[textfield].visible,false););
+        set(layer[img_page].visible,true); tween(layer[img_page].alpha,1,0.3,easeOutQuint);
+        set(layer[img_next].visible,true); tween(layer[img_next].alpha,1,0.3,easeOutQuint);
+        set(layer[popupimage_image].visible,true); tween(layer[popupimage_image].alpha,1,0.3,easeOutQuint);
+        set(layer[spotxiangq].html,文字介绍); set(xq_qhuan,0); , tween(layer[img_page].alpha,0,0.5,easeOutQuint);
+        delayedcall(0.3,set(layer[img_page].visible,false);); tween(layer[img_next].alpha,0,0.5,easeOutQuint);
+        delayedcall(0.3,set(layer[img_next].visible,false);); tween(layer[popupimage_image].alpha,0,0.5,easeOutQuint);
+        delayedcall(0.3,set(layer[popupimage_image].visible,false);); set(layer[textfield].visible,true);
+        tween(layer[textfield].alpha,1,0.3,easeOutQuint); set(layer[spotxiangq].html,查看图像); set(xq_qhuan,1); ); );
+        if(%1 ==
+        5,set(layer[popupimage_image].ondown,draglayer(lr);touch(sliding,touch_ac(3);,pro_ac(right);,pro_ac(left););touch_ac(1););
+        tween(layer[popupimage_image].x,0,0.5,easeOutQuint); tween(layer[popupimage_image].y,0,0.5,easeOutQuint); );
+        if(%1 == 6,set(layer[popupimage_image].ondown,touch_ac(1);draglayer();); );
+    </action>
+    <action protect="true" name="roller">if(%1 == jin, set(roller_men,true); roller(tj); ); if(%1 == tj, if(roller_men,
+        if(wheeldelta, if(wheeldelta GT 0, add(img_scale,0.2); set(wheeldelta,0); , sub(img_scale,0.2);
+        set(wheeldelta,0); tween(layer[popupimage_image].x,0,0.5,easeOutQuint);
+        tween(layer[popupimage_image].y,0,0.5,easeOutQuint); ); if(img_scale GT maxscale, copy(img_scale,maxscale); );
+        if(img_scale LT 1, set(img_scale,1); ); set(layer[popupimage_image].scale,get(img_scale));
+        if(layer[popupimage_image].scale == 1, pro_ac(5); , pro_ac(6); ); ); delayedcall(0, roller(tj)); ); ); if(%1 ==
+        chu, set(roller_men,false); ); if(%1 == restore, set(view.fovmin,get(mini_fov)); set(view.fovmax,get(max_fov));
+        ); if(%1 == shop, copy(mini_fov,view.fovmin); copy(max_fov,view.fovmax); set(view.fovmin,get(view.fov));
+        set(view.fovmax,get(view.fov)); );
+    </action>
+    <action protect="true" name="touch_ac">if(%1 == 1, set(img_scale,get(layer[popupimage_image].scale));
+        set(sx_data,get(layer[popupimage_image].scale)); set(touchswo,1); touch_ac(2); ); if(%1 == 2, if(touchswo,
+        if(wheeldelta_touchscale, set(btbt,30); pro_ac(6); if(sx_data LT maxscale,
+        mul(sx_data,get(img_scale),get(wheeldelta_touchscale)); , div(xsyx,maxscale,get(img_scale));
+        sub(xsxy,get(wheeldelta_touchscale),get(xsyx)); mul(max_up,get(xsxy),0.2);
+        add(max_upup,get(xsyx),get(max_up));mul(sx_data,get(img_scale),get(max_upup)); );
+        set(layer[popupimage_image].scale,get(sx_data)); ); delayedcall(0,touch_ac(2);); ); ); if(%1 == 3,
+        set(touchswo,0); set(wheeldelta_touchscale,0); if(layer[popupimage_image].scale LE 1,
+        tween(layer[popupimage_image].scale,1,0.5,easeOutQuint); pro_ac(5); ); if(layer[popupimage_image].scale GT
+        maxscale, tween(layer[popupimage_image].scale,get(maxscale),0.5,easeOutQuint); pro_ac(6); ); ); if(%1 == 4,
+        if(layer[popupimage_image].scale == 1, set(sx_data,get(maxscale)); set(img_scale,get(maxscale)); pro_ac(6); ,
+        set(sx_data,1); set(img_scale,1); pro_ac(5); );
+        tween(layer[popupimage_image].scale,get(sx_data),1,easeOutQuint); );
+    </action>
+    <style name="list_one" keep="true" url="%SWFPATH%/plugins/textfield.swf" edge="lefttop" align="lefttop"
+           vcenter="true" width="200" height="50" enabled="true" backgroundalpha="0.5" background="true"
+           css="text-align:left;color:#d7d7d7; font-family:Arial; font-size:12px;"/>
+    <style name="list_line" keep="true" type="container" bgcolor="0x555555" bgcapture="true" width="100%" height="1"
+           align="bottom" bgalpha="1"/>
+    <style name="list_ioc" keep="true" url="gallerybtns.png" crop="180|0|70|70" scale="0.2" alpha="1" align="right"
+           edge="center" x="15" bgcapture="true"/>
+    <style name="list_oper" keep="true" type="container" bgcolor="0xffffff" bgcapture="true" align="lefttop"
+           handcursor="true" width="100%" height="100%" bgalpha="0" enabled="true"
+           onover="tween(bgalpha,0.2,0.5,easeOutQuint);" onout="tween(bgalpha,0,0.5,easeOutQuint);"/>
+    <style name="thumbnail" keep="true" url="bg.png" width="110" height="110" parent="list_right" align="lefttop"
+           bgcapture="true"/>
+    <style name="thumb_ck" keep="true" type="container" bgcolor="0xffffff" bgcapture="true" align="lefttop"
+           handcursor="true" width="100%" height="100%" bgalpha="0" enabled="true"
+           onover="tween(bgalpha,0.4,0.5,easeOutQuint);textfollow(get(title));"
+           onout="tween(bgalpha,0,0.5,easeOutQuint);"/>
+    <action protect="true" name="listlist">if(%1 == start, pro_ac(start); listlist(windows); product(Hidden,list);
+        listlist(acc_list); if(device.mobile, , delayedcall(0.3, listlist(one); thumbnail(start); ); );
+        listlist(pc_dir); set(q_list,true); ); if(%1 == windows, if(device.mobile, sub(prod_list_h,stageheight,150); ,
+        sub(prod_list_h,stageheight,90); ); set(layer[prod_list].height,get(prod_list_h)); if(device.mobile,
+        sub(prod_list_r_w,stagewidth,30); set(layer[list_right].x,30); , sub(prod_list_r_w,stagewidth,260); );
+        set(layer[list_right].width,get(prod_list_r_w)); ); if(%1 == hidden_list,
+        tween(layer[list_left].alpha,0,0.5,easeOutQuint); tween(layer[list_right].alpha,0,0.5,easeOutQuint);
+        delayedcall(0.5, set(layer[prod_list].visible,false); ); ); if(%1 == acc_list,
+        set(layer[img_fenlei].visible,false); set(layer[prod_list].visible,true);
+        tween(layer[list_left].alpha,1,0.5,easeOutQuint); tween(layer[list_right].alpha,1,0.5,easeOutQuint);
+        set(layer[prod_box].visible,false); ); if(%1 == minimg, indexoftxt(minimg_s,%2,'.');
+        subtxt(minimg_l,%2,0,get(minimg_s)); subtxt(minimg_r,%2,get(minimg_s),4); if(online,
+        txtadd(minimg,"%CURRENTXML%/../../packet/product/",get(minimg_l),'_min',get(minimg_r)); ,
+        txtadd(minimg,"%CURRENTXML%/product/",get(minimg_l),'_min',get(minimg_r)); ); ); if(%1 == one,
+        set(txt_f,'list_left'); set(txt_y,0); if(device.mobile, set(list_h,80);, set(list_h,50);); for(set(i,0),i LT
+        list[one].item.count,inc(i), set(one_name,get(list[one].item[get(i)].name));
+        txtadd(txt_name,get(one_name),_txt); addlayer(get(txt_name)); set(layer[get(txt_name)].keep,true);
+        set(layer[get(txt_name)].parent,get(txt_f)); set(txt_f,get(txt_name)); set(layer[get(txt_name)].y,get(txt_y));
+        if(txt_y != list_h, set(txt_y,get(list_h)); ); layer[get(txt_name)].loadstyle(list_one);
+        set(layer[get(txt_name)].backgroundcolor,0x000000); set(layer[get(txt_name)].visible,true);
+        txtadd(layer[get(txt_name)].html,'　',get(list[one].item[get(one_name)].title));
+        txtadd(ioc_name,get(txt_name),_ioc); addlayer(get(ioc_name)); set(layer[get(ioc_name)].parent,get(txt_name));
+        layer[get(ioc_name)].loadstyle(list_ioc); txtadd(line_name,get(one_name),_line); addlayer(get(line_name));
+        set(layer[get(line_name)].parent,get(txt_name)); layer[get(line_name)].loadstyle(list_line);
+        addlayer(get(one_name)); layer[get(one_name)].loadstyle(list_oper);
+        set(layer[get(one_name)].parent,get(txt_name)); set(layer[get(one_zi)].zi,get(txt_name));
+        set(one_zi,get(one_name)); set(layer[get(one_name)].off,false);
+        set(layer[get(one_name)].onclick,'listlist(sohw);'); if(device.mobile, set(two_y,80);, set(two_y,50););
+        for(set(ii,0),ii LT list[two].item.count,inc(ii), set(two_name,get(list[two].item[get(ii)].name));
+        if(list[two].item[get(two_name)].one == one_name, addlayer(get(two_name));
+        set(layer[get(two_name)].parent,get(txt_name)); layer[get(two_name)].loadstyle(list_one);
+        set(layer[get(two_name)].backgroundcolor,0x333333); set(layer[get(two_name)].visible,false);
+        set(layer[get(two_name)].y,get(two_y));
+        txtadd(layer[get(two_name)].html,'　　',get(list[two].item[get(two_name)].title));
+        set(layer[get(one_name)].two,get(two_y)); if(device.mobile, add(two_y,80); , add(two_y,50); );
+        txtadd(oper_two_name,get(two_name),_oper); addlayer(get(oper_two_name));
+        layer[get(oper_two_name)].loadstyle(list_oper); set(layer[get(oper_two_name)].parent,get(two_name));
+        if(device.mobile,
+        txtadd(layer[get(oper_two_name)].onclick,'listlist(start);delayedcall(0.3,thumbnail(',get(two_name),'););'); ,
+        txtadd(layer[get(oper_two_name)].onclick,'thumbnail(',get(two_name),');'); ); ); ); );
+        mul(list_h,get(list[one].item.count)); set(layer[list_scroller].height,get(list_h));
+        delete(txt_f,txt_y,list_h,one_name,txt_name,ioc_name,line_name,two_y,two_name,oper_two_name); ); if(%1 == sohw,
+        if(two, listlist(scr_in);set(two_s_h,0); for(set(i,0),i LT list[one].item.count,inc(i),
+        set(one_name,get(list[one].item[get(i)].name)); if(layer[get(one_name)].off,
+        listlist(suo,get(one_name),get(layer[get(one_name)].zi)); ); ); if(device.mobile, add(twotwo,get(two),80); ,
+        add(twotwo,get(two),50); );set(layer[get(name)].onclick,'listlist(suo,get(name),get(zi));');
+        set(layer[get(name)].off,true); tween(layer[get(zi)].y,get(twotwo),0.5,easeOutQuint);
+        txtadd(ioc_name,get(parent),_ioc); tween(layer[get(ioc_name)].rotate,-90,0.5,easeOutQuint); for(set(ii,0),ii LT
+        list[two].item.count,inc(ii), if(list[two].item[get(ii)].one == name, add(two_s_h,1);
+        set(layer[get(list[two].item[get(ii)].name)].visible,true); ); ); add(two_s_h,get(list[one].item.count));
+        if(device.mobile, mul(two_s_h,81); tween(layer[scroller].height,get(two_s_h),0.5,easeOutQuint); ,
+        mul(two_s_h,51); if(two_s_h GT layer[list_right].height,
+        tween(layer[list_scroller].height,get(two_s_h),0.5,easeOutQuint); ); ); ); delete(one_name,twotwo,two_s_h); );
+        if(%1 == scr_in, layer[list_scroller].scrolltocenter(0,0); set(layer[list_scroller].y,0);
+        set(layer[list_scrollslider].y,10); ); if(%1 == suo, if(device.mobile, tween(layer[%3].y,80,0.5,easeOutQuint); ,
+        tween(layer[%3].y,50,0.5,easeOutQuint); ); set(layer[%2].onclick,'listlist(sohw);'); set(layer[%2].off,false);
+        txtadd(ioc_name,get(layer[%2].parent),_ioc); tween(layer[get(ioc_name)].rotate,0,0.5,easeOutQuint);
+        delayedcall(0.2, for(set(i,0),i LT list[two].item.count,inc(i), if(list[two].item[get(i)].one == %2,
+        set(layer[get(list[two].item[get(i)].name)].visible,false); ); ); ); );
+    </action>
+</krpano>

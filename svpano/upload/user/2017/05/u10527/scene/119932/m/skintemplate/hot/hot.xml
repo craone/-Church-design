@@ -1,0 +1,170 @@
+<krpano>
+    <action name="hotspot_animate">inc(frame,1,get(lastframe),0); mul(ypos,frame,frameheight);
+        txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+        delayedcall(get(seep),if(loaded,hotspot_animate();));
+    </action>
+    <style name="dynamic1" url="dynamic1.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="19"
+           seep="0.04"/>
+    <style name="dynamic2" url="dynamic2.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0" lastframe="19"
+           seep="0.04"/>
+    <style name="dynamic3" url="dynamic3.png" crop="0|0|100|88" framewidth="102" frameheight="88" frame="0"
+           lastframe="4" seep="0.1" scale="0.5"/>
+    <style name="dynamic4" url="dynamic4.png" crop="0|0|50|50" framewidth="50" frameheight="50" frame="0" lastframe="99"
+           seep="0.02" scale="1"/>
+    <style name="dynamic5" url="dynamic5.png" crop="0|0|199|80" framewidth="199" frameheight="80" frame="0"
+           lastframe="2" seep="0.3" scale="0.5"/>
+    <style name="dynamic6" url="dynamic6.png" crop="0|0|199|80" framewidth="199" frameheight="80" frame="0"
+           lastframe="2" seep="0.3" scale="0.5"/>
+    <style name="dynamic7" url="dynamic7.png" crop="0|0|100|88" framewidth="102" frameheight="88" frame="0"
+           lastframe="4" seep="0.1" scale="0.5"/>
+    <style name="dproducts1" url="dynamic1.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0"
+           lastframe="19" seep="0.04"/>
+    <style name="dproducts2" url="dynamic2.png" crop="0|0|64|64" framewidth="64" frameheight="64" frame="0"
+           lastframe="19" seep="0.04"/>
+    <style name="dproducts3" url="dproducts3.png" crop="0|0|128|85" framewidth="128" frameheight="85" frame="0"
+           lastframe="7" seep="0.2" scale="0.5"/>
+    <style name="spot1" url="spot1.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot2" url="spot2.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot3" url="spot3.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot4" url="spot4.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot5" url="spot5.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot6" url="spot6.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot7" url="spot7.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot8" url="spot8.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot9" url="spot9.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot10" url="spot10.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot11" url="spot11.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot12" url="spot12.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="25"
+           seep="0.04" scale="0.5"/>
+    <style name="spot13" url="spot13.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="10"
+           seep="0.04" scale="0.5"/>
+    <style name="spot14" url="spot14.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="10"
+           seep="0.04" scale="0.5"/>
+    <style name="spot15" url="spot15.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="10"
+           seep="0.04" scale="0.5"/>
+    <style name="spot16" url="spot16.png" crop="0|0|128|128" framewidth="128" frameheight="128" frame="0" lastframe="10"
+           seep="0.04" scale="0.5"/>
+    <style name="waves" url="target.png" toushi="true" walk="do_crop_animation(80,80,15);step();" distorted="true"
+           inverserotation="true" mouse="%SWFPATH%/skintemplate/hot/target_mouse.png"
+           onover="ontarget(%SWFPATH%/skintemplate/hot/target_l.png);"
+           onout="ontarget(%SWFPATH%/skintemplate/hot/target.png);"/>
+    <style name="waves1" url="quan.png" toushi="true" walk="step();" distorted="true" inverserotation="true"
+           mouse="%SWFPATH%/skintemplate/hot/quanl.png" onover="ontarget(%SWFPATH%/skintemplate/hot/quanl.png);"
+           onout="ontarget(%SWFPATH%/skintemplate/hot/quan.png);"/>
+    <style name="waves2" url="Foot.png" toushi="true" walk="step();" distorted="true" inverserotation="true"
+           mouse="%SWFPATH%/skintemplate/hot/Footl.png" onover="ontarget(%SWFPATH%/skintemplate/hot/Footl.png);"
+           onout="ontarget(%SWFPATH%/skintemplate/hot/Foot.png);"/>
+    <action protect="true" name="step">set(rx,calc(90 - atv)); set(scale,calc(0.8 + 0.006 * atv));
+        set(onclick,'waves_onclick();');
+    </action>
+    <action protect="true" name="ontarget">if(settings.mousestyle, if(hotspot[spotshubiao].alpha == 1, set(ondd,true);
+        tween(hotspot[spotshubiao].alpha,0,0.1); , set(ondd,false); tween(hotspot[spotshubiao].alpha,1,0.1); ); );
+        set(url,%1);
+    </action>
+    <action name="waves_onclick">if(webvr.isenabled, loadscene(get(linkedscene), null, MERGE|KEEPMOVING,ZOOMBLEND(0.6,
+        1.2, easeInCubic)); , set(ggsth,get(ath)); loadscene(get(linkedscene), null, MERGE|KEEPMOVING,ZOOMBLEND(0.6,
+        1.2, easeInCubic)); moveto(get(ggsth),0); );
+    </action>
+    <action name="do_crop_animation">registerattribute(xframes, calc((imagewidth / %1) BOR 0));
+        registerattribute(yframes, calc((imageheight / %2) BOR 0)); registerattribute(frames, calc(xframes * yframes));
+        registerattribute(frame, 0); set(crop, '0|0|%1|%2'); setinterval(calc('crop_anim_' + name), calc(1.0 / %3),
+        if(loaded, inc(frame); if(frame GE frames, if(onlastframe !== null, onlastframe() );set(frame,0);); mod(xpos,
+        frame, xframes); div(ypos, frame, xframes); Math.floor(ypos); mul(xpos, %1); mul(ypos, %2); calc(crop, xpos +
+        '|' + ypos + '|%1|%2'); , clearinterval(calc('crop_anim_' + name)); ); );
+    </action>
+    <style name="manyou" distorted="false"
+           onclick=" if(hotspot[get(name)].move, set(hot_move_kg,true); txtsplit(get(hotspot[get(name)].move), '|', hot_move); , set(hot_move_kg,false); ); if(hotspot[get(name)].linkedscene, if(webvr.isenabled, loadscene(get(linkedscene),null,NOPREVIEW|MERGE|KEEPMOVING,BLEND(1)); , moveto(get(ath),0,smooth()); loadscene(get(linkedscene),null,MERGE,get(blendmodes[get(hotspot[get(name)].blendmodes)].blend)); ); ); if(hotspot[get(name)].quanjingid, open_pano(get(quanjingid),get(target),get(name),get(scene)); ); if(hot_move_kg, if(hot_move[0].value, delayedcall(1, lookto(get(hot_move[1].value),get(hot_move[2].value),get(hot_move[3].value),linear(80)); ); , lookat(get(hot_move[1].value),get(hot_move[2].value),get(hot_move[3].value)); ); ); skin_updatescroll();"/>
+    <style name="svrvrtxt" vcenter="true"
+           css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:12px;margin:5px 8px 5px 8px;"
+           backgroundcolor="0x000000" backgroundalpha="0.4" roundedge="3"/>
+    <style name="svrvrtxt" devices="mobile"
+           css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:16px;margin:5px 8px 5px 8px;"/>
+    <action protect="true" name="svrvrtxt">copy(tooltipname,name); set(set_html,true);
+        if(hotspot[get(tooltipname)].walk, if(editor, set(hotspot[get(tooltipname)].wz,m); , set(set_html,false); );
+        hotspot[get(tooltipname)].walk(); ); if(set_html, ifnot(hotspot[get(tooltipname)].walk,
+        if(hotspot[get(tooltipname)].style, if(hotspot[get(tooltipname)].style != comments, hotspot_animate(); ); ,
+        set(hotspot[get(tooltipname)].scale,0.8); ); ); ifnot(webvr.isenabled, if(html, addplugin(get(tooltipname));
+        txtadd(plugin[get(tooltipname)].parent,'hotspot[',get(name),']'); if(wz ==
+        r,set(plugin[get(tooltipname)].align,right);set(plugin[get(tooltipname)].edge,left);); if(wz ==
+        l,set(plugin[get(tooltipname)].align,left);set(plugin[get(tooltipname)].edge,right);); if(wz ==
+        t,set(plugin[get(tooltipname)].align,top);set(plugin[get(tooltipname)].edge,bottom);); if(wz ==
+        m,set(plugin[get(tooltipname)].align,bottom);set(plugin[get(tooltipname)].edge,top);); if(device.flash, if(scale
+        LT 1, txtadd(lshtml,'　',get(html),'　　',); , txtadd(lshtml,'　',get(html),'　',); );
+        set(plugin[get(tooltipname)].html,get(lshtml)); , set(plugin[get(tooltipname)].html,get(html)); ); ); ,
+        ifnot((hotspot[get(tooltipname)].audio) OR (hotspot[get(tooltipname)].linkedscene),
+        removehotspot(get(tooltipname)); ); ); if(hotspot[get(tooltipname)].article,
+        set(onclick,calc('js(wapView.act("article","' + article + '"));')); if(html,
+        set(plugin[get(tooltipname)].onclick,get(onclick)); plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt); );
+        ); if(hotspot[get(tooltipname)].js, set(onclick,calc('jscall(' + hotspot[get(tooltipname)].js + ');'));
+        set(hotspot[get(tooltipname)].onclick,get(onclick)); if(html,
+        set(plugin[get(tooltipname)].onclick,get(onclick)); plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt); );
+        ); if(hotspot[get(tooltipname)].video, set(onclick,calc('js(wapView.act("video","' + video + '"));')); if(html,
+        txtadd(plugin[get(tooltipname)].onclick,get(onclick)); plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt);
+        ); ); if(hotspot[get(tooltipname)].audio, txtadd(user_voice,get(tooltipname),'voice');
+        set(hotspot[get(tooltipname)].ioc,get(user_voice));
+        txtadd(hotspot[get(tooltipname)].onclick,"hot_voice(voice,",get(hotspot[get(tooltipname)].audio),");");
+        ifnot(webvr.isenabled, addplugin(get(user_voice));
+        txtadd(layer[get(user_voice)].parent,'hotspot[',get(tooltipname),']');
+        plugin[get(user_voice)].loadstyle(user_voice); plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt);
+        set(plugin[get(tooltipname)].y,-12); set(plugin[get(tooltipname)].x,-3);
+        set(plugin[get(tooltipname)].ioc,get(user_voice)); set(plugin[get(tooltipname)].css,text-align:right;
+        color:#FFFFFF; font-family:Arial; font-size:16px;margin:5px 8px 5px 8px;);
+        txtadd(plugin[get(tooltipname)].onclick,'hotspot[',get(tooltipname),'].onclick();'); if(device.mobile,
+        set(plugin[get(user_voice)].scale,0.7); set(plugin[get(tooltipname)].width,70);
+        set(plugin[get(tooltipname)].height,40); , set(plugin[get(tooltipname)].width,70);
+        set(plugin[get(tooltipname)].height,30); );
+        txtadd(plugin[get(tooltipname)].onclick,"hot_voice(voice,",get(hotspot[get(tooltipname)].audio),");"); ); );
+        if(hotspot[get(tooltipname)].userurl, plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt);
+        set(plugin[get(tooltipname)].y,-12); set(plugin[get(tooltipname)].x,-3);
+        txtadd(user_head,get(tooltipname),'head'); addplugin(get(user_head));
+        txtadd(layer[get(user_head)].parent,'hotspot[',get(tooltipname),']');
+        set(plugin[get(user_head)].url,get(userurl)); plugin[get(user_head)].loadstyle(user_head);
+        if(hotspot[get(tooltipname)].wz == m, set(plugin[get(tooltipname)].backgroundcolor,0xff0000);
+        set(plugin[get(tooltipname)].enabled,false); if(device.mobile,
+        set(plugin[get(tooltipname)].css,text-align:center;color:#FFFFFF;font-family:Arial;font-size:24px;margin:10px);
+        ,
+        set(plugin[get(tooltipname)].css,text-align:center;color:#FFFFFF;font-family:Arial;font-size:16px;margin:10px);
+        ); if(device.mobile, set(plugin[get(tooltipname)].x,42); set(hotspot[addcom].scale,1.5); ,
+        set(hotspot[addcom].scale,1); ); ); );
+        if(hotspot[get(tooltipname)].voice,txtadd(user_voice,get(tooltipname),'voice'); addplugin(get(user_voice));
+        txtadd(layer[get(user_voice)].parent,'hotspot[',get(tooltipname),']');
+        plugin[get(user_voice)].loadstyle(user_voice); set(hotspot[get(tooltipname)].enabled,true);
+        set(plugin[get(tooltipname)].ioc,get(user_voice));if(device.mobile, set(plugin[get(user_voice)].scale,0.7);
+        set(plugin[get(tooltipname)].width,70); set(plugin[get(tooltipname)].height,40); ,
+        set(plugin[get(tooltipname)].width,70); set(plugin[get(tooltipname)].height,30); );
+        set(plugin[get(tooltipname)].css,text-align:right; color:#FFFFFF; font-family:Arial; font-size:16px;margin:5px
+        8px 5px 8px;);
+        txtadd(plugin[get(tooltipname)].onclick,"hot_voice(voice,",get(hotspot[get(tooltipname)].voice),");"); );
+        if(hotspot[get(tooltipname)].productid, set(onclick,product(get(productid))); if(html,
+        txtadd(plugin[get(tooltipname)].onclick,'product(',get(hotspot[get(tooltipname)].productid),');');
+        plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt); ); ); if(hotspot[get(tooltipname)].link, if(online,
+        txtadd(openlink,'openurl(',get(link),',',get(target),')'); ,
+        txtadd(openlink,'openurl(',get(link),'?openwin=1',',_blank',')'); ); set(onclick,get(openlink)); if(html,
+        plugin[getÏ(tooltipname)].loadstyle(txt_style|svrvrtxt); set(plugin[get(tooltipname)].onclick,get(openlink)); );
+        ); if(hotspot[get(tooltipname)].quanjingid, if(online, loadstyle(manyou); if(html,
+        set(plugin[get(tooltipname)].quanjingid,get(quanjingid)); set(plugin[get(tooltipname)].scene,get(scene));
+        set(plugin[get(tooltipname)].target,get(target)); plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt|manyou);
+        ); , removehotspot(get(tooltipname)); ); ); if(hotspot[get(tooltipname)].linkedscene,
+        if(hotspot[get(tooltipname)].walk, plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt);
+        set(plugin[get(tooltipname)].y,-10); , loadstyle(manyou); if(html, set(plugin[get(tooltipname)].hmat,get(hmat));
+        set(plugin[get(tooltipname)].vmat,get(vmat)); set(plugin[get(tooltipname)].fmat,get(fmat));
+        set(plugin[get(tooltipname)].linkedscene,get(linkedscene));
+        plugin[get(tooltipname)].loadstyle(txt_style|svrvrtxt|manyou); ); ); ); if(device.flash,
+        set(plugin[get(tooltipname)].height,25); ); );
+    </action>
+    <action protect="true" name="open_pano">txtadd(urlmub,'/index.php?a=quanjingjump&amp;id=',%1,'&amp;scene=',%4);
+        if(%2 == '_blank', openurl(get(urlmub),_blank); , if(plugin[editor_da_box].name, openurl(get(urlmub),_blank); ,
+        if(%3 !== 'no', looktohotspot(%3); ); openurl(get(urlmub),'_self'); ); );
+    </action>
+</krpano>

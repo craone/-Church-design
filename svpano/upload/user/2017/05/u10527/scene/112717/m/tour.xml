@@ -1,0 +1,64 @@
+<krpano version="15.5.23">
+    <settings key="dff0eade66b2db99" voicepc="true" voicemob="true" comments="0" bgmsc="true" bgmscmob="true"
+              thumbs_opened="false"
+              bgmscurl="%CURRENTXML%/svrvr/sound/201805001015539293.mp3?r=1"
+              jump="true" jumpmob="false" jumptime="60" normalview="true" waittime="5" viewtime="3" hd="true"
+              adlogo="true" logolink="" walk="0" mousestyle="" direction="1" autowalk="" hothide="" keywsad=""
+              adad="false" adadhttp="" adadurl="" swlogo="0" in_image_url="" in_image_url_mob="" in_bg=""
+              in_alpha="0.05" in_time="3"
+              introduce="【教堂简介】 桂集堂座落在安徽省淮南市凤台县。 教堂一层为入堂大厅，中庭为两层高度；进而为礼拜聚会厅，有楼座二层，中庭高度直到三角屋顶。 聚会厅地面为长方体框架，内长29.4M、宽17.3M； 顶棚为水泥现浇尖顶，三角尖顶16.2M、低点13.4M；梁的三角尖顶15.7M、低点11.3M。 圣台地面面积96m2,聚会厅加楼座两层地面面积共900m2，可容纳1500多人聚会。  【心声】 本堂负责人始终找不到合适的教堂内装修设计人员，经一粒盐弟兄介绍而相识，得教会的信任，为此展开设计。  【经文】 启示录五章1节至12节 我看见坐宝座的右手中有书卷，里外都写着字，用七印封严了。 我又看见一位大力的天使，大声宣传说，有谁配展开那书卷，揭开那七印呢。 在天上、地上、地底下、没有能展开能观看那书卷的。 因为没有配展开，配观看那书卷的，我就大哭。 长老中有一位对我说：不要哭。看哪，犹大支派中的狮子，大卫的根，他已得胜，能以展开那书卷，揭开那七印。 我又看见宝座与四活物并长老之中，有羔羊站立，像是被杀过的，有七角七眼，就是　神的七灵，奉差遣往普天下去的。 这羔羊前来，从坐宝座的右手里拿了书卷。 他既拿了书卷，四活物和二十四位长老，就俯伏在羔羊面前，各拿着琴，和盛满了香的金炉。这香就是众圣徒的祈祷。 他们唱新歌，说：你配拿书卷，配揭开七印。因为你曾被杀，用自己的血从各族各方、各民各国中买了人来，叫他们归于　神， 又叫他们成为国民，作祭司，归于　神。在地上执掌王权。 我又看见，且听见，宝座与活物并长老的周围，有许多天使的声音。他们的数目有千千万万． 大声说：曾被杀的羔羊，是配得权柄、丰富、智慧、能力、尊贵、荣耀、颂赞的。  【神学设计理念】 因着教堂土建框架结构的允许，心里再次受感动-应结合传统欧式风格来设计。 入堂门厅： 斜面的椭圆造型当中，利用顶上结构梁，加一根假梁设计成十架，有恩光照耀的喻义； 过道的扶手栏杆设计成拱门形状，用通透的钢化玻璃做栏杆；入聚会厅为三个对开门，两侧对开门平时礼拜场使用，中间对开门配上欧式水晶壁灯，为婚礼时使用； 门厅整体设计提取传统教堂风格元素，再以现代简约的风格为根本，使之成为非常简洁同时也拥有教堂的特有韵味。 聚会厅： 本次设计从启示录五章找得设计主题，设计理念：“被杀的羔羊”、“祂是配得的”、数字“七”、“千千万万的天使”。 因着经文提到“曾被杀的羔羊，是配得权柄、丰富、智慧、能力、尊贵、荣耀、颂赞的”-为此十字架设计为红色结合金色(红色代表所流的宝血，金色代表尊贵、荣耀等)。 十字架下方有七个灯，喻义神的七灵。 圣台左右墙壁各有6个灯光，就是十二个灯光，则喻义十二位门徒。 顶棚通体设计长方体的凸弧板，又设计有暗灯带，形似翅膀，喻义千千万万发声赞美的天使。 教堂通体色调白色，喻表大宝座前的神圣与圣洁属性；窗帘选蓝绿色，喻表属天的属性。   【声学设计理念】 圣台十架背景使用纤维吸音板，侧墙壁采用槽型冲孔吸声板； 会众席两侧墙壁因着小方柱二设计为凸棱形，窗户过大二设计有窗帘盒，以至窗户玻璃面积缩小； 所有顶棚采用冲孔石膏板；所有内置吸音棉为玻璃纤维吸音棉。"/>
+    <include url="%CURRENTXML%/plugins/swVR/webvr.xml?v=2"/>
+    <include url="%$Plugin_Path%/plugins/system.xml"/>
+    <include url="%$Plugin_Path%/skintemplate/default/default.xml"/>
+    <include url="%$Plugin_Path%/plugins/user_box/left.xml"/>
+    <include url="%$Plugin_Path%/plugins/photo/photofull.xml"/>
+    <include url="%CURRENTXML%data_self.xml?r=1"/>
+    <include url="%$Plugin_Path%/skintemplate/hot/hot.xml"/>
+    <include url="%$Plugin_Path%/plugins/walk/walk.xml"/>
+    <include url="%$Plugin_Path%/plugins/lensflare/lensflare.xml"/>
+    <autorotate enabled="true" waittime="5" accel="1" speed="3" horizon="0" tofov="110"/>
+    <control mousetype="drag2d"/>
+    <group name="group">
+        <item name="g0" title="其他" scene="scene_20180523095943109" scene_count="2"/>
+    </group>
+    <scene name="scene_20180523095937517" group="g0" title="门厅"
+           thumburl="%$Pano_Path%/panos/20180523095937517/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180523095937517/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180523095937517/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180523095937517/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180523095937517/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018423101614" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="0.000"
+                 atv="20.000" linkedscene="scene_20180523095943109" html="主堂"/>
+    </scene>
+    <scene name="scene_20180523095943109" group="g0" title="主堂"
+           thumburl="%$Pano_Path%/panos/20180523095943109/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180523095943109/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180523095943109/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180523095943109/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180523095943109/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018423101629" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="179.000"
+                 atv="-3.000" linkedscene="scene_20180523095937517" html="门厅"/>
+    </scene>
+</krpano>

@@ -1,0 +1,163 @@
+<krpano>
+    <skin_settings layout_width="100%"
+                   layout_maxwidth=""
+                   controlbar_width="100%"
+                   controlbar_height.normal="40"
+                   controlbar_height.mobile="38"
+                   controlbar_offset.normal="60"
+                   controlbar_offset.mobile="38"
+                   controlbar_offset_closed="-2"
+                   controlbar_overlap="0"
+                   design_skin_images="vtourskin.png"
+                   design_bgcolor="0x000000"
+                   design_bgalpha="0"
+                   design_bgborder="1,0 0xFFFFFF 0"
+                   design_bgroundedge.no-ios="0"
+                   design_bgroundedge.ios="1"
+                   design_bgshadow="0 0 20 0x000000 0"
+                   design_thumbborder_bgborder="4 0xEF7800 0.8"
+                   design_thumbborder_padding="2"
+                   design_thumbborder_bgroundedge="3"
+                   design_text_css=" color:#FFFFFF; font-family:微软雅黑 , Arial , Helvetica, sans-serif; font-size:14px;"
+                   design_text_shadow="1"
+    />
+
+    <layer name="skin_layer" keep="true" type="container" align="top" width="get:skin_settings.layout_width" maxwidth="get:skin_settings.layout_maxwidth" height="98%" maskchildren="true" visible="false" bgcapture="false" zorder="1">
+        <layer name="compare_btn" scale="1.0" url="/justeasy/res1/vr2023/skin/fenping.png"  style="skin_custom"   align="rightbottom"  x="20"  y="380"  onclick="js(compare_vr());" data="1" visible="false"/>
+        <layer name="skin_btn_fs" scale="1.0" url="/justeasy/res1/vr2023/skin/fullscreen-new.png"  style="skin_custom"   align="rightbottom"  x="20"  y="330"  onclick="js(jsfullScreen());" devices="fullscreensupport" />
+        <layer name="skin_btn_vr"  scale="1.0" url="/justeasy/res1/vr2023/skin/vr-new.png"  style="skin_custom"   align="rightbottom" x="20" y="230"  onclick="webvr.enterVR();" visible="false" />
+        <layer name="skin_btn_sound"  scale="1.0" url="/justeasy/res1/vr2023/skin/music-new.png"  style="skin_custom"  align="rightbottom" x="20" y="280" onclick="js(playsound(););" data="1" />
+        <layer name="skin_btn_gyro"   scale="1.0"   style="skin_base|skin_glow" url="/justeasy/res1/vr2023/skin/gyro-new.png"  align="rightbottom"      x="20" y="330"  onclick="switch(plugin[skin_gyro].enabled);switch(alpha,1,0.25); if(plugin[skin_gyro].enabled, skin_showmap(false));" visible="false" devices="html5" />
+        <layer name="skin_scroll_window" type="container" align="bottom" width="100%" height="100%" x="0" y="calc:skin_settings.controlbar_offset + skin_settings.controlbar_height - skin_settings.controlbar_overlap" maskchildren="true" onloaded="skin_calc_opened_closed();" zorder="1">
+            <layer name="skin_scroll_layer" type="container" align="bottom" width="get:skin_settings.controlbar_width" height="100%" x="0" y="200" y_offset="get:skin_settings.controlbar_overlap" accuracy="1" bgalpha="get:skin_settings.design_bgalpha" bgcolor="get:skin_settings.design_bgcolor" bgborder="get:skin_settings.design_bgborder" bgroundedge="get:skin_settings.design_bgroundedge" bgshadow="get:skin_settings.design_bgshadow">
+
+                <layer name="skin_scroll_container" type="container" align="lefttop" width="100%" height="100%" x="0" y="0" bgroundedge="get:skin_settings.design_bgroundedge" bgcolor="0x000000" bgalpha="0.2" maskchildren="true" >
+                    <layer name="skin_thumbs_container" type="container" align="lefttop" width="100%" height="100%" visible="false">
+                        <layer name="skin_thumbs_scrollleft"  style="skin_base|skin_glow" crop="0|64|64|64"  align="lefttop"  edge="left"  x="5" y="50" scale="0.5" zorder="2" alpha="1.0" ondown2="asyncloop(pressed, layer[skin_thumbs].scrollby(+2,0));" visible="false" />
+                        <layer name="skin_thumbs_scrollright" style="skin_base|skin_glow" crop="64|64|64|64" align="righttop" edge="right" x="5" y="50" scale="0.5" zorder="2" alpha="1.0" ondown2="asyncloop(pressed, layer[skin_thumbs].scrollby(-2,0));" visible="false" />
+                        <layer name="skin_thumbs_scrollindicator" type="container" bgcolor="0xFFFFFF" bgalpha="0.25" align="lefttop" width="0" y="100" height="2" visible="false" enabled="false" />
+                        <layer name="skin_thumbs" state="closed" url.flash="%SWFPATH%/plugins/scrollarea.swf" url.html5="%SWFPATH%/plugins/scrollarea.js" direction="h" align="top" width="100%" height="100" zorder="1" onloaded="skin_updatescroll();" onscroll="skin_updatethumbscroll();" />
+                    </layer>
+
+                </layer>
+            </layer>
+        </layer>
+
+        <layer name="skin_splitter_bottom" type="container" align="bottom" width="100%" height="calc:skin_settings.controlbar_offset + skin_settings.controlbar_height - skin_settings.controlbar_overlap" y="0" maskchildren="true" onloaded="skin_calc_opened_closed();" zorder="2">
+            <layer name="skin_control_bar_bg" type="container" align="bottom" width="get:skin_settings.controlbar_width" height="calc:skin_settings.controlbar_height + skin_settings.controlbar_overlap" x="0" y="get:skin_settings.controlbar_offset" bgcolor="get:skin_settings.design_bgcolor" bgalpha="get:skin_settings.design_bgalpha" bgborder="get:skin_settings.design_bgborder" bgroundedge="get:skin_settings.design_bgroundedge" bgshadow="get:skin_settings.design_bgshadow" />
+        </layer>
+
+        <layer name="skin_control_bar" type="container" align="bottom" width="get:skin_settings.controlbar_width" height="calc:skin_settings.controlbar_height" x="0" y="get:skin_settings.controlbar_offset" onloaded="skin_calc_opened_closed();" zorder="3">
+            <layer name="skin_control_bar_buttons" type="container" align="leftbottom" width="100%" height="get:skin_settings.controlbar_height">
+                <layer name="skin_btn_thumbs" url="/justeasy/res1/vr2023/skin/scene-new.png"   style="skin_base|skin_glow"   align="left"        x="40"   y="5" scale="1.0"  ondown2="skin_showmap(false); skin_showthumbs();" />
+                <layer name="skin_btn_thumbs_text_container" type="container" bgroundedge="5"  x="22"   y="40" bgcolor="0x000000" bgalpha="0" width="70" height="28" align="left">
+                    <layer  name="skin_btn_thumbs_text" url="%SWFPATH%/plugins/textfield.swf"  css="font-size:14px; color:#FFFFFF;font-family:微软雅黑, Arial, Helvetica, sans-serif" html="场景选择" background="false" padding="3 7"  ondown="skin_showmap(false); skin_showthumbs();" />
+                </layer>
+            </layer>
+        </layer>
+
+        <layer name="skin_loadingtext" type="text" align="center" x="5" y="-5" html="get:skin_settings.loadingtext" visible="false" bg="false" enabled="false" css="calc:skin_settings.design_text_css + ' text-align:center; font-style:italic; font-size:22px;'" textshadow="get:skin_settings.design_text_shadow" />
+        <layer name="skin_buttonglow"  style="skin_base" crop="64|384|64|64" align="center" x="0" y="1" scale="1.0" alpha="0.0" visible="false" enabled="false" />
+        <layer name="skin_thumbborder" type="container" x="get:skin_settings.design_thumbborder_padding" y="get:skin_settings.design_thumbborder_padding" width="calc:skin_settings.thumbs_width - 2*skin_settings.design_thumbborder_padding" height="calc:skin_settings.thumbs_height - 2*skin_settings.design_thumbborder_padding" visible="false" enabled="false" align="lefttop" bgborder="get:skin_settings.design_thumbborder_bgborder" bgroundedge="get:skin_settings.design_thumbborder_bgroundedge" />
+    </layer>
+
+    <action name="skin_arrange_buttons" scope="local">
+        calc(show_selbuttons, scene.count GT 1);
+        calc(show_thumbutton, skin_settings.thumbs == true);
+        calc(show_mapbutton,  skin_settings.maps == true);
+        calc(show_gyrobutton, plugin[skin_gyro].available == true AND (view.vlookatrange == 180 OR lp_scene === xml.scene));
+        calc(show_vrbutton,   webvr.isavailable == true);
+        calc(show_fsbutton,   device.fullscreensupport == true);
+
+        set(lpos,6);
+        set(cpos,0);
+        if(show_gyrobutton, dec(cpos,20));
+        if(show_vrbutton OR plugin[webvr].mobilevr_fake_support == true, dec(cpos,24));
+        set(rpos,6);
+
+        calc(show_dirbuttons, !device.mobile AND ((area.pixelwidth + 2*cpos) GT 520) );
+
+        copy(layer[skin_btn_navi].visible, show_dirbuttons);
+
+        copy(layer[skin_btn_prev].visible, show_selbuttons);
+        copy(layer[skin_btn_next].visible, show_selbuttons);
+        if(show_selbuttons, inc(lpos,44); inc(rpos,44); );
+
+        copy(layer[skin_btn_thumbs].visible, show_thumbutton);
+        copy(layer[skin_btn_thumbs_text_container].visible, show_thumbutton);
+
+        if(show_thumbutton, inc(lpos,40));
+        if(scene.count LT 2,set(layer[skin_btn_thumbs].visible, false);set(layer[skin_btn_thumbs_text_container].visible, false););
+
+        copy(layer[skin_btn_map].visible, show_mapbutton);
+        copy(layer[skin_btn_map].x, lpos);
+        if(show_mapbutton, inc(lpos,40));
+        if(show_dirbuttons,
+        copy(layer[skin_btn_navi].x, cpos);
+        inc(cpos,140);
+
+        set(layer[skin_btn_gyro].align, rightbottom);
+        copy(layer[skin_btn_gyro].visible, show_gyrobutton);
+        <!-- copy(layer[skin_btn_gyro].x, cpos); -->
+        if(show_gyrobutton, inc(cpos,48));
+
+        copy(layer[skin_btn_vr].visible, show_vrbutton);
+        if(show_vrbutton, inc(cpos,80));
+
+        set(layer[skin_btn_fs].align, rightbottom);
+        set(layer[skin_btn_sound].align, rightbottom);
+        set(layer[skin_btn_vr].align, rightbottom);
+
+        set(layer[skin_btn_sound].y, 280);
+        set(layer[skin_btn_vr].y, 230);
+        set(layer[skin_btn_gyro].y, 330);
+        set(layer[skin_btn_fs].y, 330);
+        ,
+        set(layer[skin_btn_gyro].align, rightbottom);
+        copy(layer[skin_btn_gyro].visible, true);
+        set(layer[skin_btn_gyro].x, 20);
+        if(show_gyrobutton, inc(lpos,40));
+
+        set(layer[skin_btn_thumbs].visible, false);
+        set(layer[skin_btn_thumbs_text_container].visible, false);
+
+        set(layer[skin_btn_fs].align, rightbottom);
+        set(layer[skin_btn_sound].align, rightbottom);
+        set(layer[skin_btn_vr].align, rightbottom);
+
+        set(layer[compare_btn].y, 230);
+        set(layer[skin_btn_sound].y, 150);
+        set(layer[skin_btn_vr].y, 110);
+        set(layer[skin_btn_gyro].y, 190);
+        set(layer[skin_btn_fs].y, 190);
+
+        copy(layer[skin_btn_vr].visible, show_vrbutton);
+        set(layer[skin_btn_vr].x, 20);
+        if(show_vrbutton, inc(lpos,80));
+<!--        set(layer[skin_btn_sound].scale,1); set(layer[skin_btn_vr].scale,1);set(layer[skin_btn_fs].scale,1);set(layer[skin_btn_gyro].scale,1);-->
+        set(layer[compare_btn].scale,0.695); set(layer[skin_btn_sound].scale,0.695); set(layer[skin_btn_vr].scale,0.695);set(layer[skin_btn_fs].scale,0.695);set(layer[skin_btn_gyro].scale,0.695);
+        );
+
+        copy(layer[skin_btn_hide].x, rpos);
+        inc(rpos,40);
+
+        copy(layer[skin_btn_fs].visible, show_fsbutton);
+
+        if(scene[get(startscene)].is_compare GT 0, set(layer[compare_btn].visible, true););
+
+    </action>
+
+    <events name="skin_events" keep="true"
+            onxmlcomplete="set(events[skin_events].onxmlcomplete,null); skin_startup();"
+            onnewpano="skin_showloading(true); skin_update_scene_infos(); skin_deeplinking_update_url();"
+            onremovepano="skin_showloading(true);"
+            onloadcomplete="skin_showloading(false);"
+            onidle="skin_deeplinking_update_url();"
+            onresize="skin_onresize();"
+            onenterfullscreen.fullscreensupport="set(layer[skin_btn_fs].url, '/justeasy/res1/vr2023/skin/exitfullscreen-new.png');"
+            onexitfullscreen.fullscreensupport="set(layer[skin_btn_fs].url, '/justeasy/res1/vr2023/skin/fullscreen-new.png');"
+            onkeydown="skin_keydown_event();"
+    />
+
+
+</krpano>

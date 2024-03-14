@@ -1,0 +1,42 @@
+<krpano version="15.5.23">
+    <settings key="a0f303300fd711da" voicepc="true" voicemob="true" comments="0" bgmsc="true" bgmscmob="true"
+              thumbs_opened="false"
+              bgmscurl="/svpano/upload/user/2017/05/u10527/svrvr/sound/20170801118164975.mp3?r=4"
+              jump="true" jumpmob="false" jumptime="60" normalview="true" waittime="5" viewtime="3" hd="true"
+              adlogo="true" logolink="" walk="0" mousestyle="" direction="1" autowalk="" hothide="" keywsad=""
+              adad="false" adadhttp="" adadurl="" swlogo="0" in_image_url="" in_image_url_mob="" in_bg=""
+              in_alpha="0.05" in_time="3"
+              introduce="【教堂简介】 乐成教堂座落在浙江省温州乐清市乐成，是一个有百年历史的教会。 原建筑风格是古典式，黑瓦片人字架木梁顶，砖墙木框玻璃窗。 礼拜堂内25M长、14.1M宽，人字架尖顶9M高、人字架底部6M高。 池座及楼座可容纳300人同时聚会。   【声学设计和神学设计理念】 设计师再次将人字架外漏来提高空间的高度，并在顶部利用暗藏灯带微弱的光线来增加堂内古典的韵味。 将两侧楼座的过道全部拆除，原来分开的窗户用造型和暗藏灯管使之有整体的错觉，又增加教堂的竖向崇高的感受； 后墙面用上斜面和折叠的方法打乱前后声场， 圣台十架背景的设计沿用教堂专用元素--拱门，圣台桌及椅子都沿用拱门以强调统一元素的设计方法。 设计师考虑到圣台净深的有限，又希望圣台背景别太平面，因此将第三层的高度设计在两米之上，再多两层，如此之后不仅增加了背景的空间深度，更有从天而降的视觉享受。"/>
+    <include url="%CURRENTXML%/plugins/swVR/webvr.xml?v=0"/>
+    <include url="%$Plugin_Path%/plugins/system.xml"/>
+    <include url="%$Plugin_Path%/skintemplate/default/default.xml"/>
+    <include url="%$Plugin_Path%/plugins/user_box/left.xml"/>
+    <include url="%$Plugin_Path%/plugins/photo/photofull.xml"/>
+    <include url="%CURRENTXML%data_self.xml?r=4"/>
+    <include url="%$Plugin_Path%/skintemplate/hot/hot.xml"/>
+    <include url="%$Plugin_Path%/plugins/walk/walk.xml"/>
+    <include url="%$Plugin_Path%/plugins/lensflare/lensflare.xml"/>
+    <autorotate enabled="true" waittime="5" accel="1" speed="3" horizon="0" tofov="110"/>
+    <control mousetype="drag2d"/>
+    <group name="group">
+        <item name="g0" title="其他" scene="scene_20180116192154341" scene_count="1"/>
+    </group>
+    <scene name="scene_20180116192154341" group="g0" title="教堂"
+           thumburl="%$Pano_Path%/panos/20180116192154341/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180116192154341/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180116192154341/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180116192154341/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180116192154341/mob_%s.jpg"/>
+        </mobile>
+    </scene>
+</krpano>

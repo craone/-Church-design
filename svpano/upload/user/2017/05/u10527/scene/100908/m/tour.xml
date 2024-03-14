@@ -1,0 +1,64 @@
+<krpano version="15.5.23">
+    <settings key="adf4a6f266491162" voicepc="true" voicemob="true" comments="0" bgmsc="true" bgmscmob="true"
+              thumbs_opened="true"
+              bgmscurl="/svpano/upload/user/2017/05/u10527/svrvr/sound/20180301116322037.mp3?r=7"
+              jump="true" jumpmob="false" jumptime="60" normalview="true" waittime="5" viewtime="3" hd="true"
+              adlogo="true" logolink="" walk="0" mousestyle="" direction="1" autowalk="" hothide="" keywsad=""
+              adad="false" adadhttp="" adadurl="" swlogo="0" in_image_url="" in_image_url_mob="" in_bg=""
+              in_alpha="0.05" in_time="3"
+              introduce="【教堂简介】福音堂座落在河南省义马市区，是异地新建的基督教堂，土建框架仿造驻马店白牧师的教堂，长37.8M，宽24.4M,中庭顶棚为直线三角形，三角形顶点高23.7M, 三角形底点高17.7M，池座过道层高4.5M,楼座过道层高8.0M,堂内柱子为圆柱，可容纳三千人同时聚会。  【心声】当设计师拿到土建的设计蓝图时，其实毫无头绪，因为设计师 未到过现场，也未与负责人有任何沟通，所以也就没有什么心思在这个项目上，然而以现在的情况看，神实在是奇妙，这个教堂的设计却成了设计师自己最爱的一项设计，真的好美。  【声学设计和神学设计理念】整体教堂以简欧式教堂风格设计。门厅：拱门隔断和拱门形栏杆的设计，配上四层欧式水晶大吊灯。正堂室内：圣台上十架背景按照土建原有框架， 正面参照丹麦管风琴教堂，在三个面用半圆石膏线条涂白漆增加层次和虚幻的视觉，巨大的拱门用白光打照出层次分明的立体效果， 大顶棚以原土建大梁之间平均分割，用冲孔铝板做成许多拱梁，以呼应十架背景的设计，给予视觉和感观充满神圣感，而密集的假梁设计又解决了穹顶声聚焦的问题， 过道的中间土建梁上设计三个拱门喻义“三位一体”，后墙壁用槽形冲孔吸音板做上斜面，将直面的声波放射于顶棚，利用冲孔铝板吸音。此堂设计充满神圣、圣洁和神秘感， 是设计师本人最喜欢的作品之一。"/>
+    <include url="%CURRENTXML%/plugins/swVR/webvr.xml?v=0"/>
+    <include url="%$Plugin_Path%/plugins/system.xml"/>
+    <include url="%$Plugin_Path%/skintemplate/default/default.xml"/>
+    <include url="%$Plugin_Path%/plugins/user_box/left.xml"/>
+    <include url="%$Plugin_Path%/plugins/photo/photofull.xml"/>
+    <include url="%CURRENTXML%data_self.xml?r=7"/>
+    <include url="%$Plugin_Path%/skintemplate/hot/hot.xml"/>
+    <include url="%$Plugin_Path%/plugins/walk/walk.xml"/>
+    <include url="%$Plugin_Path%/plugins/lensflare/lensflare.xml"/>
+    <autorotate enabled="true" waittime="5" accel="1" speed="3" horizon="0" tofov="110"/>
+    <control mousetype="drag2d"/>
+    <group name="group">
+        <item name="g0" title="其他" scene="scene_20180322104737202" scene_count="2"/>
+    </group>
+    <scene name="scene_20180324153128156" group="g0" title="门厅"
+           thumburl="%$Pano_Path%/panos/20180324153128156/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="-120" vlookat="-5" fovtype="MFOV" fov="70" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180324153128156/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180324153128156/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180324153128156/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180324153128156/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018224153445" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="-122.000"
+                 atv="4.000" linkedscene="scene_20180322104737202" html="礼拜堂"/>
+    </scene>
+    <scene name="scene_20180322104737202" group="g0" title="礼拜堂"
+           thumburl="%$Pano_Path%/panos/20180322104737202/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="-1" vlookat="-3" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180322104737202/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180322104737202/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180322104737202/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180322104737202/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018224134035" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="177.000"
+                 atv="13.000" linkedscene="scene_20180324153128156" html="门厅"/>
+    </scene>
+</krpano>

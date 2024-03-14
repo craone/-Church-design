@@ -1,0 +1,86 @@
+<krpano version="15.5.23">
+    <settings key="5350d6697092d676" voicepc="true" voicemob="true" comments="0" bgmsc="true" bgmscmob="true"
+              thumbs_opened="true"
+              bgmscurl="/svpano/upload/user/2017/05/u10527/svrvr/sound/20180501237078228.mp3?r=7"
+              jump="true" jumpmob="false" jumptime="60" normalview="true" waittime="5" viewtime="3" hd="true"
+              adlogo="true" logolink="" walk="0" mousestyle="" direction="1" autowalk="" hothide="" keywsad=""
+              adad="false" adadhttp="" adadurl="" swlogo="0" in_image_url="" in_image_url_mob="" in_bg=""
+              in_alpha="0.05" in_time="3"
+              introduce="【简介】 浙江省慈善基金会位于浙江省温州瑞安市，于今年已有13周年的历史，起初是温州有爱心的基督徒企业家联手创办，异象是帮助全国各地贫困地区。 建筑框架为异型，平顶水泥梁结构，地面实际面积550M2,净高6.4M，梁高5M。需要的功能:一个聚会厅、一个咖啡休闲厅、厨房及包厢、会议室、办公室及休息房间。 业主的要求是聚会厅做大屏幕，做阁楼用于会议及办公，设计风格前卫潮流，又不可一眼看出有基督教的文化，也不可太过于世俗化，并要注重声学设计。  【设计理念】 由于业主要求在基督教文化与世界潮流文化之间取舍，为此设计理念取至：上善若“水”。 以“水”的理念贯穿接待区、聚会厅及休闲厅。地面选择银白龙大理石，聚会厅舞台选择细花白大理石，顶棚流水造型由铝板定制，灯具选择水滴形灯。 并且接待区水滴灯具七盏；接待台60cm高，以至签到的人须弯腰而隐喻谦卑；聚会厅和后墙壁七个放射板；以及“鱼”元素的使用。   【聚会厅声学设计理念】 整个顶棚用冲孔铝板内置吸音棉达到吸音效果,墙壁使用槽型吸音板内置吸音棉达到吸音效果。 由于是异形空间，需要做处理的是舞台侧墙面及后墙面。 舞台侧墙面做造型，并有暗藏舞台灯的功能；后墙面有反射板，放射板间隔空隙置舞台面光灯，入听门侧墙做凸弧形"/>
+    <include url="%CURRENTXML%/plugins/swVR/webvr.xml?v=9"/>
+    <include url="%$Plugin_Path%/plugins/system.xml"/>
+    <include url="%$Plugin_Path%/skintemplate/default/default.xml"/>
+    <include url="%$Plugin_Path%/plugins/user_box/left.xml"/>
+    <include url="%$Plugin_Path%/plugins/photo/photofull.xml"/>
+    <include url="%CURRENTXML%data_self.xml?r=7"/>
+    <include url="%$Plugin_Path%/skintemplate/hot/hot.xml"/>
+    <include url="%$Plugin_Path%/plugins/walk/walk.xml"/>
+    <include url="%$Plugin_Path%/plugins/lensflare/lensflare.xml"/>
+    <autorotate enabled="true" waittime="5" accel="1" speed="3" horizon="0" tofov="110"/>
+    <control mousetype="drag2d"/>
+    <group name="group">
+        <item name="g0" title="其他" scene="scene_20180514131346297" scene_count="3"/>
+    </group>
+    <scene name="scene_20180511122349501" group="g0" title="门厅"
+           thumburl="%$Pano_Path%/panos/20180511122349501/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180511122349501/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180511122349501/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180511122349501/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180511122349501/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018411122614" wz="t" style="spot3" onloaded="svrvrtxt();" blendmodes="blend_c" ath="-6.000"
+                 atv="9.000" linkedscene="scene_20180511122358349" html="剧院"/>
+        <hotspot name="h2018411122738" wz="t" style="spot2" onloaded="svrvrtxt();" blendmodes="blend_c" ath="-13.000"
+                 atv="10.000" linkedscene="scene_20180514131346297" html="咖啡厅"/>
+    </scene>
+    <scene name="scene_20180511122358349" group="g0" title="剧院"
+           thumburl="%$Pano_Path%/panos/20180511122358349/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180511122358349/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180511122358349/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180511122358349/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180511122358349/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018411122717" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="-176.000"
+                 atv="6.000" linkedscene="scene_20180511122349501" html="门厅"/>
+    </scene>
+    <scene name="scene_20180514131346297" group="g0" title="咖啡厅"
+           thumburl="%$Pano_Path%/panos/20180514131346297/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180514131346297/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180514131346297/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180514131346297/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180514131346297/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018414131456" wz="t" style="spot2" onloaded="svrvrtxt();" blendmodes="blend_c" ath="-173.000"
+                 atv="12.000" linkedscene="scene_20180511122349501" html="门厅"/>
+    </scene>
+</krpano>

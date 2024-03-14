@@ -1,0 +1,1446 @@
+<krpano>
+
+    <data name="zuojj"><![CDATA[<]]></data>
+    <data name="youjj"><![CDATA[>]]></data>
+    <data name="zuojjdxg"><![CDATA[</]]></data>
+
+
+    <layer name="errxinxi" visible="false" type="container" keep="true" bgcolor="0x000000" zorder="9999999"
+           bgcapture="true" handcursor="false" width="100%" height="100%" align="center" bgalpha="1">
+        <layer name="err_title" keep="true" style="txt_style" align="center" autoheight="true" background="false"
+               border="false" enabled="false" css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:18px;"
+               html="错误：[br][br]您的主账号已到期或当前正处于独立运行状态[br][br]请使用视维PC客户端或视维iPad播放器2.5以上版本播放[br][br]最新客户端官方下载：www.svrvr.com[br][br]视维全国统一服务热线：4007-111-788[br][br][br][br][br][br]数字加密·盗版必究"/>
+    </layer>
+    <style name="txt_style" url="%SWFPATH%/plugins/textfield.swf"/>
+    <action protect="true" name="startup" autorun="onstart">
+        jscall("document.getElementById('loading').style.display='none'");
+
+
+        indexoftxt(mb_n,get(browser.location),'n=' );
+        indexoftxt(mb_h,get(browser.location),'h=' );
+        indexoftxt(mb_v,get(browser.location),'v=' );
+        indexoftxt(mb_f,get(browser.location),'f=' );
+        if((mb_n !== '-1') AND (mb_h !== '-1') AND (mb_v !== '-1') AND (mb_f !== '-1'),
+        add(mb_n,2);
+        subtxt(mb_n,get(browser.location),get(mb_n),999);
+        indexoftxt(mb_n_len,get(mb_n),'&amp;' );
+        if(mb_n_len == '-1',add(mb_n_len,999););
+        subtxt(mb_n,get(mb_n),0,get(mb_n_len));
+
+        add(mb_h,2);
+        subtxt(mb_h,get(browser.location),get(mb_h),999);
+        indexoftxt(mb_h_len,get(mb_h),'&amp;' );
+        if(mb_h_len == '-1',add(mb_h_len,999););
+        subtxt(mb_h,get(mb_h),0,get(mb_h_len));
+
+        add(mb_v,2);
+        subtxt(mb_v,get(browser.location),get(mb_v),999);
+        indexoftxt(mb_v_len,get(mb_v),'&amp;' );
+        if(mb_v_len == '-1',add(mb_v_len,999););
+        subtxt(mb_v,get(mb_v),0,get(mb_v_len));
+
+        add(mb_f,2);
+        subtxt(mb_f,get(browser.location),get(mb_f),999);
+        indexoftxt(mb_f_len,get(mb_f),'&amp;' );
+        if(mb_f_len == '-1',add(mb_f_len,999););
+        subtxt(mb_f,get(mb_f),0,get(mb_f_len));
+        );
+
+        txtsplit('svrvr.com|demosv.com', '|', domain);
+        for(set(i,0), i LT domain.count, inc(i),
+
+        indexoftxt(ym,get(browser.domain),get(domain[get(i)].value));
+        if(ym GE 0,
+        set(ymqr,shiweiyun4007111788jiushipobudiao);
+        );
+        );
+        if(ymqr == shiweiyun4007111788jiushipobudiao,
+
+        set(online,1);
+        startupup(get(mb_n),get(mb_h),get(mb_v),get(mb_f));
+        ,
+
+
+        indexoftxt(keys,get(browser.location),'k=' );
+        add(keys,2);
+        subtxt(secretkeyarray,get(browser.location),get(keys),999);
+        indexoftxt(secretkeylen,get(secretkeyarray),'&amp;' );
+        if(secretkeylen == '-1',add(secretkeylen,999));
+        subtxt(secretkey,get(secretkeyarray),0,get(secretkeylen));
+        copy(duibikey,settings.key);
+        if(secretkey == duibikey,
+        startupup(get(mb_n),get(mb_h),get(mb_v),get(mb_f));
+        set(ymqr,shiweiyun4007111788jiushipobudiao);
+        ,
+        <!--        破解处-->
+        <!--        set(layer[errxinxi].visible,true);-->
+        startupup(get(mb_n),get(mb_h),get(mb_v),get(mb_f));
+        set(ymqr,shiweiyun4007111788jiushipobudiao);
+        );
+
+        );
+    </action>
+
+
+    <action protect="true" name="hd_switch">
+        if(%1 == hd,
+        for(set(i,0),i LT scene.count,inc(i),
+        set(scene_name,get(scene[get(i)].name));
+
+        set(newscene,get(scene[get(scene_name)].content));
+
+
+        txtreplace(newscene,'image','mobile');
+        txtreplace(newscene,'image','mobile');
+
+        txtreplace(newscene,'ipad','image');
+        txtreplace(newscene,'ipad','image');
+
+        set(scene[get(scene_name)].content,get(newscene));
+        );
+        ,
+        for(set(i,0),i LT scene.count,inc(i),
+        set(scene_name,get(scene[get(i)].name));
+
+        set(newscene,get(scene[get(scene_name)].content));
+
+        txtreplace(newscene,'image','ipad');
+        txtreplace(newscene,'image','ipad');
+
+        txtreplace(newscene,'mobile','image');
+        txtreplace(newscene,'mobile','image');
+        set(scene[get(scene_name)].content,get(newscene));
+        );
+        );
+    </action>
+
+    <action protect="true" name="startupup">
+
+        if(device.mobile,
+        ifnot(settings.hd,
+        hd_switch(standard);
+        );
+        );
+
+        ifnot(settings.swlogo,
+        set(contextmenu.item[lpv].visible,false);
+        set(contextmenu.item[app].visible,false);
+        );
+
+        skin_startup();
+
+        if((%1 !== -1) AND (%2 !== -1) AND (%3 !== -1) AND (%4 !== -1) ,
+        loadscene(%1,null,MERGE);lookat(%2,%3,%4);
+        ,
+        loadscene(get(scene[0].name),null,MERGE);
+        );
+        set(pano_state,normal);
+        if(settings.normalview,
+        normalview();
+        );
+        if(settings.in_image_url,
+        if(device.mobile,
+        if(settings.in_image_url_mob,
+        copy(in_img_url,settings.in_image_url_mob);
+        ,
+        copy(in_img_url,settings.in_image_url);
+        );
+        ,
+        copy(in_img_url,settings.in_image_url);
+        );
+        hideintroimage(show,get(in_img_url),get(settings.in_time),calc(settings.in_bg ? settings.in_bg :
+        '0x000000'),get(settings.in_alpha));
+
+        ,
+        skin_state(true);
+        operating();
+        );
+        bombtimer(0);
+    </action>
+
+    <style name="operating" visible="true" align="center" alpha="0" scale="0.5" enabled="false"
+           onloaded="tween(alpha,1,0.5);delayedcall(3,tween(alpha, 0, 0.5, default, removelayer(operating)););"/>
+    <action protect="true" name="operating">
+        addlayer(operating);
+        layer[operating].loadstyle(operating);
+
+        if(device.touch,
+        set(layer[operating].url,%SWFPATH%/plugins/touchAlert.png);
+        ,
+        set(layer[operating].url,%SWFPATH%/plugins/mouseAlert.png);
+        );
+        if(device.mobile,set(layer[operating].scale,0.7););
+
+    </action>
+
+
+    <style name="guide_cycle" visible="true" alpha="0.5" url="guide.png" align="left"
+           onover="textfollow(get(txt));tween(alpha,1.0,0.25);" onout="tween(alpha,0.5,0.25);"/>
+
+    <layer name="guide_box" type="container" keep="true" visible="false" width="350" height="40" align="bottom" x="0"
+           y="40">
+        <layer name="guide_cycle" style="guide_cycle" crop="300|0|100|100" x="0" y="0" scale="0.5" txt="关闭循环播放!"
+               onclick="switch(crop,300|0|100|100,300|100|100|100);switch(data[guide].cycle,true,false);switch(txt,开启循环播放!,关闭循环播放!);textfollow(get(txt));"/>
+        <layer name="guide_back" style="guide_cycle" crop="100|0|100|100" x="70" y="0" scale="0.5"
+               txt="切换到上一个章节!" onclick="guide_ac(up);"/>
+        <layer name="guide_play" style="guide_cycle" crop="200|100|100|100" x="140" y="0" scale="0.7" txt="暂停导游!"
+               onclick="switch(crop,200|0|100|100,200|100|100|100);switch(layer[head_guide_stop].visible,true,false);guide_ac(being);switch(txt,继续导游!,暂停导游!);textfollow(get(txt));"/>
+        <layer name="guide_next" style="guide_cycle" crop="100|100|100|100" x="230" y="0" scale="0.5"
+               txt="切换到下一个章节!" onclick="guide_ac(down);"/>
+        <layer name="guide_music" style="guide_cycle" crop="0|0|100|100" x="300" y="0" scale="0.5" txt="关闭声音!"
+               onclick="skin_guide(music_guan);textfollow(get(txt));"/>
+
+        <layer name="head_guide_stop" visible="false" bgroundedge="35" type="container" bgcolor="0x000000"
+               bgcapture="true" width="200" height="40" align="top" bgalpha="0.5" x="0" y="-80" onclick="if(guide_bgbg,
+					delete(guide_bgbg);
+					yinyue(play);
+				);
+			skin_guide(stop);" onover="set(bgalpha,0.65);" onout="set(bgalpha,0.5);">
+            <layer name="guide_stop_ioc" visible="true" style="skin_base" enabled="false" url="guide.png"
+                   crop="400|0|100|100" align="left" x="35" y="0" scale="0.25"/>
+            <layer name="guide_stop_txt" style="txt_style" align="right" x="35" y="0" visible="true" vcenter="true"
+                   background="false" border="false" enabled="false"
+                   css="color:#FFFFFF; font-family:Arial;font-size:16px;" html="退出一键导游"/>
+        </layer>
+    </layer>
+    <action name="skin_guide" protect="true">
+
+        if(%1 == stop,
+        guide_ac(stop);
+        set(layer[head_guide_stop].visible,false);
+        set(layer[guide_play].crop,200|100|100|100);
+        set(layer[guide_box].visible,false);
+        );
+        if(%1 == music_kai,
+        set(layer[guide_music].crop,0|0|100|100);
+        set(layer[guide_music].txt,关闭声音!);
+        set(layer[guide_music].onclick,skin_guide(music_guan);textfollow(get(txt)););
+        set(gui_music,true);
+        guide_ac(music);
+        );
+        if(%1 == music_guan,
+        set(layer[guide_music].crop,0|100|100|100);
+        set(layer[guide_music].txt,开启声音!);
+        set(layer[guide_music].onclick,skin_guide(music_kai);textfollow(get(txt)););
+        set(gui_music,false);
+        guide_ac(music);
+        );
+    </action>
+
+
+    <style name="introimage" visible="true" align="center" alpha="0" onclick="hideintroimage(hidden);"/>
+    <style name="introimage_bg" visible="true" type="container" bgcolor="0x000000" bgcapture="true" handcursor="false"
+           width="100%" height="100%" bgalpha="0" align="center" onclick="hideintroimage(hidden);"/>
+    <action protect="true" name="hideintroimage">
+        if(%1 == hidden,
+        stopdelayedcall(a);
+        set(layer[introimage].enabled,false);
+        set(layer[introimage_bg].enabled,false);
+        tween(layer[introimage].alpha, 0.0, 0.5, default, removelayer(introimage));
+        tween(layer[introimage_bg].alpha, 0.0, 0.5, default, removelayer(introimage_bg));
+        ifnot(%2,skin_state(true););
+        );
+        if(%1 == show,
+        addlayer(introimage_bg);
+        layer[introimage_bg].loadstyle(introimage_bg);
+        set(layer[introimage_bg].bgcolor,%4);
+        tween(layer[introimage_bg].bgalpha,%5);
+        addlayer(introimage);
+        layer[introimage].loadstyle(introimage);
+        set(layer[introimage].url,%2);
+        tween(layer[introimage].alpha,1);
+        set(layer[introimage].onloaded,delayedcall(a,%3,hideintroimage(hidden,%6););hideintroimage(onlod););
+        );
+        if(%1 == onlod,
+        if((imageheight GE calc(stageheight * 0.8)) OR (imagewidth GE calc(stagewidth * 0.8)),
+        imgsize(calc(stagewidth * 0.8),calc(stageheight * 0.8));
+        );
+        );
+    </action>
+
+    <events onmousedown="set(bt,0);"/>
+    <action protect="true" name="bombtimer">
+        copy(jmp,settings.jumptime);
+        set(bt,%1);
+        add(bt,1);
+        delayedcall(1,bombtimer(get(bt)));
+        if(bt == jmp,
+        set(bt,0);
+        if(device.mobile,
+        if(settings.jumpmob,
+        skin_nextscene(+1);
+        );
+        ,
+        if(settings.jump,
+        skin_nextscene(+1);
+        );
+        );
+        );
+    </action>
+
+
+    <action protect="true" name="normalview">
+
+        copy(hy_1,view.hlookatmin);
+        copy(hy_2,view.hlookatmax);
+        copy(hy_3,view.fov);
+        copy(hy_4,view.fovmax);
+        copy(hy_5,view.maxpixelzoom);
+        copy(hy_6,view.stereographic);
+        copy(hy_7,view.fisheye);
+        copy(hy_8,view.hlookat);
+        copy(hy_9,view.vlookat);
+
+        set(view.hlookatmin,-180);
+        set(view.hlookatmax,180);
+        set(view.fov,160);
+        set(view.fovmax,160);
+        set(view.maxpixelzoom,2.0);
+        set(view.stereographic,true);
+        set(view.fisheye,1.0);
+        set(view.hlookat,-80);
+        set(view.vlookat,120);
+
+        wait(get(settings.viewtime));
+        tween(view.hlookat,get(hy_8),3,easeInOutQuad);
+        tween(view.vlookat,get(hy_9),3,easeInOutQuad);
+        tween(view.fov, get(hy_3),3,easeInOutQuad);
+        tween(view.fisheye,0.0,3,easeInOutQuad);
+        set(display.flash10,on);
+        wait(3);
+
+
+        copy(view.hlookatmin,hy_1);
+        copy(view.hlookatmax,hy_2);
+        copy(view.fov,hy_3);
+        copy(view.fovmax,hy_4);
+        copy(view.maxpixelzoom,hy_5);
+        copy(view.stereographic,hy_6);
+        copy(view.fisheye,hy_7);
+        copy(view.hlookat,hy_8);
+        copy(view.vlookat,hy_9);
+
+        delete(hy_1,hy_2,hy_3,hy_4,hy_5,hy_6,hy_7,hy_8,hy_9);
+
+    </action>
+
+
+    <style name="comments" scalechildren="true" ondown="hot_move();" enabled="true" align="bottom" wz="r"
+           url="comments.png" scale="0.8" onloaded="svrvrtxt();"/>
+    <style name="user_mask" type="container" enabled="false" width="30" height="30" bgcapture="true" bgcolor="0xffffff"
+           bgalpha="1" bgroundedge="200" maskchildren="true" align="top" x="0" y="5"/>
+
+    <style name="user_head" enabled="false" width="36" height="36" align="top" x="0" y="2"/>
+    <style name="user_voice" url="voice.png?v=0812" crop="0|80|40|40" enabled="false" align="right" edge="left" x="-10"
+           y="-12" scale="0.5"/>
+
+    <action protect="true" name="hot_voice">
+        if(%1 == voice,
+        if(hot_play == name,
+        set(mp3_2,%2);
+        if(ls_mp3 == mp3_2,
+        set(hot_play,false);
+        hot_voice(stop);
+        ,
+        set(hot_play,false);
+        hot_voice(stop);
+        set(layer[get(ioc)].crop,0|0|40|40);
+        delayedcall(0.5,hot_voice(voice,%2););
+        );
+        ,
+        hot_voice(stop);
+        set(ls_mp3,%2);
+        set(ls_ioc,get(ioc));
+        set(hot_play,get(name));
+        hot_voice(play,%2);
+        );
+        );
+        if(%1 == play,
+        if(yinyue_switch,
+        set(hot_yy_bg,true);
+        yinyue(stop);
+        );
+        set(layer[get(ls_ioc)].crop,0|0|40|40);
+        playsound(hot_yy,%2,1,hot_voice(stop));
+        set(hot_ioc,true);
+        set(frame_mp3,0);
+        delayedcall(0.4,hot_voice(ioc););
+        );
+        if(%1 == stop,
+        if(hot_yy_bg,
+        set(hot_yy_bg,false);
+        yinyue(play);
+        );
+        set(hot_ioc,false);
+        stopsound(hot_yy);
+        set(layer[get(ls_ioc)].crop,0|80|40|40);
+        );
+        if(%1 == ioc,
+        if(hot_ioc,
+        inc(frame_mp3,1,2,0);
+        mul(ypos,frame_mp3,40);
+        txtadd(layer[get(ls_ioc)].crop,'0|',get(ypos),'|40|40');
+        delayedcall(ioc,0.4,hot_voice(ioc););
+        );
+        );
+    </action>
+    <action protect="true" name="comment">
+
+        if(%1 == add,
+
+        mul(asas1, random, 10);
+        mul(asas2, random, 10);
+        mul(val, random, 25);
+        if(asas1 GT 5,
+        if(asas2 GT 5,
+        add(acomath,view.hlookat,val);
+        sub(acomatv,view.vlookat,val);
+        ,
+        sub(acomath,view.hlookat,val);
+        add(acomatv,view.vlookat,val);
+        )；
+        ,
+        if(asas2 GT 5,
+        add(acomath,view.hlookat,val);
+        add(acomatv,view.vlookat,val);
+        ,
+        sub(acomath,view.hlookat,val);
+        sub(acomatv,view.vlookat,val);
+        )；
+        );
+        roundval(acomath);
+        roundval(acomatv);
+
+        addhotspot(addcom);
+        copy(hotspot[addcom].ath,acomath);
+        copy(hotspot[addcom].atv,acomatv);
+        set(hotspot[addcom].userurl,%2);
+        set(hotspot[addcom].html,"拖动头像到要说的地方");
+        hotspot[addcom].loadstyle(comments);
+        set(hotspot[addcom].wz,m);
+        );
+
+        if(%1 == del,
+        set(hotspot[addcom].visible,false);
+        delayedcall(0.1,removeplugin(addcomhead);
+        removeplugin(addcommask);
+        removehotspot(addcom););
+        );
+
+        if(%1 == submit,
+        if(hotspot[addcom].ath,
+        comment(del);
+        editor_clew(评论成功！,5);
+        );
+        addhotspot(%2);
+        set(hotspot[%2].ath,%3);
+        set(hotspot[%2].atv,%4);
+        set(hotspot[%2].userurl,%5);
+        if(%7 != null,
+        set(hotspot[%2].voice,%7);
+        txtadd(hotspot[%2].html,%6,"”");
+        ,
+        set(hotspot[%2].html,%6);
+        );
+        hotspot[%2].loadstyle(comments);
+
+        if(device.mobile,
+        set(hotspot[%2].scale,1);
+        );
+        );
+
+        if(%1 == switch,
+        if(com_off,
+
+        set(com_off,false);
+        js(comment(new));
+        ,
+
+        set(com_off,true);
+        set(removesl,0);
+        comment(hotmove);
+        );
+        );
+        if(%1 == hotmove,
+        for(set(i,0),i LT hotspot.count,inc(i),
+        set(hot_name,get(hotspot[get(i)].name));
+        if(hotspot[get(hot_name)].userurl,
+        add(removesl,1);
+        txtadd(del_head,get(hot_name),'head');
+        removeplugin(get(del_head));
+        removehotspot(get(hot_name));
+        );
+        );
+        if(removesl GE 1,
+        delayedcall(0,set(removesl,0);comment(hotmove););
+        );
+        );
+    </action>
+
+    <plugin name="soundinterface" url="%SWFPATH%/plugins/soundinterface.swf"
+            alturl="%SWFPATH%/plugins/soundinterface.js" preload="true"/>
+
+
+    <action protect="true" name="yinyue">
+
+
+        if(%1 == sound_stop,
+        if(yinyue_switch,
+        yinyue(stop);
+        set(sound_stop,true);
+        );
+        );
+
+        if(%1 == sound_play,
+        if(sound_stop,
+        yinyue(play);
+        delete(sound_stop);
+        );
+        );
+
+        if(%1 == yyks,
+        playsound(cjyy,get(cjyy_url),1,set(cjyy,0));
+        skin_music(off);
+        set(yinyue_switch,true);
+        );
+
+        if(%1 == bgks,
+        playsound(bgyy,get(bgyy_url),0);
+        skin_music(off);
+        set(yinyue_switch,true);
+        );
+        if(%1 == play,
+        skin_music(off);
+        set(gjrdyc,1);
+        yinyue(up);
+        );
+        if(%1 == stop,
+        skin_music(on);
+        set(gjrdyc,1);
+        stopsound(cjyy);
+        pausesound(bgyy);
+        delete(yinyue_switch);
+        );
+        if(%1 == up,
+        ifnot(music_stop,
+        stopsound(cjyy);
+        hot_voice(stop);
+
+        set(cjyy,0);
+
+        if((scene[get(xml.scene)].voice) AND (scene[get(xml.scene)].voiceurl) AND (pano_state == normal),
+        copy(cjyy_url,scene[get(xml.scene)].voiceurl);
+        if(bgyy,
+        pausesound(bgyy);
+        );
+        set(cjyy,1);
+        yinyue(yyks);
+        );
+
+        ifnot(cjyy,
+        if(bgyy,
+        if(device.flash,
+        pausesound(bgyy);
+        );
+        resumesound(bgyy);
+        set(yinyue_switch,true);
+        ,
+        if(settings.bgmscurl,
+        copy(bgyy_url,settings.bgmscurl);
+        if(gjrdyc,
+        set(bgyy,1);
+        yinyue(bgks);
+        ,
+
+        if(device.mobile,
+        if(settings.bgmscmob,
+        set(bgyy,1);
+        yinyue(bgks);
+        ,
+        skin_music(on);
+        );
+        ,
+        if(settings.bgmsc,
+        set(bgyy,1);
+        yinyue(bgks);
+        ,
+        skin_music(on);
+        );
+        );
+        );
+        ,
+
+        );
+        );
+        );
+        );
+        );
+    </action>
+
+
+    <blendmodes name="blend_a" txt="没有效果" blend="NOBLEND"/>
+    <blendmodes name="blend_b" txt="淡入淡出" blend="BLEND(1.0, easeInCubic)"/>
+    <blendmodes name="blend_c" txt="放大重叠" blend="ZOOMBLEND(1.0, 2.0, easeInOutSine)"/>
+    <blendmodes name="blend_d" txt="圆形穿越" blend="OPENBLEND(1.0, 0.0, 0.2, 0.0, linear)"/>
+    <blendmodes name="blend_e" txt="淡出到黑" blend="COLORBLEND(1.0, 0x000000, easeOutSine)"/>
+    <blendmodes name="blend_f" txt="淡出到白" blend="COLORBLEND(1.0, 0xFFFFFF, easeOutSine)"/>
+    <blendmodes name="blend_g" txt="闪光效果" blend="LIGHTBLEND(1.0, 0xFFFFFF, 2.0, linear)"/>
+    <blendmodes name="blend_h" txt="从左往右" blend="SLIDEBLEND(1.0, 180.0, 0.2, linear)"/>
+    <blendmodes name="blend_i" txt="从上往下" blend="SLIDEBLEND(1.0, 90.0, 0.2, linear)"/>
+    <blendmodes name="blend_j" txt="从右往左" blend="SLIDEBLEND(1.0, 0.0, 0.2, linear)"/>
+    <blendmodes name="blend_k" txt="从下往上" blend="SLIDEBLEND(1.0, -90.0, 0.2, linear)"/>
+    <blendmodes name="blend_l" txt="上下打开" blend="OPENBLEND(1.0, -1.0, 0.3, 0.0, linear)"/>
+    <blendmodes name="blend_m" txt="左右打开" blend="OPENBLEND(1, 1.0, 0.3, 0.0, linear)"/>
+    <blendmodes name="blend_n" txt="左上卷入" blend="SLIDEBLEND(1.0, 135.0, 0.4, linear)"/>
+    <blendmodes name="blend_o" txt="右上卷入" blend="SLIDEBLEND(1.0, 35.0, 0.4, linear)"/>
+    <blendmodes name="blend_p" txt="左下卷入" blend="SLIDEBLEND(1.0, 215.0, 0.4, linear)"/>
+    <blendmodes name="blend_q" txt="右下卷入" blend="SLIDEBLEND(1.0, -35.0, 0.4, linear)"/>
+
+    <action protect="true" name="guide_ac">
+
+
+        if(%1 == ks_scene,
+        loadscene(get(sv_scene),null,MERGE,BLEND(1.0, easeInCubic));
+        lookat(get(sv_ath),get(sv_atv),get(sv_fov));
+        );
+        if(%1 == kaishi,
+
+        set(guide_data,%2);
+        indexoftxt(l_shu,get(guide_data),'scene=');
+        if(l_shu == -1,
+        js(alert(还没有导游路径数据,请添加后重试！));
+        ,
+        set(pano_state,guide);
+        skin_state(false);
+        set(guide_one,true);
+
+
+        if(data[guide].start_img,
+        hideintroimage(show,get(data[guide].start_img),3,0x000000,0.5,true);
+        set(layer[introimage].onclick,false);
+        delayedcall(3,guide_ac(up_xml););
+        ,
+        guide_ac(up_xml);
+        );
+
+        );
+
+        );
+        if(%1 == up_xml,
+
+        add(l_shu,7);
+        indexoftxt(r_shu,get(guide_data),'"',get(l_shu));
+        subtxt(sv_scene,get(guide_data),get(l_shu),calc(r_shu - l_shu));
+
+        indexoftxt(l_shu,get(guide_data),'ath="');
+        add(l_shu,5);
+        indexoftxt(r_shu,get(guide_data),'"',get(l_shu));
+        subtxt(sv_ath,get(guide_data),get(l_shu),calc(r_shu - l_shu));
+
+        indexoftxt(l_shu,get(guide_data),'atv="');
+        add(l_shu,5);
+        indexoftxt(r_shu,get(guide_data),'"',get(l_shu));
+        subtxt(sv_atv,get(guide_data),get(l_shu),calc(r_shu - l_shu));
+
+        indexoftxt(l_shu,get(guide_data),'fov="');
+        add(l_shu,5);
+        indexoftxt(r_shu,get(guide_data),'"',get(l_shu));
+        subtxt(sv_fov,get(guide_data),get(l_shu),calc(r_shu - l_shu));
+
+        set(scene[get(sv_scene)].content,calc(scene[get(sv_scene)].content + data[guide].content));
+
+        wait(1);
+        guide_ac(ks_scene);
+        wait(1);
+        guide_ac(initial);
+
+        );
+        if(%1 == initial,
+        if(being,set(being,false););
+        set(g_start,0);
+        ifnot(gui_music == false,
+        skin_guide(music_kai);
+        );
+        if(guide_one,
+        set(g_start_z,1);
+        ,
+        set(g_start_z,0);
+        );
+        wait(2);
+        guide_ac(next);
+        );
+        if(%1 == music,
+        if(gui_music,
+        if(guide[get(g_start)].music,
+        set(guide_misic_url,get(guide[get(g_start)].music));
+        ,
+        set(guide_misic_url,get(settings.bgmscurl));
+        );
+        ifnot(guide_music == play,
+        if(guide_music == pause,
+        resumesound(guide_music);
+        ,
+        playsound(guide_music,get(guide_misic_url),1,set(guide_music,stop););
+        );
+        set(guide_music,play);
+        );
+        ,
+        if(guide_music == play,
+        pausesound(guide_music);
+        set(guide_music,pause);
+        );
+
+        );
+        );
+        if(%1 == start,
+        if((guide_one == true) OR (%3 == 0),
+
+        delete(guide_one);
+        guide_ac(music,%2);
+        );
+
+        if(guide[%2].item[%3].scene != guide[%2].item[calc(%3 - 1)].scene,
+        set(looktxt,calc('loadscene(' + guide[%2].item[%3].scene + ',null,MERGE,' + (guide[%2].item[%3].blend ?
+        blendmodes[get(guide[%2].item[%3].blend)].blend : 'BLEND(1.0, easeInCubic)') + ');lookat(' +
+        guide[%2].item[%3].ath + ',' + guide[%2].item[%3].atv + ',' + guide[%2].item[%3].fov +
+        ');add(g_start_z,1);delayedcall(gd,2,guide_ac(next););'));
+
+        ,
+        set(looktxt,calc('lookto(' + guide[%2].item[%3].ath + ',' + guide[%2].item[%3].atv + ',' +
+        guide[%2].item[%3].fov + ',tween(easeOutCubic,' + guide[%2].item[%3].time +
+        '),true,true,add(g_start_z,1);guide_ac(next););'));
+        );
+
+
+        guide_ac(zhixing,get(looktxt));
+
+        set(layer[skin_title].html,get(guide[%2].txt));
+        );
+        if(%1 == zhixing,
+        %2
+        );
+        if(%1 == next,
+        ifnot(being,
+        if(g_start GE guide.count,
+        if(data[guide].cycle,
+        guide_ac(initial);
+        ,
+        guide_ac(ks_scene);
+
+        skin_guide(stop);
+        );
+        ,
+        if(guide[get(g_start)].item.count !== null,
+        if(g_start_z GE guide[get(g_start)].item.count,
+        stopsound(guide_music);
+        set(guide_music,stop);
+        add(g_start,1);
+        set(g_start_z,0);
+        delayedcall(0,guide_ac(next););
+        ,
+
+        guide_ac(start,get(g_start),get(g_start_z));
+        );
+        ,
+        stopsound(guide_music);
+        set(guide_music,stop);
+        add(g_start,1);
+        set(g_start_z,0);
+        delayedcall(0,guide_ac(next););
+        );
+        );
+        );
+        );
+        if(%1 == up,
+        ifnot(g_start == 0,
+        stopdelayedcall(gd);
+        stoplookto();
+        sub(g_start,1);
+        set(g_start_z,0);
+        stopsound(guide_music);
+        set(guide_music,stop);
+        guide_ac(next);
+        );
+        );
+        if(%1 == down,
+        ifnot(g_start == calc(guide.count -1),
+        stopdelayedcall(gd);
+        stoplookto();
+        add(g_start,1);
+        set(g_start_z,0);
+        stopsound(guide_music);
+        set(guide_music,stop);
+        guide_ac(next);
+        );
+        );
+        if(%1 == being,
+        ifnot(being,
+        set(being,true);
+        skin_guide(music_guan);
+        stoplookto();
+        ,
+        delete(being);
+        skin_guide(music_kai);
+        guide_ac(start,get(g_start),get(g_start_z));
+        );
+        );
+        if(%1 == stop,
+        stoplookto();
+
+        stopsound(guide_music);
+        if(data[guide].end_img,
+        hideintroimage(show,get(data[guide].end_img),3,0x000000,0.5);
+        set(layer[introimage].onclick,false);
+        );
+
+        set(a,get(scene[get(sv_scene)].content));
+        txtreplace(a,get(guide_data),);
+        set(scene[get(sv_scene)].content,get(a));
+
+
+        delete(a,being,looktxt,g_start,g_start_z,guide_music,gui_music);
+        set(pano_state,normal);
+
+        if(plugin[editor_da_box].name,
+        delayedcall(3,
+        editor_skin(true);
+        );
+        );
+        skin_update_scene_infos();
+        );
+    </action>
+
+
+    <events name="dibiao" keep="true" onnewpano="dibiao();"/>
+
+    <style name="dibiao" ath="0" atv="90" enabled="false" rotate="0" zoom="true" visible="false" width="0" height="0"
+           onloaded="set(width,get(scene[get(xml.scene)].dibiaosize));set(height,calc(scene[get(xml.scene)].dibiaosize / hotspot[nadirlogo].imagewidth * hotspot[nadirlogo].imageheight));set(visible,true);"/>
+    <action protect="true" name="dibiao">
+        if(%1 == add,
+        addhotspot(nadirlogo);
+        hotspot[nadirlogo].loadstyle(dibiao);
+        copy(hotspot[nadirlogo].url,dibiaourl);
+        ,
+        if(scene[get(xml.scene)].db,
+        if(scene[get(xml.scene)].dburl,
+
+        if((online) AND (device.mobile),
+        set(dibiaourl,get(scene[get(xml.scene)].dbmoburl));
+        ,
+        set(dibiaourl,get(scene[get(xml.scene)].dburl));
+        );
+        ,
+
+        if(device.mobile,
+        if(online,
+        set(dibiaourl,%CURRENTXML%/../../packet/svrvr/dibiao_m.png);
+        ,
+        set(dibiaourl,%SWFPATH%/svrvr/dibiao_m.png);
+        );
+        ,
+        if(online,
+        set(dibiaourl,%CURRENTXML%/../../packet/svrvr/dibiao.png);
+        ,
+        set(dibiaourl,%SWFPATH%/svrvr/dibiao.png);
+        );
+        );
+
+        );
+        dibiao(add);
+        );
+        );
+    </action>
+
+    <events name="snow" keep="true" onnewpano="texiao();"/>
+
+
+    <action protect="true" name="texiao">
+        if(scene[get(xml.scene)].snow,
+        removeplugin(snow);
+        addplugin(snow);
+        copy(effect,scene[get(xml.scene)].snow);
+        if(device.html5,
+        set(plugin[snow].url, %SWFPATH%/plugins/snow.js);
+        ,
+        set(plugin[snow].url, %SWFPATH%/plugins/snow.swf);
+        );
+        set(plugin[snow].zorder,1);
+        set(plugin[snow].floor,0.7);
+        set(plugin[snow].keep,true);
+
+
+        if(effect == 'money' , snow(image ,normal ,200 ,false ,0.8 ,8.0 ,3.0 ,1.0 ,false ,false ,0.0 ,0.8 ,0
+        ,%SWFPATH%/skintemplate/hot/money.png); );
+        if(effect == 'hearts' , snow(image ,normal ,200 ,false ,1.0 ,4.0 ,2.0 ,1.0 ,false ,false ,0.0 ,0.8 ,0
+        ,%SWFPATH%/skintemplate/hot/heart.png); );
+        if(effect == 'redbao' , snow(image ,normal ,200 ,false ,1.0 ,4.0 ,2.0 ,1.0 ,false ,false ,0.0 ,0.8 ,0
+        ,%SWFPATH%/skintemplate/hot/red.png); );
+        if(effect == 'ballssnow' , snow(image ,normal ,1200 ,false ,1.0 ,4.0 ,2.0 ,2.0 ,false ,false ,1.0 ,0.5 ,0
+        ,%SWFPATH%/skintemplate/hot/snowball.png); );
+        if(effect == 'flakessnow' , snow(image ,add ,800 ,false ,0.5 ,8.0 ,2.0 ,2.0 ,false ,false ,1.0 ,0.4 ,0
+        ,%SWFPATH%/skintemplate/hot/snowflake.png); );
+        if(effect == 'silverstars' , snow(image ,add ,800 ,false ,0.5 ,4.0 ,2.0 ,2.0 ,false ,false ,0.0 ,0.3 ,0
+        ,%SWFPATH%/skintemplate/hot/silverstar.png); );
+        if(effect == 'goldenstars' , snow(image ,normal ,300 ,false ,1.0 ,4.0 ,2.0 ,1.0 ,false ,false ,0.0 ,1.5 ,0
+        ,%SWFPATH%/skintemplate/hot/star.png); );
+        if(effect == 'rain' , snow(image ,normal ,2000 ,false ,6 ,0.0 ,1.0 ,2.0 ,false ,false ,0.0 ,0.5 ,0
+        ,%SWFPATH%/skintemplate/hot/rain.png); );
+        if(effect == 'heavyrain' , snow(image ,normal ,3000 ,false ,12 ,0.0 ,3.0 ,2.0 ,false ,false ,0.0 ,0.8 ,0
+        ,%SWFPATH%/skintemplate/hot/rain.png); );
+        if(effect == 'defaultsnow' , snow(snow ,normal ,800 ,0xFFFFFF ,1.0 ,4.0 ,2.0 ,4.0 ,1.5 ,0.5 ,2.0 ,false ,0
+        ,false); );
+        ,
+        removeplugin(snow);
+        );
+    </action>
+    <action protect="true" name="snow">
+        set(plugin[snow].mode, %1);
+        set(plugin[snow].blendmode, %2);
+        set(plugin[snow].flakes, %3);
+        set(plugin[snow].color, %4);
+        set(plugin[snow].speed, %5);
+        set(plugin[snow].shake, %6);
+        set(plugin[snow].speedvariance, %7);
+        set(plugin[snow].spreading, %8);
+        set(plugin[snow].rainwidth, %9);
+        set(plugin[snow].rainalpha, %10);
+        set(plugin[snow].wind, %11);
+        set(plugin[snow].imagescale, %12);
+        set(plugin[snow].winddir, %13);
+        set(plugin[snow].imageurl, %14);
+    </action>
+
+    <action protect="true" name="skin_nextscene">
+        set(newsceneindex,get(scene[get(xml.scene)].index));
+        set(scene_count,get(scene.count));
+        sub(scene_count,1);
+        if(%1 GT 0,
+
+        if(newsceneindex == scene_count,
+
+        set(newsceneindex,0);
+        ,
+
+        add(newsceneindex,%1);
+        );
+        ,
+        if(newsceneindex LT 1,
+
+        set(newsceneindex,get(scene_count));
+        ,
+
+        add(newsceneindex,%1);
+        );
+        );
+        txtadd(layer[skin_thumbborder].parent, 'skin_thumb_', get(newsceneindex));
+        layer[skin_thumbs].scrolltocenter(get(scene[get(newsceneindex)].thumbx), get(scene[get(newsceneindex)].thumby));
+
+        if(webvr.isenabled,
+        loadscene(get(scene[get(newsceneindex)].name), null, NOPREVIEW|MERGE|KEEPMOVING, BLEND(1));
+        ,
+        loadscene(get(scene[get(newsceneindex)].name), null, MERGE, BLEND(0.5));
+        );
+
+    </action>
+
+
+    <contextmenu fullscreen="true" enterfs="全屏显示" exitfs="退出全屏">
+        <item name="fsc" caption="FULLSCREEN"/>
+        <item name="nrm" caption="正常视角" onclick="skin_view(normal);" showif="view.vlookatrange == 180"
+              separator="true"/>
+        <item name="fis" caption="鱼眼视角" onclick="skin_view(fisheye);" showif="view.vlookatrange == 180"/>
+        <item name="xxx" caption="小行星视角" onclick="skin_view(littleplanet);" showif="view.vlookatrange == 180"/>
+        <item name="lpv" caption="视维云：svrvr.com" separator="true"
+              onclick="openurl(http://www.svrvr.com/?openwin=1,_blank);"/>
+        <item name="app" caption="下载客户端" onclick="openurl(http://www.svrvr.com/?openwin=1,_blank);"/>
+    </contextmenu>
+
+    <action protect="true" name="skin_view">
+
+        if(%1 == normal,
+        tween(view.fovmax, 150.0,distance(179,1.00),easeoutquad);
+        tween(view.architectural, 0.0,distance(1.0,0.45),easeoutquad);
+        tween(view.fisheye, 0.0,distance(1.0,0.45),easeoutquad,set(view.stereographic,false);
+        if(view.pannini,js(alert(wddw));
+        set(view.pannini,false);
+        delayedcall(0,updateobject(true,true));
+        ););
+        set(centerview,false);
+        if(view.architectural LT 0.2,
+        if(view.vlookat LT -60,set(centerview,true));
+        if(view.vlookat GT +60,set(centerview,true));
+        if(centerview,tween(view.vlookat,0.0,distance(90,0.45),easeoutquad));
+        );
+        if(view.fov GE 150,tween(view.fov,100.0,distance(50,0.45),easeoutquad));
+        );
+
+        if(%1 == fisheye,
+        tween(view.architectural,0.0,distance(1.0,0.30),easeoutquad);
+        tween(view.fisheye, 0.0 ,distance(1.0,0.30),easeoutquad,
+        set(view.stereographic,false);
+        if(view.pannini,
+        set(view.pannini,false);
+        delayedcall(0,updateobject(true,true));
+        );
+        set(view.fovmax,179);
+        tween(view.fisheye,0.35,distance(1.0,1.25));
+        );
+        );
+
+        if(%1 == littleplanet,
+        tween(view.architectural,0.0,0.25);
+        tween(view.vlookat, 90,distance(179,1.50),easeoutquad);
+        set(backtonormalfirst,false);
+        if(view.pannini == true, set(backtonormalfirst,true) );
+        if(view.stereographic == false,set(backtonormalfirst,true) );
+        if(backtonormalfirst,tween(view.fisheye,0.0 ,distance(1.0,0.25),easeoutquad,WAIT););
+        if(view.pannini,set(view.pannini,false);delayedcall(0,updateobject(true,true)););
+        set(view.stereographic,true);
+        set(view.fovmax,150);
+        tween(view.fisheye,1.0,distance(1.0,0.75),easeoutquad);
+        tween(view.fov, 150,distance(179,0.75),easeoutquad);
+        );
+    </action>
+
+
+    <style name="textfollow" visible="true" keep="true" zorder="9999" align="lefttop" edge="bottom" x="0" y="0"
+           vcenter="true" autowidth="true" autoheight="true" enabled="true"
+           css="color:#FFFFFF; font-family:Arial; font-size:12px;margin:5px 8px 5px 8px;" backgroundcolor="0x000000"
+           backgroundalpha="0.5" roundedge="3"/>
+
+    <action protect="true" name="textfollow">
+        if(%1 == sow,
+        asyncloop(txtoff,
+        copy(drag_stagex,mouse.stagex);
+        copy(drag_stagey,mouse.stagey);
+        sub(drag_stagey,10);
+        set(layer[textfollow].x,get(drag_stagex));
+        set(layer[textfollow].y,get(drag_stagey));
+        );
+        ,
+        ifnot(ismobile,
+        set(txtoff,1);
+        addlayer(textfollow);
+        layer[textfollow].loadstyle(textfollow|txt_style);
+        set(layer[textfollow].html,%1);
+        textfollow(sow);
+
+        if(onout,
+        txtadd(onout,get(onout),"set(txtoff,0);removelayer(textfollow);");
+        ,
+        set(onout,"set(txtoff,0);removelayer(textfollow);");
+        );
+        );
+        );
+    </action>
+
+
+    <action protect="true" name="imgsize">
+        if(%3 != null,
+        set(i_n,%3);
+        ,
+        set(i_n,get(name));
+        );
+        div(img_sf,%1,get(layer[get(i_n)].imagewidth));
+        mul(img_heig,get(layer[get(i_n)].imageheight),img_sf);
+        if(img_heig GT %2,
+        div(img_sf_h,%2,img_heig);
+        mul(img_sf,img_sf,img_sf_h);
+        );
+        mul(pop_width,get(layer[get(i_n)].imagewidth),img_sf);
+        mul(pop_height,get(layer[get(i_n)].imageheight),img_sf);
+        set(layer[get(i_n)].width,get(pop_width));
+        set(layer[get(i_n)].height,get(pop_height));
+    </action>
+
+
+    <action protect="true" name="draglayer">
+
+        if(%2 != dragging,
+        copy(drag_currentx,x);
+        copy(drag_currenty,y);
+        copy(drag_stagex,mouse.stagex);
+        copy(drag_stagey,mouse.stagey);
+        set(drag_sx,+1);
+        set(drag_sy,+1);
+        if(align == righttop, set(drag_sx,-1););
+        if(align == right, set(drag_sx,-1););
+        if(align == rightbottom,set(drag_sx,-1);set(drag_sy,-1););
+        if(align == bottom, set(drag_sy,-1););
+        if(align == leftbottom, set(drag_sy,-1););
+        draglayer(%1,dragging);
+        ,
+        if(pressed,
+        sub(dx,mouse.stagex,drag_stagex);
+        sub(dy,mouse.stagey,drag_stagey);
+        mul(dx,drag_sx);
+        mul(dy,drag_sy);
+        if(%1 == lr,
+        add(x,drag_currentx,dx);
+        ,
+        if(%1 == tb,
+        add(y,drag_currenty,dy);
+        ,
+        add(x,drag_currentx,dx);
+        add(y,drag_currenty,dy);
+        );
+        );
+        delayedcall(0,draglayer(%1,dragging) );
+        );
+        );
+    </action>
+
+    <action protect="true" name="hot_move">
+        if(%1 != dragging,
+        spheretoscreen(ath, atv, hotspotcenterx, hotspotcentery);
+        sub(drag_adjustx, mouse.stagex, hotspotcenterx);
+        sub(drag_adjusty, mouse.stagey, hotspotcentery);
+        hot_move(dragging);
+        ,
+        if(pressed,
+        sub(dx, mouse.stagex, drag_adjustx);
+        sub(dy, mouse.stagey, drag_adjusty);
+        screentosphere(dx, dy, ath, atv);
+        delayedcall(0, hot_move(dragging) );
+        );
+        );
+    </action>
+
+    <action protect="true" name="touch">
+
+        if(%1 == sliding,
+
+        if(linshicc,,
+
+        set(linshicc,true);
+
+        set(time_off,true);
+        set(btbt,0);
+        touch(timing);
+
+        copy(onuptxt,onup);
+        if(onuptxt == null,set(onuptxt,););
+        txtadd(onup,get(onuptxt),'touch(onup,%2,%3,%4,%5,%6);');
+
+        copy(press_x,mouse.stagex);
+        );
+        );
+        if(%1 == onup,
+        copy(press_up,mouse.stagex);
+        sub(press_up,press_x);
+        if(btbt LT 20,
+        if(press_up GT 0,
+        if(press_up GT 60,
+        %4
+        ,
+        %2
+        );
+        ,
+        if(press_up LT -60,
+        %3
+        ,
+        %2
+        );
+        );
+        ,
+        %2
+        );
+        set(onup,get(onuptxt));
+        set(linshicc,false);
+        set(time_off,false);
+        delete(linshicc,time_off,btbt,onuptxt,press_x,press_up,ac);
+        );
+        if(%1 == timing,
+        if(time_off,
+        add(btbt,get(btbt),1);
+        delayedcall(0,touch(timing));
+        );
+        );
+        if(%1 == double,
+        if(double,,
+        set(double,1);
+        );
+        add(double,1);
+        if(double GE 3,
+        %2
+        );
+        delayedcall(0.5,set(double,1));
+        );
+    </action>
+
+    <action name="scroll_bar" protect="true">
+
+        if(%1 == onscroll,
+
+        div(yp,toverflow,hoverflow);
+        Math.min(yp,1);
+        Math.max(yp,0);
+
+        sub(th,%2,layer[%3].pixelheight);
+
+        mul(yp,th);
+        copy(layer[%3].y,yp);
+        );
+
+        if(%1 == dragging,
+        if(pressed,
+
+        sub(box_height,%2,get(height));
+
+        Math.max(y,0);
+        Math.min(y,box_height);
+
+        div(bfb,get(y),box_height);
+
+        Math.min(bfb,1);
+        Math.max(bfb,0);
+
+        copy(fh,layer[%3].hoverflow);
+
+        mul(fh,-1);
+        mul(bfb,fh);
+        copy(layer[%3].y,bfb);
+
+        delayedcall(0,scroll_bar(dragging,%2,%3));
+        );
+        );
+    </action>
+
+    <action protect="true" name="cover">
+
+        if(%1 == show,
+        scenario(shop);
+        skin_state(false);
+        );
+        if(%1 == hide,
+        scenario(start);
+        skin_state(true);
+        );
+    </action>
+
+    <action protect="true" name="scenario">
+        if(%1 == shop,
+        js(boxhide());
+
+        if(settings.jump, set(settings.jump,false); set(jump_jl,true); );
+        if(settings.jumpmob, set(settings.jumpmob,false); set(jumpmob_jl,true); );
+        if(autorotate.enabled, set(autorotate.enabled,false); set(jumpauto_jl,true); );
+        );
+        if(%1 == start,
+        js(boxshow());
+
+        if(jump_jl, set(bt,0);set(settings.jump,true); );
+        if(jumpmob_jl, set(bt,0);set(settings.jumpmob,true); );
+        if(jumpauto_jl, set(autorotate.enabled,true); );
+        delete(jump_jl,jumpmob_jl,jumpauto_jl);
+        );
+    </action>
+
+
+    <style name="text"
+           url="%SWFPATH%/plugins/textfield.swf"
+           children="false"
+           background="false"
+           border="false"
+           enabled="false"
+    />
+
+
+    <style name="text" devices="html5"
+           textshadow="1"
+           textshadowrange="5"
+           textshadowcolor="0x000000"
+           textshadowalpha="1.0"
+    />
+
+    <style name="text" devices="flash"
+           effect="glow(0xFFFFFF,0.6,4,2);glow(0x000000,1,2,2);dropshadow(0,0,0x000000,1,0.5);"
+    />
+
+    <layer name="editor_clew" style="text" align="top" y="-40" keep="true" alpha="0"
+           css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:24px; font-weight:bold;"/>
+
+    <action protect="true" name="editor_clew">
+        set(layer[editor_clew].html,%1);
+        tween(layer[editor_clew].alpha,1.0,1,easeOutQuint);
+        tween(layer[editor_clew].y,120,2,easeOutQuint);
+        delayedcall(%2,tween(layer[editor_clew].alpha,0,1,easeOutQuint);
+        tween(layer[editor_clew].y,-40,2,easeOutQuint););
+    </action>
+    <action protect="true" name="ath_zhuan">
+
+        copy(svath,view.hlookat);
+        add(svath,360000);
+        mod(svath,360);
+        sub(svath,180);
+        if(svath LT 0 ,
+        add(svath,180);
+        ,
+        sub(svath,180);
+        );
+        roundval(svath,0);
+    </action>
+
+
+    <events name="SV_SDK" keep="true"
+            onnewpano="SV_SDK(pano_info);"
+    />
+    <action protect="true" name="SV_SDK">
+
+        if(%1 == pano_info,
+
+        set(pano_info,calc('
+        {
+        "status": "ok",
+        "message": "property",
+        "type": "Pano_Info",
+        "content":
+        [
+        {
+        "hd":"' + settings.hd + '",
+        "gyro":"' + settings.gyro + '",
+        "walk":"' + settings.walk + '"
+        }
+        ]
+        }
+        '));
+        jscall(calc('SDK_Receive_Info(' + pano_info + ');'));
+
+        set(events[SV_SDK].onnewpano,SV_SDK(scene_info););
+        SV_SDK(scene_info);
+        );
+
+        if(%1 == scene_info,
+        set(scene_info,calc('
+        {
+        "status": "ok",
+        "message": "property",
+        "type": "Scene_Info",
+        "content":
+        [
+        {
+        "name":"' + xml.scene + '",
+        "title":"' + scene[get(xml.scene)].title + '",
+        "group":"' + group[group].item[get(scene[get(xml.scene)].group)].title + '"
+        }
+        ]
+        }
+        '));
+
+        jscall(calc('SDK_Receive_Info(' + scene_info + ');'));
+        );
+
+        if(%1 == SDK_Hot_Property,
+        if(%2 == all,
+        set(SDK_Hot_Property_all,false);
+        for(set(i,0),i LT hotspot.count,inc(i),
+
+        if(hotspot[get(i)].js,
+        set(SDK_Hot_Property_all,calc((SDK_Hot_Property_all ? SDK_Hot_Property_all : "") + '
+        {
+        "name":"' + hotspot[get(i)].name + '",
+        "ath":"' + hotspot[get(i)].ath + '",
+        "atv":"' + hotspot[get(i)].atv + '",
+        "js":"' + hotspot[get(i)].js + '",
+        "img":"' + hotspot[%2].url + '",
+        "position":"' + hotspot[get(i)].wz + '",
+        "title":"' + hotspot[get(i)].html + '"
+        },
+        '));
+        );
+        );
+        if(SDK_Hot_Property_all,
+        set(SDK_Hot_Property_all,calc('
+        {
+        "status": "ok",
+        "message": "property",
+        "type": "SDK_Hot_Property_all",
+        "content":
+        [' + SDK_Hot_Property_all + ']
+        }
+        '));
+        ,
+        set(SDK_Hot_Property_all,calc('
+        {
+        "status": "error",
+        "type": "SDK_Hot_Property_all",
+        "message": "There are no custom hotspots!"
+        }
+        '));
+        );
+        jscall(calc('SDK_Receive_Info(' + SDK_Hot_Property_all + ');'));
+
+        ,
+
+
+        if(hotspot[%2].name,
+
+        set(SDK_Hot_ObtainHot,calc('
+        {
+        "status": "ok",
+        "type": "SDK_Hot_ObtainHot",
+        "message": "property",
+        "content":
+        [
+        {
+        "name":"' + hotspot[%2].name + '",
+        "ath":"' + hotspot[%2].ath + '",
+        "atv":"' + hotspot[%2].atv + '",
+        "js":"' + hotspot[%2].js + '",
+        "position":"' + hotspot[%2].wz + '",
+        "img":"' + hotspot[%2].url + '",
+        "title":"' + hotspot[%2].html + '"
+        }
+        ]
+        }
+        '));
+        ,
+        set(SDK_Hot_ObtainHot,calc('
+        {
+        "status": "error",
+        "type": "SDK_Hot_ObtainHot",
+        "message": "There is no such hot spot！",
+        }
+        '));
+        );
+
+        jscall(calc('SDK_Receive_Info(' + SDK_Hot_ObtainHot + ');'));
+
+        );
+
+        );
+    </action>
+
+    <action name="flayer">
+        addlayer(%1);
+        layer[%1].loadstyle(%2);
+        copy(p, layer[%1]);
+    </action>
+
+    <action name="fhotspot">
+        addhotspot(%1);
+        hotspot[%1].loadstyle(%2);
+        copy(h, hotspot[%1]);
+    </action>
+
+    <action name="vonp">
+        if(layer[%1].loaded, removelayer(%1));
+    </action>
+
+    <action name="vonh">
+        if(hotspot[%1].loaded, removehotspot(%1));
+
+    </action>
+
+    <action name="vonh_all">
+        sub(i,hotspot.count,1);
+        loop(i GT 0,
+        if(hotspot[get(i)].%1 == %2,
+        vonh(get(hotspot[get(i)].name));
+        );
+        dec(i);
+        );
+    </action>
+</krpano>
+
+

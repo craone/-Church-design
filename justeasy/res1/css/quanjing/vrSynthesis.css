@@ -1,0 +1,385 @@
+/* 全景合成 2021-9 */
+
+#filePicker {
+    position: absolute;
+    opacity: 1
+}
+
+#uploader .filelist li {
+    float: left;
+    width: 168px;
+    height: 220px;
+    float: left;
+    cursor: pointer;
+    margin: 0 25px 0 0;
+    position: relative;
+    border-bottom: none !important
+}
+
+.select-vr-cont_new #uploader .filelist li {
+    width: 128px;
+    height: 160px;
+}
+
+.select-vr-cont_new #uploader .filelist li p.imgWrap {
+    width: 128px;
+    height: 128px;
+}
+
+.select-vr-cont_new #uploader .filelist div.file-panel {
+    top: 92px
+}
+
+.select-vr-cont_new #uploader .filelist li .title {
+    width: 128px !important;
+    top: 136px !important;
+}
+
+#uploader .filelist li:nth-child(6n+0) {
+    margin-right: 0
+}
+
+#uploader .filelist li p.imgWrap {
+    width: 168px;
+    height: 172px;
+    position: relative
+}
+
+#uploader .filelist div.file-panel {
+    right: 0;
+    top: 136px;
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    background: url("../../images/vrvip/corner-delete.png") center center no-repeat;
+}
+
+#uploader .filelist div.file-panel span.cancel {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+#uploader .filelist div.file-panel:hover {
+    background: url("../../images/vrvip/corner-delete-sel.png") center center no-repeat;
+}
+
+#uploader .filelist li p.imgWrap img {
+    width: 100%;
+    height: 100%
+}
+
+#uploader .filelist li .title {
+    width: 168px !important;
+    text-align: center !important;
+    display: block;
+    top: 180px !important;
+    left: 0px !important
+}
+
+#uploader .filelist {
+    float: left
+}
+
+#uploader .queueList {
+    margin: 10px 0 !important
+}
+
+#uploader .filelist div.file-panel span {
+    background: transparent
+}
+
+#uploader .filelist li p.progress span {
+    height: 8px;
+    margin-top: 0
+}
+
+#uploader .filelist div.file-panel span {
+    background: none !important
+}
+
+.pagination {
+    margin: 0
+}
+
+.li-active-temp {
+    display: none
+}
+
+#uploader .filelist li .vr-pic-s img {
+    height: 100%
+}
+
+#container {
+    border: none
+}
+
+#uploader .filelist li p.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 32px;
+    color: #333;
+}
+
+body .layui-shuang11 {
+    width: 100%;
+    height: 354px;
+    background: url('/justeasy/res1/images/quanjing/yun-fc.png') center center no-repeat;
+    padding-top: 264px;
+    box-sizing: border-box
+}
+
+body .layui-shuang11 .yun-shuan11-activity .yun-btn2 {
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+
+body .layui-shuang11 .yun-shuan11-activity .yun-btn2 .yun-btn {
+    line-height: 38px;
+    color: #fff;
+    font-size: 24px;
+    width: 170px;
+    border-radius: 14px;
+    border: 0;
+    outline: none;
+    display: block;
+    cursor: pointer;
+    text-align: center
+}
+
+.yun-shuan11-activity .yun-btn2 .yun-blue {
+    margin-right: 20px;
+    background: #2dd2f9
+}
+
+.yun-shuan11-activity .yun-btn2 .yun-red {
+    background: #ff4b4b
+}
+
+#uploader .filelist li p.error1 {
+    position: absolute;
+    top: 104px !important;
+    left: 0 !important;
+    height: 28px;
+    line-height: 28px;
+    width: 100%;
+    z-index: 100;
+    font-size: 10px
+}
+
+#uploader .filelist li p.error {
+    top: 4px;
+    left: 18px;
+}
+
+a.red:focus {
+    color: red
+}
+
+a.org:focus {
+    color: #ff8d1c
+}
+
+.lay_vip_expire_commont {
+    height: auto;
+    overflow: hidden;
+    display: none
+}
+
+.lay_vip_expire {
+    height: auto;
+    overflow: hidden
+}
+
+.lay_vip_expire_commont .lay_off {
+    height: auto;
+    overflow: hidden;
+    text-align: right;
+    padding-top: 13px;
+    padding-right: 9px;
+    padding-bottom: 20px
+}
+
+.lay_vip_expire_commont .lay_off img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer
+}
+
+.lay_vip_expire_commont .expire_text {
+    height: auto;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    line-height: 25px;
+    margin-bottom: 40px
+}
+
+.expire_commont_button {
+    height: auto;
+    overflow: hidden;
+    text-align: center
+}
+
+.expire_commont_button a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    color: #fff;
+    background: #FF8D1C;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px
+}
+
+.expire_commont_button a:hover {
+    background: #e70
+}
+
+#uploader .filelist li:hover {
+    background: transparent;
+}
+
+body {
+    background: #fff;
+}
+
+.avatar-img {
+    width: 100%
+}
+
+.tips_water {
+    position: absolute;
+    width: 110px;
+    bottom: 50px;
+    left: 130px;
+}
+
+#historylogo_type1 .select-vr-cont ul li:nth-child(2n) {
+    margin-right: 30px;
+}
+
+.select-vr-cont_new ul li .vr-pic-s {
+    height: 128px
+}
+
+.select-vr-cont_new ul li h3 {
+    width: 128px;
+}
+
+.select-vr2 .select-vr-cont {
+    min-height: 360px;
+}
+
+.select-vr20216 .select-vr-cont {
+    min-height: 200px;
+}
+
+
+/* 弹框按钮样式的改版 */
+
+.btn-box20219 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-box20219 .btn {
+    border-radius: 36px;
+    display: flex;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    height: 36px;
+}
+
+.btn-box20219 .btn-org:hover {
+    background: #e70;
+    border: 1px solid #e70;
+}
+
+.btn-box20219 .btn-org:hover {
+    background: #e70;
+    border: 1px solid #e70;
+}
+
+
+/* 防盗保护: */
+
+.save-theft {
+    position: relative;
+    padding-left: 62px;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+.save-theft .switch {
+    position: absolute;
+    left: 11px;
+    top: 6px;
+    height: 24px;
+    line-height: 24px;
+    z-index: 2;
+}
+
+.save-theft .tips {
+    position: absolute;
+    left: 0;
+    bottom: -28px;
+    height: 36px;
+    line-height: 36px;
+    z-index: 2;
+    padding: 0;
+}
+
+.save-theft .tips span {
+    color: #333333;
+}
+
+.vr-save-theft-showbox .d-text {
+    padding: 40px 57px;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.vr-save-theft-showbox .d-text a {
+    text-decoration: underline;
+}
+
+.vr-save-theft-showbox .btn {
+    width: 140px;
+}
+
+.vr-save-theft-showbox .txt2 {
+    width: 420px;
+    margin: 0 auto;
+}
+
+.vr-save-theft-showbox .d-text2 {
+    margin-bottom: 0px;
+    padding: 20px 57px 0 57px;
+    height: auto;
+}
+
+.vr-save-theft-showbox .txt2 p {
+    color: #999;
+    font-size: 12px;
+}
+
+.vr-save-theft-showbox .txt2 .p2 {
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+
+.vr-save-theft-showbox .hecheng {
+    text-align: center;
+    display: block
+}

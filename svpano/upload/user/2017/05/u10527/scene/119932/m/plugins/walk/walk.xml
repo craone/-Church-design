@@ -1,0 +1,101 @@
+<krpano>
+    <layer name="errxinxi" visible="false" type="container" keep="true" bgcolor="0x000000" zorder="9999999"
+           bgcapture="true" handcursor="false" width="100%" height="100%" align="center" bgalpha="1">
+        <layer name="err_title" keep="true" style="txt_style" align="center" autoheight="true" background="false"
+               border="false" enabled="false" css="text-align:center; color:#FFFFFF; font-family:Arial;font-size:18px;"
+               html="错误：[br][br]upload/user/2017/05/u10527/scene/119932/m/plugins/walk/walk.xml您的主账号已到期或当前正处于独立运行状态[br][br]请使用视维PC客户端或视维iPad播放器2.5以上版本播放[br][br]最新客户端官方下载：www.svrvr.com[br][br]视维全国统一服务热线：4007-111-788[br][br][br][br][br][br]数字加密·盗版必究"/>
+    </layer>
+    <events name="walk_events" keep="true"
+            onnewpano="walk(initial); if((settings.walk) AND (settings.hothide), walk_initial(hide); ); ;"
+            onkeydown="if((settings.walk) AND (settings.keywsad), if(keycode==87,walk(w);); if(keycode==83,walk(s);); if(keycode==65,walk(a);); if(keycode==68,walk(dd);); );"
+            onmousedown="if((settings.walk) AND (settings.direction), stopdelayedcall(fu); set(layer[new_fuxuan].visible,true); tween(layer[new_fuxuan].alpha, 1, 0.5, default); );"
+            onmouseup="if((settings.walk) AND (settings.direction), delayedcall(fu,1, tween(layer[new_fuxuan].alpha, 0.0, 0.5, default); delayedcall(fu,1,set(layer[new_fuxuan].visible,false);); ); );"
+            onremovepano="set(layer[new_fuxuan].visible,false);" onclick="autowalk();"/>
+    <action name="walk_start" autorun="onstart">if(ymqr == shiweiyun4007111788jiushipobudiao, if(settings.walk,
+        walk_initial(walk_hot); if(device.mouse,walk_initial(mouse);); walk_initial(hide); ); ,
+        set(layer[errxinxi].visible,true); );
+    </action>
+    <action name="autowalk">if(settings.autowalk, screentosphere(mouse.x,mouse.y,hlt,tov); walk(bearing);
+        walk(get(cao),'BLEND(1)'); );
+    </action>
+    <action name="walk_initial">if(%1 == walk_hot, if(settings.direction, addhotspot(hot_zhinanzhen);
+        hotspot[hot_zhinanzhen].loadstyle(zhinanzhen); set(layer[new_fuxuan].parent,'hotspot[hot_zhinanzhen]');
+        set(layer[new_fuxuan].visible,true); walk(initial); , removehotspot(hot_zhinanzhen);
+        set(layer[new_fuxuan].visible,false); ); ); if(%1 == mouse, if(settings.mousestyle, addhotspot(spotshubiao);
+        hotspot[spotshubiao].loadstyle(spotshubiao_style);
+        set(hotspot[spotshubiao].url,get(style[get(settings.mousestyle)].mouse)); ); ); if(%1 == hide,
+        if(settings.hothide, ifnot(editor, for(set(i,0),i LT hotspot.count,inc(i),
+        set(hotspot_name,get(scene[get(i)].name)); if(hotspot[get(i)].linkedscene, set(hotspot[get(i)].visible,false);
+        ); ); ); ); );
+    </action>
+    <style name="spotshubiao_style" keep="true" url="get:style[get(settings.mousestyle)].mouse" ath="0" atv="0"
+           onloaded="shubiao(hotgs);" handcursor="false" enabled="false" distorted="true" inverserotation="true"/>
+    <action protect="true" name="shubiao">if(%1 == hotgs, if(ondd,, set(hotspot[spotshubiao].alpha,1);
+        set(hotspot[spotshubiao].rx,calc(90 - atv)); if(atv LT 0, set(a_atv,calc(0 - atv)); , set(a_atv,get(atv)); );
+        set(hotspot[spotshubiao].scale,calc(0.8 + 0.006 * a_atv)); ); copy(dx, mouse.stagex); copy(dy, mouse.stagey);
+        screentosphere(dx, dy, ath, atv); delayedcall(0,shubiao(hotgs);); );
+    </action>
+    <style name="zhinanzhen" keep="true" url="topo_arrow.png" crop="0|0|1|1"
+           onloaded="fangx_hot(hot);if(device.mobile,set(scale,0.7););" scale="0.4" ath="0" atv="25" rx="55"
+           distorted="true" inverserotation="true" onhover="stopdelayedcall(fu);"/>
+    <action protect="true" name="fangx_hot">if(%1 == hot, copy(rz,view.hlookat); copy(ath,view.hlookat); delayedcall(0,
+        fangx_hot(hot);); );
+    </action>
+    <style name="new_fuxuan" url="topo_arrow.png" crop="0|0|256|256" align="center" edge="bottom"
+           onovercrop="256|0|256|256"/>
+    <style name="new_fuxuan_txt" url="topo_arrow.png" align="center" edge="bottom" enabled="false"/>
+    <layer name="new_fuxuan" visible="false" type="container" align="center" keep="true">
+        <layer name="bei" visible="false" style="new_fuxuan" rotate="0" y="-70" onclick="walk(b,'BLEND(0.5)');"/>
+        <layer name="dong" visible="false" style="new_fuxuan" rotate="90" x="70" onclick="walk(d,'BLEND(0.5)');"/>
+        <layer name="nan" visible="false" style="new_fuxuan" rotate="180" y="70" onclick="walk(n,'BLEND(0.5)');"/>
+        <layer name="xi" visible="false" style="new_fuxuan" rotate="270" x="-70" onclick="walk(x,'BLEND(0.5)');"/>
+        <layer name="bei_txt" visible="false" style="new_fuxuan_txt" rotate="0" y="-120" crop="210|320|70|64"/>
+        <layer name="dong_txt" visible="false" style="new_fuxuan_txt" rotate="90" x="120" crop="0|256|70|64"/>
+        <layer name="nan_txt" visible="false" style="new_fuxuan_txt" rotate="180" y="120" crop="0|320|70|64"/>
+        <layer name="xi_txt" visible="false" style="new_fuxuan_txt" rotate="270" x="-120" crop="210|256|70|64"/>
+    </layer>
+    <action protect="true" name="walk">if(%1 == ath, set(hlt,calc(view.hlookat + 360000 + hlt)); mod(hlt,360);
+        sub(hlt,180); if(hlt LT 0 , add(hlt,180); , sub(hlt,180); ); roundval(hlt, 2); ); if(%1 == w, set(hlt,0);
+        walk(ath); walk(bearing); walk(get(cao),'ZOOMBLEND(0.6, 1.2, easeInCubic)'); ); if(%1 == s, set(hlt,180);
+        walk(ath); walk(bearing); walk(get(cao),'ZOOMBLEND(0.6, 0.8, easeInCubic)'); ); if(%1 == a, set(hlt,-90);
+        walk(ath); walk(bearing); walk(get(cao),'BLEND(0.5)'); ); if(%1 == dd, set(hlt,90); walk(ath); walk(bearing);
+        walk(get(cao),'BLEND(0.5)'); ); if(%1 == d, if(bearing[get(xml.scene)].d,
+        loadscene(get(bearing[get(xml.scene)].d), null, MERGE|KEEPMOVING,%2); ); ); if(%1 == db,
+        if(bearing[get(xml.scene)].db, loadscene(get(bearing[get(xml.scene)].db), null, MERGE|KEEPMOVING,%2); ); );
+        if(%1 == dn, if(bearing[get(xml.scene)].dn, loadscene(get(bearing[get(xml.scene)].dn), null,
+        MERGE|KEEPMOVING,%2); ); ); if(%1 == n, if(bearing[get(xml.scene)].n, loadscene(get(bearing[get(xml.scene)].n),
+        null, MERGE|KEEPMOVING,%2); ); ); if(%1 == x, if(bearing[get(xml.scene)].x,
+        loadscene(get(bearing[get(xml.scene)].x), null, MERGE|KEEPMOVING,%2); ); ); if(%1 == xn,
+        if(bearing[get(xml.scene)].xn, loadscene(get(bearing[get(xml.scene)].xn), null, MERGE|KEEPMOVING,%2); ); );
+        if(%1 == b, if(bearing[get(xml.scene)].b, loadscene(get(bearing[get(xml.scene)].b), null, MERGE|KEEPMOVING,%2);
+        ); ); if(%1 == xb, if(bearing[get(xml.scene)].xb, loadscene(get(bearing[get(xml.scene)].xb), null,
+        MERGE|KEEPMOVING,%2); ); ); if(%1 == bearing, if((hlt GT -23) AND (hlt LT 24), set(cao,b); ); if((hlt GT 23) AND
+        (hlt LT 69), set(cao,db); ); if((hlt GT 68) AND (hlt LT 114), set(cao,d); ); if((hlt GT 113) AND (hlt LT 159),
+        set(cao,dn); ); if((hlt GT 158) OR (hlt LT -157), set(cao,n); ); if((hlt GT -158) AND (hlt LT -112),
+        set(cao,xn); ); if((hlt GT -113) AND (hlt LT -67), set(cao,x); ); if((hlt GT -68) AND (hlt LT -22), set(cao,xb);
+        ); ); if(%1 == distance, if(%2 == d, set(ath_l, 68); set(ath_r, 114); ); if(%2 == dn, set(ath_l, 113);
+        set(ath_r, 159); ); if(%2 == n, set(ath_l, 158); set(ath_r, -157); );if(%2 == xn, set(ath_l, -158); set(ath_r,
+        -112); ); if(%2 == x, set(ath_l, -113); set(ath_r, -67); ); if(%2 == xb, set(ath_l, -68); set(ath_r, -22); );
+        if(%2 == b, set(ath_l, -23); set(ath_r, 24); ); if(%2 == db, set(ath_l, 23); set(ath_r, 69); );
+        set(hot_name,false); for(set(i,0),i LT hotspot.count,inc(i), if(hotspot[get(i)].linkedscene, if(%2 == n,
+        if((hotspot[get(i)].ath GT ath_l) OR (hotspot[get(i)].ath LT ath_r), if(hot_name, if(hotspot[get(hot_name)].atv
+        LT hotspot[get(i)].atv, set(hot_name,get(hotspot[get(i)].name)); ); , set(hot_name,get(hotspot[get(i)].name));
+        ); ); , if((hotspot[get(i)].ath GT ath_l) AND (hotspot[get(i)].ath LT ath_r), if(hot_name,
+        if(hotspot[get(hot_name)].atv LT hotspot[get(i)].atv, set(hot_name,get(hotspot[get(i)].name)); ); ,
+        set(hot_name,get(hotspot[get(i)].name)); ); ); ); ); ); ); if(%1 == initial, walk(distance,d); if(hot_name,
+        set(layer[dong].visible,true); set(layer[dong_txt].visible,true);
+        set(bearing[get(xml.scene)].d,get(hotspot[get(hot_name)].linkedscene)); , set(layer[dong].visible,false);
+        set(layer[dong_txt].visible,false); ); walk(distance,n); if(hot_name, set(layer[nan].visible,true);
+        set(layer[nan_txt].visible,true); set(bearing[get(xml.scene)].n,get(hotspot[get(hot_name)].linkedscene)); ,
+        set(layer[nan].visible,false); set(layer[nan_txt].visible,false); ); walk(distance,x); if(hot_name,
+        set(layer[xi].visible,true); set(layer[xi_txt].visible,true);
+        set(bearing[get(xml.scene)].x,get(hotspot[get(hot_name)].linkedscene)); , set(layer[xi].visible,false);
+        set(layer[xi_txt].visible,false); ); walk(distance,b); if(hot_name, set(layer[bei].visible,true);
+        set(layer[bei_txt].visible,true); set(bearing[get(xml.scene)].b,get(hotspot[get(hot_name)].linkedscene)); ,
+        set(layer[bei].visible,false); set(layer[bei_txt].visible,false); ); walk(distance,dn); if(hot_name,
+        set(bearing[get(xml.scene)].dn,get(hotspot[get(hot_name)].linkedscene)); ); walk(distance,db);
+        if(hot_name,set(bearing[get(xml.scene)].db,get(hotspot[get(hot_name)].linkedscene)); ); walk(distance,xn);
+        if(hot_name, set(bearing[get(xml.scene)].xn,get(hotspot[get(hot_name)].linkedscene)); ); walk(distance,xb);
+        if(hot_name, set(bearing[get(xml.scene)].xb,get(hotspot[get(hot_name)].linkedscene)); ); );
+    </action>
+</krpano>

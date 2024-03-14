@@ -1,0 +1,64 @@
+<krpano version="15.5.23">
+    <settings key="1c5edcd66e8ce977" voicepc="true" voicemob="true" comments="0" bgmsc="true" bgmscmob="true"
+              thumbs_opened="false"
+              bgmscurl="/svpano/upload/user/2017/05/u10527/svrvr/sound/20180301116322037.mp3"
+              jump="true" jumpmob="false" jumptime="60" normalview="true" waittime="5" viewtime="3" hd="true"
+              adlogo="true" logolink="" walk="0" mousestyle="" direction="1" autowalk="" hothide="" keywsad=""
+              adad="false" adadhttp="" adadurl="" swlogo="0" in_image_url="" in_image_url_mob="" in_bg=""
+              in_alpha="0.05" in_time="3"
+              introduce="【教堂简介】 师桥堂座落在浙江省宁波市慈溪，建筑于今已有20年来年的基督教堂。 教堂一层为入堂大厅；两侧楼梯上来就是主礼拜会所，内有圆柱支撑，楼座有一层且两侧过道为阶梯式可放置四排椅子，中庭高度直到三角屋顶。 聚会厅地面为长方体框架：内长37.7M、宽21.7M； 顶棚为水泥现浇尖顶，三角尖顶16.7M、低点15.6M；楼座过道为平顶。 圣台地面面积95m2,聚会厅加楼座两层地面面积共1380m2，可容纳2000多人礼拜聚会。  【心声】 原本于14年初已经确定了设计方案，却因多方原因装修一事搁置了；到18年底，教会方再次启动装修工作，并设计师以14年的设计为蓝图再次深入思考，在19年3月完成设计图纸。  【经文】 诗篇一十九章01节： 诸天述说神的荣耀,穹苍传扬祂的手段。  启示录五章06-14节： 我又看见宝座与四活物并长老之中，有羔羊站立，像是被杀过的，有七角七眼，就是　神的七灵，奉差遣往普天下去的。 这羔羊前来，从坐宝座的右手里拿了书卷。 他既拿了书卷，四活物和二十四位长老就俯伏在羔羊面前，各拿着琴和盛满了香的金炉，这香就是众圣徒的祈祷。 他们唱新歌说：“你配拿书卷，配揭开七印，因为你曾被杀，用自己的血从各族、各方、各民、各国中买了人来，叫他们归于　神， 又叫他们成为国民，作祭司，归于　神，在地上执掌王权。” 我又看见且听见宝座与活物并长老的周围有许多天使的声音，他们的数目有千千万万， 大声说：“曾被杀的羔羊是配得权柄、丰富、智慧、能力、尊贵、荣耀、颂赞的。” 我又听见在天上、地上、地底下、沧海里和天地间一切所有被造之物都说：“但愿颂赞、尊贵、荣耀、权势都归给坐宝座的和羔羊，直到永永远远。” 四活物就说：“阿们！”众长老也俯伏敬拜。  启示录七章09-12节： 此后，我观看，见有许多的人，没有人能数过来，是从各国、各族、各民、各方来的，站在宝座和羔羊面前，身穿白衣，手拿棕树枝， 大声喊着说：“愿救恩归与坐在宝座上我们的　神，也归与羔羊。” 众天使都站在宝座和众长老并四活物的周围，在宝座前面伏于地敬拜　神， 说：“阿们！颂赞、荣耀、智慧、感谢、尊贵、权柄、大力都归与我们的　神，直到永永远远。阿们！”   【神学设计理念】 主题：天上的敬拜。 经文的描述可让读者心情无比澎湃，叫人无法想象主神的荣耀充满全地时的圣洁情景。 本次设计以白色、金色、红色为主。白色喻义神圣、圣洁；金色喻义荣耀、尊贵、权柄；红色的十字架喻义救赎。 设计师从建筑的框架着手思考，利用中庭的 突高的特点，用方块做五层递升的高度，顶棚与十字架背景衔接为一体的设计，更加凸显主题。 顶棚上的方块造型喻义天上的圣使者，方块与方块上下巨大的距离用反光灯带营造出十足的空间感，让人震惊于天上的神圣而发出赞叹。 并且更是藉着玻璃马赛克的闪耀的效果，为主题添上最浓重的色彩。 地面满铺蓝宝石花岗岩，有星河般的感受。   【声学设计理念】 圣台十架背景及大顶棚使用冲孔铝板内置32kg/m2的玻璃纤维吸音棉； 侧墙壁用槽型冲孔吸音板做四层横向不同的切面造型内置32kg/m2的玻璃纤维吸音棉； 会众席侧墙壁用槽型冲孔吸音板做斜面内置32kg/m2的玻璃纤维吸音棉； 后顶棚用冲孔石膏板内置32kg/m2的玻璃纤维吸音棉， 栏杆外侧用槽型冲孔吸音板内置32kg/m2的玻璃纤维吸音棉，玻璃做上斜面并玻璃与玻璃之间空10cm。"/>
+    <include url="%CURRENTXML%/plugins/swVR/webvr.xml?v=1"/>
+    <include url="%$Plugin_Path%/plugins/system.xml"/>
+    <include url="%$Plugin_Path%/skintemplate/default/default.xml"/>
+    <include url="%$Plugin_Path%/plugins/user_box/left.xml"/>
+    <include url="%$Plugin_Path%/plugins/photo/photofull.xml"/>
+    <include url="%CURRENTXML%data_self.xml?r=7"/>
+    <include url="%$Plugin_Path%/skintemplate/hot/hot.xml"/>
+    <include url="%$Plugin_Path%/plugins/walk/walk.xml"/>
+    <include url="%$Plugin_Path%/plugins/lensflare/lensflare.xml"/>
+    <autorotate enabled="true" waittime="5" accel="1" speed="3" horizon="0" tofov="110"/>
+    <control mousetype="drag2d"/>
+    <group name="group">
+        <item name="g0" title="其他" scene="scene_20190315125303499" scene_count="2"/>
+    </group>
+    <scene name="scene_20190315131857451" group="g0" title="内堂门口"
+           thumburl="%$Pano_Path%/panos/20190315131857451/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="54" vlookat="2" fovtype="MFOV" fov="70" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20190315131857451/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20190315131857451/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20190315131857451/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20190315131857451/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h201921513224" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="50.000"
+                 atv="6.000" linkedscene="scene_20190315125303499" html="圣台"/>
+    </scene>
+    <scene name="scene_20190315125303499" group="g0" title="圣台"
+           thumburl="%$Pano_Path%/panos/20190315125303499/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20190315125303499/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20190315125303499/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20190315125303499/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20190315125303499/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h201921513615" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="-179.000"
+                 atv="4.000" linkedscene="scene_20190315131857451" html="内堂门口"/>
+    </scene>
+</krpano>

@@ -1,0 +1,37 @@
+@charset "utf-8";
+.jxbg {position:fixed;_position:absolute;display:none;background:#000;top:0;left:0;filter:alpha(opacity=30);-moz-opacity:0.3;opacity:0.3;}
+.jxbox {position:fixed;_position:absolute;width:auto;height:auto;display:none;z-index:9999;font: 12px/1.5 Tahoma,Arial,Helvetica,STHeiti;-o-font-family:Tahoma,Arial;}
+.jx-close {position:absolute;top:12px;right:16px;width:20px;height:20px;background-position:0 -112px;cursor:pointer;}
+.jx-close:hover {background-position:0 -132px;}
+.jx-tip {background-color:#376EA5;border-color:#376EA5;border-radius:4px;color:#fff;line-height:40px;}
+.jx-tip-content {background-image:url(info.png);_background-image:url(info.gif);background-repeat:no-repeat;background-position:5px 4px;padding:0 20px 0 50px;}
+.jx-simple {}
+.jx-simple .jx-close {position:absolute;top:-150px;right:10px;width:19px;height:18px;background-image:url(close.gif);background-position:0 0;cursor:pointer;}
+/*.jx-simple .jx-close {position:absolute;top:10px;right:10px;width:19px;height:18px;background-image:url(close.gif);background-position:0 0;cursor:pointer;}*/
+.jx-simple .jx-close:hover {background-position:0 -18px;}
+.jx-simple-border {position:absolute;left:0;top:0;z-index:-1;background-color:#000;border-color:#000;border-radius:5px;filter:alpha(opacity=30);-moz-opacity:0.3;opacity:0.3;}
+.jx-simple-content {margin:5px;padding:3px;background-color:#fff;border-color:#fff;border-radius:3px;}
+/*border*/
+.jx-t-l, .jx-t-c, .jx-t-r, .jx-b-l, .jx-b-c, .jx-b-r, .jx-close {background-image:url(bg.png); _background-image:url(bg.gif); background-repeat:no-repeat;}
+/*border top*/
+.jx-t-l, .jx-t-r {width:15px;height:38px;}
+.jx-t-r {background-position: -15px 0;}
+.jx-t-c {height:38px;background-repeat:repeat-x;background-position:0 -56px;}
+/*border center*/
+.jx-c-l, .jx-c-r {background-image:url(bg2.png);_background-image:url(bg2.gif);background-repeat:repeat-y;}
+.jx-c-r {background-position:-15px 0;}
+.jx-content {background:#f7f7f7;padding:20px;}
+.jx-loading {background-image:url(loading.gif);background-repeat:no-repeat;background-position:center 40px;width:180px;height:120px; text-indent:-999em;}
+.jx-error {color:#f00;text-align:center;}
+.jx-info {width:auto!important;width:150px;min-width:150px;background:#f7f7f7;background-image:url(info.png);_background-image:url(info.gif);background-repeat:no-repeat;background-position:10px 12px;padding:20px 20px 20px 60px;}
+/*border bottom*/
+.jx-b-l, .jx-b-r {width:15px;height:18px;}
+.jx-b-l {background-position:0 -38px;}
+.jx-b-r {background-position:-15px -38px;}
+.jx-b-c {height:18px;background-repeat:repeat-x;background-position:0 -94px;}
+.jx-title, jx-button{font: 12px/1.2 'Microsoft Yahei',Tahoma,Arial,Helvetica,STHeiti;_font-family:Tahoma,Arial,Helvetica,STHeiti;-o-font-family:Tahoma,Arial;}
+.jx-title {font-size:14px;height:29px;line-height:29px;padding:3px 0 0 0;_padding:0;text-indent:5px;color:#FFF;font-weight:600; text-shadow:-1px -1px 0 rgba(33, 79, 183, .7);}
+.jx-button {height:40px;line-height:40px;padding:10px; text-align:right;background:#f7f7f7;}
+.jx-button .yes, .jx-button .cancel{background:url(jxbox-button.png) repeat-x transparent;border:#aaaaaa 1px solid;color:#888888;border-radius:3px 3px 3px 3px;margin:1px 7px 0px 0px;height:22px;cursor:default;outline:none;}
+.jx-button .hover{background-position:0px -20px;color:#666666;}
+.jx-button .active{background-position:0px -40px;}

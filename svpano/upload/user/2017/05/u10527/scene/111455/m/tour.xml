@@ -1,0 +1,42 @@
+<krpano version="15.5.23">
+    <settings key="4d3a6f24546b73e9" voicepc="true" voicemob="true" comments="0" bgmsc="true" bgmscmob="true"
+              thumbs_opened="false"
+              bgmscurl="/svpano/upload/user/2017/05/u10527/svrvr/sound/20180501418001044.mp3?r=8"
+              jump="true" jumpmob="false" jumptime="60" normalview="true" waittime="5" viewtime="3" hd="true"
+              adlogo="true" logolink="" walk="0" mousestyle="" direction="1" autowalk="" hothide="" keywsad=""
+              adad="false" adadhttp="" adadurl="" swlogo="0" in_image_url="" in_image_url_mob="" in_bg=""
+              in_alpha="0.05" in_time="3"
+              introduce="【教堂简介】 福音堂座落在浙江金华市武义，为异地新建教堂。分地面层为车库，地面二层为副堂，地面三、四层为主堂。 本次设计为二层副堂，三、四层主堂及主堂门厅。 正堂为长方体，池座580m2,后方楼座一层380m2，顶棚为水泥现浇平顶，长27.8M、宽21M，层高11.18M、梁高9.6M，  【经文】	 路加福音十九章38	节 说：奉主名来的王，是应当称颂的。在天上有和平，在至高之处有荣光。 启示录 4	章 此后，我观看，见天上有门开了。我初次听见好像吹号的声音，对我说：你上到这里来，我要将以后必成的事指示你。 我立刻被圣灵感动，见有一个宝座安置在天上，又有一位坐在宝座上。 看那坐着的，好像碧玉和红宝石。又有虹围着宝座，好像绿宝石。 宝座的周围，又有二十四个座位，其上坐着二十四位长老，身穿白衣，头上戴着金冠冕。 有闪电、声音、雷轰、从宝座中发出。又有七盏火灯在宝座前点着，这七灯就是　神的七灵。 宝座前好像一个玻璃海如同水晶。宝座中，和宝座周围有四个活物，前后遍体都满了眼睛。 第一个活物像狮子，第二个像牛犊，第三个脸面像人，第四个像飞鹰。 四活物各有六个翅膀，遍体内外都满了眼睛。他们昼夜不住的说：圣哉、圣哉、圣哉、主神，是昔在、今在、以后永在的全能者。 每逢四活物将荣耀、尊贵、感谢、归给那坐在宝座上，活到永永远远者的时候， 那二十四位长老，就俯伏在坐宝座的面前，敬拜那活到永永远远，又把他们的冠冕放在宝座前，说： 我们的主、我们的神、你是配得荣耀尊贵权柄的。因为你创造了万物，并且万物是因你的旨意被创造而有的。 启示录21章12节	 有高大的墙。有十二个门，门上有十二位天使。门上又写着以色列十二个支派的名字。 【神学设计理念】 再次以启示录记录天堂及大宝座前的情形来设计。 圣台用白色设计喻义基督的“圣洁”属性，金色的十字架喻义“尊贵、权柄、荣耀”，十架背后的圆圈喻义基督的荣光； 十架两侧的射灯槽共12支，代表着十二位门徒；十架下面共有七根长铜管及24根短铜管，代表着七灯台与24位长老； 圣台左右墙壁到顶上的7型灯槽，一面三个造型，造型代表着四活物，因四活物各有三对翅膀； 大顶棚共有12个拱门的灯槽，代表着天堂的十二个门。 【声学设计理念】 圣台上使用槽型冲孔吸音板内置吸音棉及纤维吸音棉来达到吸音效果； 墙壁上做出150mm，使用槽型冲孔吸音板内置吸音棉达到吸音效果； 池座墙壁做窗帘盒，缩小窗户的玻璃面积； 顶棚用冲孔铝板做凸弧造型，凸弧造型可散射声波，铝板从实用的角度考虑有耐久和使用时长的特点； 后墙壁和楼梯栏杆都做成上斜面，避免产生声驻波。"/>
+    <include url="%CURRENTXML%/plugins/swVR/webvr.xml?v=5"/>
+    <include url="%$Plugin_Path%/plugins/system.xml"/>
+    <include url="%$Plugin_Path%/skintemplate/default/default.xml"/>
+    <include url="%$Plugin_Path%/plugins/user_box/left.xml"/>
+    <include url="%$Plugin_Path%/plugins/photo/photofull.xml"/>
+    <include url="%CURRENTXML%data_self.xml?r=8"/>
+    <include url="%$Plugin_Path%/skintemplate/hot/hot.xml"/>
+    <include url="%$Plugin_Path%/plugins/walk/walk.xml"/>
+    <include url="%$Plugin_Path%/plugins/lensflare/lensflare.xml"/>
+    <autorotate enabled="true" waittime="5" accel="1" speed="3" horizon="0" tofov="110"/>
+    <control mousetype="drag2d"/>
+    <group name="group">
+        <item name="g0" title="其他" scene="scene_20180517114322582" scene_count="1"/>
+    </group>
+    <scene name="scene_20180517114322582" group="g0" title="福音堂"
+           thumburl="%$Pano_Path%/panos/20180517114322582/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180517114322582/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180517114322582/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180517114322582/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180517114322582/mob_%s.jpg"/>
+        </mobile>
+    </scene>
+</krpano>

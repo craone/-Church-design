@@ -1,0 +1,270 @@
+<krpano licznik="0" webvr_enabled="false" x_listflar="0" y_listflar="160">
+
+    <include url="lensflaresettings.xml"/>
+    <include url="edit.xml" devices="html5" />
+
+
+
+
+    <style name="blink_fl_lt" url="dust/d1.png" enabled="false" parent="STAGE" align="center" edge="rightbottom" x="0" y="0" width="prop" height="70%" keep="false" alpha="0" zorder="100"/>
+    <style name="blink_fl_rt" url="dust/d2.png" enabled="false" parent="STAGE" align="center" edge="leftbottom" x="0" y="0" width="prop" height="70%" keep="false" alpha="0" zorder="100"/>
+    <style name="blink_fl_rb" url="dust/d3.png" enabled="false" parent="STAGE" align="center" edge="lefttop" x="0" y="0" width="prop" height="70%" keep="false" alpha="0" zorder="100"/>
+    <style name="blink_fl_lb" url="dust/d4.png" enabled="false" parent="STAGE" align="center" edge="righttop" x="0" y="0" width="prop" height="70%" keep="false" alpha="0" zorder="100"/>
+    <style name="blink_fl_ce" url="dast4.png" enabled="false" parent="STAGE" rotate="180" align="center" edge="center" x="0" y="0" width="prop" height="50%" keep="false" alpha="0" zorder="100"/>
+
+
+
+    <events name="loasflares" keep="true" onpreviewcomplete="load_flare_content()" />
+
+    <style name="flare" enabled="false" distorted="get:lensflares[obj].webvr_enabled" edge="center" ox="0" oy="0" width="440" height="440" keep="false" />
+
+    <flare_style  name="blinkstyle1">
+        <item name="flare1" url="flare7.png" move="0" 		scale="1.0" alpha="1.0"	zorder="-1"/>
+        <item name="flare2" url="flare5.png" move="0" 		scale="6.0" alpha="0.0" zorder="2"/>
+        <item name="flare3" url="flare2.png" move="-6" 		scale="0.2" alpha="0.2"	zorder="-1"/>
+        <item name="flare4" url="flare6.png" move="-3" 		scale="0.3" alpha="0.4"	zorder="-1"/>
+        <item name="flare5" url="flare8.png" move="-0.8" 	scale="0.3" alpha="0.6"	zorder="-1"/>
+        <item name="flare6" url="flare8.png" move="-0.3" 	scale="0.2" alpha="0.7"	zorder="-1"/>
+        <item name="flare7" url="flare4.png" move="7" 		scale="0.8" alpha="0.2"	zorder="-1"/>
+    </flare_style>
+
+    <flare_style  name="blinkstyle2">
+        <item name="flare1" url="flare7.png"  move="0" scale="1.0" alpha="1.0" zorder="-1"/>
+        <item name="flare2" url="flare5.png"  move="0" scale="6.0" alpha="0.0" zorder="2"/>
+        <item name="flare3" url="flare6.png"  move="-5" scale="0.2" alpha="0.3" zorder="-1"/>
+        <item name="flare4" url="flare5.png"  move="-2" scale="0.1" alpha="0.6" zorder="-1"/>
+        <item name="flare5" url="flare6.png"  move="-1.5" scale="0.1" alpha="0.4" zorder="-1"/>
+        <item name="flare6" url="flare4.png"  move="-0.7" scale="0.8" alpha="0.2" zorder="-1"/>
+    </flare_style>
+
+    <flare_style  name="blinkstyle3">
+        <item name="flare1" url="flare7.png"  move="0" scale="1.0" alpha="1.0" zorder="-1"/>
+        <item name="flare2" url="flare5.png"  move="0" scale="6.0" alpha="0.0" zorder="2"/>
+        <item name="flare3" url="flare6.png"  move="-4" scale="0.2" alpha="0.3" zorder="-1"/>
+        <item name="flare4" url="flare5.png"  move="-2" scale="0.1" alpha="0.6" zorder="-1"/>
+        <item name="flare5" url="flare6.png"  move="-1.5" scale="0.1" alpha="0.4" zorder="-1"/>
+    </flare_style>
+
+    <flare_style  name="blinkstyle4">
+        <item name="flare1" url="flare7.png"  move="0" scale="1.0" alpha="1.0" zorder="-1"/>
+        <item name="flare2" url="flare5.png"  move="0" scale="6.0" alpha="0.0" zorder="2"/>
+        <item name="flare3" url="flare4.png"  move="7" scale="0.8" alpha="0.3" zorder="-1"/>
+        <item name="flare4" url="flare1.png"  move="0" scale="1" alpha="1" zorder="-1"/>
+        <item name="flare5" url="flare6.png"  move="-2.5" scale="0.1" alpha="0.4" zorder="-1"/>
+    </flare_style>
+
+    <flare_style  name="blinkstyle5">
+        <item name="flare1" url="flare1.png"  move="0" scale="1.0" alpha="1.0" zorder="-1"/>
+        <item name="flare2" url="flare5.png"  move="0" scale="6.0" alpha="0.0" zorder="2"/>
+        <item name="flare3" url="flare5.png"  move="-6" scale="0.2" alpha="0.3" zorder="1"/>
+        <item name="flare4" url="flare4.png"  move="-3" scale="0.4" alpha="0.5" zorder="1"/>
+        <item name="flare5" url="flare8.png"  move="-2.5" scale="0.1" alpha="0.4" zorder="1"/>
+    </flare_style>
+
+    <flare_style  name="blinkstyle6">
+        <item name="flare1" url="flare7.png"  move="0" scale="0.5" alpha="1.0" zorder="-1"/>
+        <item name="flare2" url="flare5.png"  move="0" scale="6.0" alpha="0.0" zorder="2"/>
+        <item name="flare3" url="flare5.png"  move="-4" scale="0.1" alpha="0.4" zorder="-1"/>
+        <item name="flare4" url="flare6.png"  move="-2" scale="0.1" alpha="0.4" zorder="-1"/>
+        <item name="flare5" url="flare2.png"  move="-1.5" scale="0.1" alpha="0.4" zorder="-1"/>
+        <item name="flare6" url="flare8.png"  move="-1.0" scale="0.08" alpha="0.4" zorder="-1"/>
+    </flare_style>
+
+    <flare_style  name="blinkstyle7">
+        <item name="flare1" url="flare1.png" move="0" 		scale="1.0" alpha="1.0"	zorder="2"/>
+        <item name="flare2" url="flare5.png" move="0" 		scale="6.0" alpha="0.0" zorder="3"/>
+        <item name="flare3" url="flare8.png" move="-6" 		scale="0.2" alpha="0.2"	zorder="2"/>
+        <item name="flare4" url="flare6.png" move="-3" 		scale="0.3" alpha="0.2"	zorder="2"/>
+        <item name="flare5" url="flare6.png" move="-0.8" 	scale="0.2" alpha="0.6"	zorder="2"/>
+        <item name="flare6" url="flare3.png" move="6" 		scale="0.6" alpha="0.1"	zorder="1"/>
+        <item name="flare7" url="flare4.png" move="9" 		scale="0.8" alpha="0.2"	zorder="1"/>
+    </flare_style>
+
+    <flare_style  name="blinkstyle8">
+        <item name="flare1" url="flare7.png" move="0" 		scale="0.7" alpha="1.0"	zorder="-1"/>
+        <item name="flare2" url="flare5.png" move="0" 		scale="6.0" alpha="0.0" zorder="2"/>
+        <item name="flare3" url="flare2.png" move="-4" 		scale="0.2" alpha="0.4"	zorder="-1"/>
+        <item name="flare4" url="flare3.png" move="-3.5" 	scale="0.3" alpha="0.2"	zorder="-1"/>
+        <item name="flare5" url="flare6.png" move="-2.8" 	scale="0.2" alpha="0.1"	zorder="-1"/>
+        <item name="flare6" url="flare5.png" move="-1.5" 	scale="0.1" alpha="0.5"	zorder="-1"/>
+        <item name="flare7" url="flare4.png" move="-1" 		scale="0.8" alpha="0.2"	zorder="-1"/>
+    </flare_style>
+
+    <flare_style  name="blinkstyle9">
+        <item name="flare1" url="flare1.png" move="0" 		scale="0.3" alpha="1.0"		zorder="-1"/>
+        <item name="flare2" url="flare5.png" move="0" 		scale="0.1" alpha="0.0" 	zorder="2"/>
+        <item name="flare3" url="flare6.png" move="-6" 		scale="0.03" alpha="0.4"	zorder="-1"/>
+    </flare_style>
+
+
+    <action name="load_flare_content">
+        if(!first_flare_settings,
+        copy(suma_flar, lensflares[obj].item.count);
+        set(first_flare_settings,true);
+        );
+        if(lensflares[obj].item.count GT 0 OR addflaremode == true,
+        flayer(blink_fl_lt,blink_fl_lt);
+        flayer(blink_fl_rt,blink_fl_rt);
+        flayer(blink_fl_rb,blink_fl_rb);
+        flayer(blink_fl_lb,blink_fl_lb);
+
+        );
+
+        set(load_gui_flar, false);
+        for(set(i,0), i LT lensflares[obj].item.count, inc(i),
+        copy(name_flare, lensflares[obj].item[get(i)].name);
+        copy(blink_style, lensflares[obj].item[get(i)].typ);
+
+        if(lensflares[obj].item[get(i)].scene == xml.scene,
+        set(load_gui_flar, true);
+        for(set(j,0), j LT flare_style[get(blink_style)].item.count, inc(j),
+        txtadd(n, 'f1_',get(lensflares[obj].item[get(i)].name),'_',get(j));
+
+        add_single_flare(get(n),get(i),get(j),get(blink_style),get(name_flare),get(flare_style[get(blink_style)].item[get(j)].move));
+        );
+        );
+        );
+        if(addflaremode,
+        show_lensfrafe_aktyw_box(get(xml.scene),get(load_gui_flar));
+        )
+    </action>
+
+
+
+    <action name="add_single_flare">
+
+        fhotspot(%1,flare);
+        copy(h.url, flare_style[%4].item[%3].url);
+        copy(h.ath, lensflares[obj].item[%5].ath);
+        copy(h.atv, lensflares[obj].item[%5].atv);
+        if(lensflares[obj].item[%5].dust_effect === null, set(lensflares[obj].item[%5].dust_effect, true));
+        copy(h.dust_effect, lensflares[obj].item[%5].dust_effect);
+        set(h.tagmini, %5);
+        copy(h.scale, flare_style[%4].item[%3].scale);
+        copy(h.alpha, flare_style[%4].item[%3].alpha);
+        copy(h.zorder, flare_style[%4].item[%3].zorder);
+        set(h.onloaded,
+        asyncloop(loaded,
+        spheretoscreen(ath, atv, xposh_%1, yposh_%1);
+        div(xpos_%1, stagewidth, 2);
+        div(ypos_%1, stageheight, 2);
+        sub(xposg_%1, xposh_%1, xpos_%1);
+        sub(yposg_%1, yposh_%1, ypos_%1);
+        div(ox, xposg_%1, %6);
+        div(oy, yposg_%1, %6);
+        if(%3 == '1',
+        getlooktodistance(result_%1, view.hlookat, view.vlookat, ath, atv);
+        div(result1_%1, result_%1, 10);
+        clamp(result1_%1, 0.0, 1.0);
+        mod(result2_%1, result1_%1, 100);
+        sub(result2_%1,1);
+        mul(result2_%1,-1);
+
+        copy(alpha, result2_%1);
+        sub(alpha, 0.3);
+
+
+        if('%4' != 'blinkstyle9',
+        if(result_%1 LT 7,
+        migaj_kurzem(get(result2_%1),get(dust_effect));
+        );
+        if(result_%1 GT 7 AND result_%1 LT 20,
+        migaj_kurzem(0,true);
+        );
+        );
+
+        );
+        testme(%1,get(xposh_%1),get(yposh_%1));
+        );
+        );
+
+    </action>
+
+    <action name="migaj_kurzem">
+
+
+        if(%2,
+        set(layer[blink_fl_lt].alpha, %1);
+        set(layer[blink_fl_rt].alpha, %1);
+        set(layer[blink_fl_rb].alpha, %1);
+        set(layer[blink_fl_lb].alpha, %1);
+        set(layer[blink_fl_ce].alpha, %1);
+        );
+    </action>
+
+    <action name="testme">
+        if(%3 LT 0 OR !%3,
+        set(ukryj_gora_%1, true);
+        ,
+        set(ukryj_gora_%1, false);
+        );
+
+        if(%3 GT stageheight OR !%3,
+        set(ukryj_dol_%1, true);
+        ,
+        set(ukryj_dol_%1, false);
+        );
+
+        if(%2 LT 0 OR !%2,
+        set(ukryj_lewo_%1, true);
+        ,
+        set(ukryj_lewo_%1, false);
+        );
+
+        if(%2 GT stagewidth OR !%2,
+        set(ukryj_prawo_%1, true);
+        ,
+        set(ukryj_prawo_%1, false);
+        );
+
+
+        if(!ukryj_gora_%1 AND !ukryj_dol_%1 AND !ukryj_lewo_%1 AND !ukryj_prawo_%1,
+        set(visible, true);
+        ,
+        set(visible, false);
+        );
+    </action>
+
+    <action name="reset_pano_lensflare"/>
+
+
+
+
+    <action name="flayer">
+        addlayer(%1);
+        layer[%1].loadstyle(%2);
+        copy(p, layer[%1]);
+    </action>
+
+    <action name="fhotspot">
+        addhotspot(%1);
+        hotspot[%1].loadstyle(%2);
+        copy(h, hotspot[%1]);
+    </action>
+
+    <action name="vonp">
+        if(layer[%1].loaded, removelayer(%1));
+    </action>
+    <action name="vonh">
+        if(hotspot[%1].loaded, removehotspot(%1));
+    </action>
+
+    <action name="vonh_all">
+        sub(i,hotspot.count,1);
+        if(i GE 0,loop_vonh_all(get(i),%1,%2));
+    </action>
+
+    <action name="loop_vonh_all">
+        if(%2 == null,
+        vonh(%1);
+        ,
+        if(hotspot[%1].%2 == %3,
+        vonh(%1);
+        );
+        );
+        dec(i);
+        if(i GE 0, loop_vonh_all(get(i),%2,%3));
+    </action>
+
+
+</krpano>

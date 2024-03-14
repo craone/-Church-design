@@ -1,0 +1,64 @@
+<krpano version="15.5.23">
+    <settings key="c2314867d14346d3" voicepc="true" voicemob="true" comments="0" bgmsc="true" bgmscmob="true"
+              thumbs_opened="true"
+              bgmscurl="/svpano/upload/user/2017/05/u10527/svrvr/sound/20180301328584383.mp3?r=6"
+              jump="true" jumpmob="false" jumptime="60" normalview="true" waittime="5" viewtime="3" hd="true"
+              adlogo="true" logolink="" walk="0" mousestyle="" direction="1" autowalk="" hothide="" keywsad=""
+              adad="false" adadhttp="" adadurl="" swlogo="0" in_image_url="" in_image_url_mob="" in_bg=""
+              in_alpha="0.05" in_time="3"
+              introduce="【教堂简介】磐石堂位于西班牙马德里，是在西班牙从商的温州信徒购买的一处厂房设计改建而成，长24.5M，宽16.4M,三角形顶棚顶点高层高6.4M、底点高4.4M。  【心声】当时设计完成时，拿去给西班牙本地的设计所批阅，被表为具有中国风的设计。听说落成时邀请了法国、意大利等周边的华裔基督徒去礼拜，真是一次盛大的聚会。 当时装修的主要材料是从温州取材海运出去的，凭着感动设计师认真负责取材并陆地上的货运，如今想来，这不仅帮助到了教会，也使自己有了新的眼界和新的感动。  【经文】诗篇十八章46节--愿我的磐石被人称颂，愿救我的上帝被人尊崇。  【声学设计和神学设计理念】门厅：教会LOGO、屏风、大门拉手、书柜、墙壁石材安装都体现了磐石的元素，顶棚一条从进户门到主堂大门的发光软膜，与地面相同的一条白色石材，喻义着天路。 门厅整体设计风格简洁，有着能安静心灵的感受。主堂：从圣台的背景、圣台讲桌、会众座椅、左右墙壁及顶棚都使用磐石的元素来设计，墙壁及顶棚是石材的切面元素设计，墙壁的切面凸出墙壁， 做吸声墙体，用暗藏暖灯光营造氛围；顶棚的每块切面上下高度不同，以下吊200、400、600随机布置，整个顶棚做成放射场，又让顶棚更具有的空间感。"/>
+    <include url="%CURRENTXML%/plugins/swVR/webvr.xml?v=0"/>
+    <include url="%$Plugin_Path%/plugins/system.xml"/>
+    <include url="%$Plugin_Path%/skintemplate/default/default.xml"/>
+    <include url="%$Plugin_Path%/plugins/user_box/left.xml"/>
+    <include url="%$Plugin_Path%/plugins/photo/photofull.xml"/>
+    <include url="%CURRENTXML%data_self.xml?r=6"/>
+    <include url="%$Plugin_Path%/skintemplate/hot/hot.xml"/>
+    <include url="%$Plugin_Path%/plugins/walk/walk.xml"/>
+    <include url="%$Plugin_Path%/plugins/lensflare/lensflare.xml"/>
+    <autorotate enabled="true" waittime="5" accel="1" speed="3" horizon="0" tofov="110"/>
+    <control mousetype="drag2d"/>
+    <group name="group">
+        <item name="g0" title="其他" scene="scene_20180324111637618" scene_count="2"/>
+    </group>
+    <scene name="scene_20180324111641219" group="g0" title="前厅"
+           thumburl="%$Pano_Path%/panos/20180324111641219/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="-177" vlookat="-3" fovtype="MFOV" fov="120" fovmin="36" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180324111641219/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180324111641219/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180324111641219/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180324111641219/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018224132725" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="179.000"
+                 atv="11.000" linkedscene="scene_20180324111637618" html="礼拜堂"/>
+    </scene>
+    <scene name="scene_20180324111637618" group="g0" title="礼拜堂"
+           thumburl="%$Pano_Path%/panos/20180324111637618/thumb.jpg" dibiaosize="300" db="1" snow="" dburl=""
+           dbmoburl="" summary="0" summarytxt="" voice="0" voicetxt="暂无音乐" voiceurl="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="range"
+              hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90"/>
+        <preview url="%$Pano_Path%/panos/20180324111637618/preview.jpg"/>
+        <image prealign="0|0|0" type="CUBE" multires="true" tilesize="1024" progressive="true">
+            <level tiledimagewidth="2546" tiledimageheight="2546">
+                <cube url="%$Pano_Path%/panos/20180324111637618/l2_%s_%v_%h.jpg"/>
+            </level>
+            <level tiledimagewidth="1273" tiledimageheight="1273">
+                <cube url="%$Pano_Path%/panos/20180324111637618/l1_%s_%v_%h.jpg"/>
+            </level>
+        </image>
+        <mobile prealign="0|0|0" type="CUBE">
+            <cube url="%$Pano_Path%/panos/20180324111637618/mob_%s.jpg"/>
+        </mobile>
+        <hotspot name="h2018224132749" wz="t" style="spot1" onloaded="svrvrtxt();" blendmodes="blend_c" ath="129.000"
+                 atv="12.000" linkedscene="scene_20180324111641219" html="前厅"/>
+    </scene>
+</krpano>
