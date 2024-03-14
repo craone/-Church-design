@@ -2883,7 +2883,7 @@
         set(hotspot[get(linear_polygon_txt_name)].capture,false);
         set(hotspot[get(linear_polygon_txt_name)].enabled, false);
         set(hotspot[get(linear_polygon_txt_name)].keep,false);
-        set(hotspot[get(linear_polygon_txt_name)].url,'/720yun/ssl-player2/@/krp/1.19-pr8/plugins/textfield.swf');
+        set(hotspot[get(linear_polygon_txt_name)].url,'/Church-Design/720yun/ssl-player2/@/krp/1.19-pr8/plugins/textfield.swf');
         set(hotspot[get(linear_polygon_txt_name)].backgroundcolor,#000000);
         set(hotspot[get(linear_polygon_txt_name)].backgroundalpha,0.5);
         set(hotspot[get(linear_polygon_txt_name)].roundedge,5);
@@ -3372,7 +3372,7 @@
         copy(hotspot[get(polygon_txt_name)].hotspot_type,hotspot[%1].hotspot_type);
         set(hotspot[get(polygon_txt_name)].keep,false);
         set(hotspot[get(polygon_txt_name)].renderer, "css3d");
-        set(hotspot[get(polygon_txt_name)].url,'/720yun/ssl-player2/@/krp/1.19-pr8/plugins/textfield.swf');
+        set(hotspot[get(polygon_txt_name)].url,'/Church-Design/720yun/ssl-player2/@/krp/1.19-pr8/plugins/textfield.swf');
         set(hotspot[get(polygon_txt_name)].backgroundcolor,#000000);
         set(hotspot[get(polygon_txt_name)].backgroundalpha,0.5);
         set(hotspot[get(polygon_txt_name)].roundedge,5);

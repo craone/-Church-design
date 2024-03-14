@@ -136,7 +136,7 @@
         return p.d(e, "a", e), e
     }, p.o = function (_, e) {
         return Object.prototype.hasOwnProperty.call(_, e)
-    }, p.p = "/720yun/ssl-static2", p.oe = function (_) {
+    }, p.p = "/Church-Design/720yun/ssl-static2", p.oe = function (_) {
         throw console.error(_), _
     };
     var e = (a = window.webpackJsonp = window.webpackJsonp || []).push.bind(a);
@@ -431,7 +431,7 @@
                             onready: function (_) {
                                 M.krp = _;
                                 _ = t.replace(/http:\/\/client-product.720static.com\/@\//g, "https://ssl-client2.720static.com/");
-                                _ = (_ = (_ = t.replace(/https:\/\/ssl-client.720static.com\/@\//g, "https://ssl-client2.720static.com/")).replace(/http:\/\/og066y9k9.bkt.clouddn.com/g, "https://ohfpztx5j.qnssl.com")).replace(/http:\/\/api-qiniu2.720static.com/g, "/720yun/ssl-player2"), M.loadxml(_), i(), M.krpChangeMouseControl()
+                                _ = (_ = (_ = t.replace(/https:\/\/ssl-client.720static.com\/@\//g, "https://ssl-client2.720static.com/")).replace(/http:\/\/og066y9k9.bkt.clouddn.com/g, "https://ohfpztx5j.qnssl.com")).replace(/http:\/\/api-qiniu2.720static.com/g, "/Church-Design/720yun/ssl-player2"), M.loadxml(_), i(), M.krpChangeMouseControl()
                             }
                         })
                     }, this.init = function (_) {

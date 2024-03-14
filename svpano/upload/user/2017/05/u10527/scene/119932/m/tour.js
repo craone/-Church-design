@@ -1963,7 +1963,7 @@ function embedpanoJS(p) {
                 }
                 /** 加密 */
                 function e(d, e, g) {
-                    if (d === "/svpano/upload/user/2017/05/u10527/scene/119932/m/plugins/system.xml") {
+                    if (d === "/Church-Design/svpano/upload/user/2017/05/u10527/scene/119932/m/plugins/system.xml") {
                         return e;
                     }
                     var h, n;

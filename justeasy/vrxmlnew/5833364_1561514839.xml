@@ -1,8 +1,8 @@
 <krpano version="1.21" title="温州-承诚·尼西装饰设计工程有限公司-1870设计">
-    <include url="/justeasy/res1/vr2023/skin/vtourskin.xml?v=2024012456"/>
+    <include url="/Church-Design/justeasy/res1/vr2023/skin/vtourskin.xml?v=2024012456"/>
 
     <skin_settings maps="false" maps_type="bing" maps_bing_api_key="" maps_zoombuttons="false" gyro="true" webvr="true" webvr_gyro_keeplookingdirection="false" webvr_prev_next_hotspots="true" littleplanetintro="true" title="true" thumbs="true" thumbs_width="60" thumbs_height="60" thumbs_padding="8" thumbs_crop="0|0|500|500" thumbs_opened="false" thumbs_text="true" thumbs_dragging="true" thumbs_onhoverscrolling="false" thumbs_scrollbuttons="true" thumbs_scrollindicator="true" thumbs_loop="false" tooltips_buttons="false" tooltips_thumbs="false" tooltips_hotspots="false" tooltips_mapspots="false" deeplinking="false" loadscene_flags="MERGE" loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)" loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)" loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)" loadingtext="加载中..." layout_width="100%" layout_maxwidth="" controlbar_width="-24" controlbar_height="40" controlbar_offset="20" controlbar_offset_closed="-40" controlbar_overlap.no-fractionalscaling="10" controlbar_overlap.fractionalscaling="0" design_skin_images="vtourskin.png" design_bgcolor="0x2D3E50" design_bgalpha="0.8" design_bgborder="0" design_bgroundedge="1" design_bgshadow="0 4 10 0x000000 0.3" design_thumbborder_bgborder="2 0xFFFFFF 1.0" design_thumbborder_padding="1" design_thumbborder_bgroundedge="0" design_text_css="" design_text_shadow="1"/>
-    <include url="/justeasy/res1/vr2023/skin/vtourskin_design_new.xml?v=2024012456"/>
+    <include url="/Church-Design/justeasy/res1/vr2023/skin/vtourskin_design_new.xml?v=2024012456"/>
     <action name="startup" autorun="onstart">
         if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
         loadscene(get(startscene), null, MERGE);
@@ -38,10 +38,10 @@
 
     <layer name="logcontainer" keep="true" type="container" bgcolor="0x000000" bgalpha="0" align="lefttop" x="0" y="0" width="300" onloaded="resizelogcontainer" enabled="false">
         <layer name="avatar" type="container" align="lefttop" bgcolor="0x000000" bgalpha="0" width="65" height="65" x="20" y="18" maskchildren="true">
-            <layer name="avatar_1" align="lefttop" width="65" height="65" x="0" y="0" url="/justeasy/vrimg/pano/20190626/logo/410486_5d12d3528f745_150.PNG" onclick="calc(resizesuport,device.mobile == true);"/>
+            <layer name="avatar_1" align="lefttop" width="65" height="65" x="0" y="0" url="/Church-Design/justeasy/vrimg/pano/20190626/logo/410486_5d12d3528f745_150.PNG" onclick="calc(resizesuport,device.mobile == true);"/>
         </layer>        <layer name="author" align="lefttop" style="textfield" x="95" y="15" html="温州-承诚·尼西装饰-1870设计" css="font-size:18px; color:#FFFFFF;font-family:微软雅黑, Arial, Helvetica, sans-serif;" onclick="calc(resizesuport,device.mobile == true);"/>
-        <layer name="iconview" align="lefttop" url="/justeasy/res1/vr2023/skin/eye.png" x="95" y="58"/>
-        <layer name="viewnum" align="lefttop" style="textfield" x="115" y="50" html="" css="font-size:16px; color:#FFFFFF; font-family:微软雅黑, Arial, Helvetica, sans-serif;" onclick="calc(resizesuport,device.mobile == true);"/>        <layer name="jelogo" width="200" height="50" align="lefttop" x="20" y="85" url="/justeasy/res1/vr16/skin/logo.png" scale="0.9" alpha="0.6" visible="false"/>
+        <layer name="iconview" align="lefttop" url="/Church-Design/justeasy/res1/vr2023/skin/eye.png" x="95" y="58"/>
+        <layer name="viewnum" align="lefttop" style="textfield" x="115" y="50" html="" css="font-size:16px; color:#FFFFFF; font-family:微软雅黑, Arial, Helvetica, sans-serif;" onclick="calc(resizesuport,device.mobile == true);"/>        <layer name="jelogo" width="200" height="50" align="lefttop" x="20" y="85" url="/Church-Design/justeasy/res1/vr16/skin/logo.png" scale="0.9" alpha="0.6" visible="false"/>
     </layer>
 
     <layer name="suport" keep="true" alpha="0" scale="0.6" align="rightbottom" style="textfield" css="color:#dddddd" x="70" y="10" html="技术支持：建E网" onloaded="calc(resizesuport,device.mobile == true);if(resizesuport,set(layer[suport].y,4);set(layer[suport].x,40);set(layer[suport].css,font-size:10px;color:#ddd););"/>
@@ -57,8 +57,8 @@
     <action name="delhotspot">
         removehotspot(%1);
     </action>
-    <scene name="scene_10221299" title="客厅" id="10221299" thumburl="/justeasy/vrimg/pano/20190429/170758_5cc6beee4f72b.tiles/thumb.jpg" lat="" lng="" heading="" onstart="js(onloadscenerun())">
-        <hotspot zorder="10" name="hotspot8539683" url="/justeasy/res1/vr16/hotspot/spot1_gif.png" onhover="js(hotspotmove(8539683));" atv="11.6559" ath="-63.3629" onloaded="do_crop_animation(128,128, 40);" scale="0.5" onclick="js(clickvrgroup(10221300););loadscene(scene_10221300,null,MERGE,BLEND(0.8));"/>
+    <scene name="scene_10221299" title="客厅" id="10221299" thumburl="/Church-Design/justeasy/vrimg/pano/20190429/170758_5cc6beee4f72b.tiles/thumb.jpg" lat="" lng="" heading="" onstart="js(onloadscenerun())">
+        <hotspot zorder="10" name="hotspot8539683" url="/Church-Design/justeasy/res1/vr16/hotspot/spot1_gif.png" onhover="js(hotspotmove(8539683));" atv="11.6559" ath="-63.3629" onloaded="do_crop_animation(128,128, 40);" scale="0.5" onclick="js(clickvrgroup(10221300););loadscene(scene_10221300,null,MERGE,BLEND(0.8));"/>
 
         <hotspot zorder="10" name="hotspotname8539683" style="textfield" css="color:#dddddd; font-size:14px;" htmlbak="洪城福2张混搭360 博雅君 曹婷 大图 今天2点2副本" html="洪城福2张混搭360 博雅君 曹婷 大图 今天2点2副本" atv="8.6559" ath="-63.3629" background="true" backgroundcolor="0x333333" backgroundalpha="0.7" padding="5 8" roundedge="5" onclick="js(clickvrgroup(10221300););loadscene(scene_10221300,null,MERGE,BLEND(0.8));" onloaded="if(device.mobile, set(hotspot[hotspotname8539683].padding,'2 5');set(hotspot[hotspotname8539683].atv,'10.6559');set(hotspot[hotspotname8539683].css,color:#dddddd; font-size:12px; ); );"/>
 
@@ -66,17 +66,17 @@
 
         <view vlookat="0" hlookat="0" fovtype="MFOV" fov="110" defaultHlookat="0" maxpixelzoom="2.0" fovmin="60" fovmax="140" limitview="auto"/>
 
-        <preview url="/justeasy/vrimg/pano/20190429/170758_5cc6beee4f72b.tiles/preview.jpg"/>
+        <preview url="/Church-Design/justeasy/vrimg/pano/20190429/170758_5cc6beee4f72b.tiles/preview.jpg"/>
         <image type="CUBE" multires="true" tilesize="1024">
 
             <level tiledimagewidth="1280" tiledimageheight="1280">
-                <cube url="/justeasy/vrimg/pano/20190429/170758_5cc6beee4f72b.tiles/%s/l1_%s_%v_%h.jpg"/>
+                <cube url="/Church-Design/justeasy/vrimg/pano/20190429/170758_5cc6beee4f72b.tiles/%s/l1_%s_%v_%h.jpg"/>
             </level>
         </image>
 
 
-    </scene><scene name="scene_10221300" title="餐厅" id="10221300" thumburl="/justeasy/vrimg/pano/20190429/170801_5cc6bef180909.tiles/thumb.jpg" lat="" lng="" heading="" onstart="js(onloadscenerun())">
-    <hotspot zorder="10" name="hotspot8539691" url="/justeasy/res1/vr16/hotspot/spot1_gif.png" onhover="js(hotspotmove(8539691));" atv="20.4009" ath="-126.362" onloaded="do_crop_animation(128,128, 40);" scale="0.5" onclick="js(clickvrgroup(10221299););loadscene(scene_10221299,null,MERGE,BLEND(0.8));"/>
+    </scene><scene name="scene_10221300" title="餐厅" id="10221300" thumburl="/Church-Design/justeasy/vrimg/pano/20190429/170801_5cc6bef180909.tiles/thumb.jpg" lat="" lng="" heading="" onstart="js(onloadscenerun())">
+    <hotspot zorder="10" name="hotspot8539691" url="/Church-Design/justeasy/res1/vr16/hotspot/spot1_gif.png" onhover="js(hotspotmove(8539691));" atv="20.4009" ath="-126.362" onloaded="do_crop_animation(128,128, 40);" scale="0.5" onclick="js(clickvrgroup(10221299););loadscene(scene_10221299,null,MERGE,BLEND(0.8));"/>
 
     <hotspot zorder="10" name="hotspotname8539691" style="textfield" css="color:#dddddd; font-size:14px;" htmlbak="洪城福2张混搭360 博雅君 曹婷 大图 今天2点1副本" html="洪城福2张混搭360 博雅君 曹婷 大图 今天2点1副本" atv="17.4009" ath="-126.362" background="true" backgroundcolor="0x333333" backgroundalpha="0.7" padding="5 8" roundedge="5" onclick="js(clickvrgroup(10221299););loadscene(scene_10221299,null,MERGE,BLEND(0.8));" onloaded="if(device.mobile, set(hotspot[hotspotname8539691].padding,'2 5');set(hotspot[hotspotname8539691].atv,'19.4009');set(hotspot[hotspotname8539691].css,color:#dddddd; font-size:12px; ); );"/>
 
@@ -84,11 +84,11 @@
 
     <view vlookat="0" hlookat="0" fovtype="MFOV" fov="110" defaultHlookat="0" maxpixelzoom="2.0" fovmin="60" fovmax="140" limitview="auto"/>
 
-    <preview url="/justeasy/vrimg/pano/20190429/170801_5cc6bef180909.tiles/preview.jpg"/>
+    <preview url="/Church-Design/justeasy/vrimg/pano/20190429/170801_5cc6bef180909.tiles/preview.jpg"/>
     <image type="CUBE" multires="true" tilesize="1024">
 
         <level tiledimagewidth="1280" tiledimageheight="1280">
-            <cube url="/justeasy/vrimg/pano/20190429/170801_5cc6bef180909.tiles/%s/l1_%s_%v_%h.jpg"/>
+            <cube url="/Church-Design/justeasy/vrimg/pano/20190429/170801_5cc6bef180909.tiles/%s/l1_%s_%v_%h.jpg"/>
         </level>
     </image>
 

@@ -797,7 +797,7 @@ a:hover {
 }
 
 .pano-head .userinfo-box .info {
-    background: url(../images/justeasy/userbg2.png) no-repeat;
+    background: url(../images/Church-Design/justeasy/userbg2.png) no-repeat;
     height: 90px;
     width: 100%;
     -webkit-box-sizing: border-box;
@@ -871,19 +871,19 @@ a:hover {
 }
 
 .icon-shezhi {
-    background: url(../images/justeasy/icon-shezhi.png);
+    background: url(../images/Church-Design/justeasy/icon-shezhi.png);
 }
 
 .icon-home {
-    background: url(../images/justeasy/icon-home.png);
+    background: url(../images/Church-Design/justeasy/icon-home.png);
 }
 
 .icon-order {
-    background: url(../images/justeasy/icon-order.png);
+    background: url(../images/Church-Design/justeasy/icon-order.png);
 }
 
 .icon-message {
-    background: url(../images/justeasy/icon-message.png);
+    background: url(../images/Church-Design/justeasy/icon-message.png);
 }
 
 .pano-head .userinfo-box .details .redbg {
@@ -10185,7 +10185,7 @@ body .layui_vr_edit .layui-layer-title {
     height: 15px;
     overflow: hidden;
     margin-top: 2px;
-    background: url(/res1/images/justeasy/popup_off.png) no-repeat;
+    background: url(/res1/images/Church-Design/justeasy/popup_off.png) no-repeat;
     background-size: 100%;
     cursor: pointer;
 }
@@ -11118,7 +11118,7 @@ body .layui_vr_edit .layui-layer-title {
     display: block;
     width: 29px;
     height: 16px;
-    background: url(../images/justeasy/new.png) center no-repeat;
+    background: url(../images/Church-Design/justeasy/new.png) center no-repeat;
     background-size: 100%;
     position: absolute;
     right: 15px;

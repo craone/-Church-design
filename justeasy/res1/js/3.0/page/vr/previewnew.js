@@ -432,7 +432,7 @@ function removeSandboxsandspotAll() {
 function showBox(id, type) {
     initAudioHotspot();
     $.ajax({
-        url: '/justeasy/vr/hotspotinfonew',
+        url: '/Church-Design/justeasy/vr/hotspotinfonew',
         type: 'get',
         dataType: 'jsonp',
         data: {
@@ -786,13 +786,13 @@ function playsound() {
     var status = krpano.get("layer[skin_btn_sound].data");
     if (status == 1 || status == null) {
         document.getElementById('mp3').pause();
-        krpano.set("layer[skin_btn_sound].url", "/justeasy/res1/vr16/skin/music-new-no.png");
+        krpano.set("layer[skin_btn_sound].url", "/Church-Design/justeasy/res1/vr16/skin/music-new-no.png");
         krpano.set("layer[skin_btn_sound].data", 0);
         $('#pano-right .music_play').addClass('active');
         $('#pano-right-mobile .music_play').addClass('active');
     } else {
         document.getElementById('mp3').play();
-        krpano.set("layer[skin_btn_sound].url", "/justeasy/res1/vr16/skin/music-new.png");
+        krpano.set("layer[skin_btn_sound].url", "/Church-Design/justeasy/res1/vr16/skin/music-new.png");
         krpano.set("layer[skin_btn_sound].data", 1);
         $('#pano-right .music_play').removeClass('active');
         $('#pano-right-mobile .music_play').removeClass('active');
@@ -816,7 +816,7 @@ function initAudioHotspot() {
 function onPause() {
     if (music > 0) {
         document.getElementById('mp3').pause();
-        krpano.set("layer[skin_btn_sound].url", "/justeasy/res1/vr16/skin/music-new-no.png");
+        krpano.set("layer[skin_btn_sound].url", "/Church-Design/justeasy/res1/vr16/skin/music-new-no.png");
         krpano.set("layer[skin_btn_sound].data", 0);
     }
 }
@@ -825,7 +825,7 @@ function onPause() {
 function onResume() {
     if (music > 0) {
         document.getElementById('mp3').play();
-        krpano.set("layer[skin_btn_sound].url", "/justeasy/res1/vr16/skin/music-new.png");
+        krpano.set("layer[skin_btn_sound].url", "/Church-Design/justeasy/res1/vr16/skin/music-new.png");
         krpano.set("layer[skin_btn_sound].data", 1);
     }
 }
@@ -1174,7 +1174,7 @@ var material_index;
 
 function showMaterial(id) {
     $.ajax({
-        url: '/justeasy/vr/hotspotinfonew',
+        url: '/Church-Design/justeasy/vr/hotspotinfonew',
         type: 'get',
         dataType: 'jsonp',
         data: {
@@ -1242,8 +1242,8 @@ function compare_vr() {
 
     embedpano({
         id: "krpanoCompareViewObject",
-        swf: "/justeasy/res1/vr-public/vr2023/tour.swf",
-        xml: "/justeasy/vr/pano/index/share_compare_xml/id/"+id+".php",
+        swf: "/Church-Design/justeasy/res1/vr-public/vr2023/tour.swf",
+        xml: "/Church-Design/justeasy/vr/pano/index/share_compare_xml/id/"+id+".php",
         target: "pano_preview_compare",
         html5: "prefer",
         mobilescale: 1.0,
